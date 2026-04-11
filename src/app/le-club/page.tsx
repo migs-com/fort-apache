@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { PageHeader } from '@/components/ui/PageHeader';
 import { Card, CardBody, CardTitle } from '@/components/ui/Card';
 import { LinkButton } from '@/components/ui/Button';
+import { ffeImages } from '@/lib/images';
 
 export const metadata: Metadata = {
   title: 'Le Club — Histoire, équipe et cavalerie',
@@ -30,12 +31,12 @@ const equipements = [
 ];
 
 const cavalerie = [
-  { name: 'Equinox', race: 'Selle Français', usage: 'Saut / Dressage' },
-  { name: 'Sahara', race: 'Arabe', usage: 'Randonnée' },
-  { name: 'Orion', race: 'Lusitanien', usage: 'Dressage' },
-  { name: 'Mistral', race: 'Poney Welsh', usage: 'École poney' },
-  { name: 'Nuage', race: 'Connemara', usage: 'Enfants / Débutants' },
-  { name: 'Romeo', race: 'Selle Français', usage: 'Saut confirmés' },
+  { name: 'Equinox', race: 'Selle Français', usage: 'Saut / Dressage', photo: ffeImages.album[0] },
+  { name: 'Sahara', race: 'Arabe', usage: 'Randonnée', photo: ffeImages.album[1] },
+  { name: 'Orion', race: 'Lusitanien', usage: 'Dressage', photo: ffeImages.album[2] },
+  { name: 'Mistral', race: 'Poney Welsh', usage: 'École poney', photo: ffeImages.album[3] },
+  { name: 'Nuage', race: 'Connemara', usage: 'Enfants / Débutants', photo: ffeImages.album[4] },
+  { name: 'Romeo', race: 'Selle Français', usage: 'Saut confirmés', photo: ffeImages.album[5] },
 ];
 
 export default function LeClubPage() {
@@ -51,7 +52,7 @@ export default function LeClubPage() {
         <div className="container mx-auto grid md:grid-cols-2 gap-12 md:gap-16 items-center">
           <div className="relative aspect-[4/5] rounded-lg overflow-hidden shadow-lg">
             <Image
-              src="https://images.unsplash.com/photo-1516466723877-e4ec1d736c8a?w=800&q=80"
+              src={ffeImages.top7}
               alt="Pénélope, fondatrice et monitrice de Fort Apache"
               fill
               sizes="(min-width: 768px) 50vw, 100vw"
@@ -152,7 +153,7 @@ export default function LeClubPage() {
               <Card key={c.name} variant="elevated">
                 <div className="relative aspect-[4/3]">
                   <Image
-                    src={`https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=600&q=80`}
+                    src={c.photo}
                     alt={`Portrait de ${c.name}`}
                     fill
                     sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"

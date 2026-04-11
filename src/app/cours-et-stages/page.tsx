@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { PageHeader } from '@/components/ui/PageHeader';
 import { LinkButton } from '@/components/ui/Button';
 import { Card, CardBody, CardTitle } from '@/components/ui/Card';
+import { ffeImages } from '@/lib/images';
 
 export const metadata: Metadata = {
   title: 'Cours & Stages — Tous niveaux, toutes saisons',
@@ -178,11 +180,14 @@ export default function CoursEtStagesPage() {
               Inscrire mon enfant
             </LinkButton>
           </div>
-          <div
-            className="aspect-[4/3] rounded-lg bg-sable/20 border border-sable/40 flex items-center justify-center text-sable-light"
-            aria-hidden
-          >
-            <span className="font-serif text-2xl">Photo — École poney</span>
+          <div className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg">
+            <Image
+              src={ffeImages.album[10]}
+              alt="École poney — enfants et poneys"
+              fill
+              sizes="(min-width: 768px) 50vw, 100vw"
+              className="object-cover"
+            />
           </div>
         </div>
       </section>

@@ -7,18 +7,19 @@ export const siteConfig = {
   ogImage: '/images/og-default.jpg',
   contact: {
     email: 'contact@fortapache.fr',
-    phone: '+33 X XX XX XX XX',
-    phoneDisplay: '0X XX XX XX XX',
+    phone: '+33493589143',
+    phoneDisplay: '04 93 58 91 43',
     address: {
-      street: 'Route des Écuries',
-      locality: 'Saint-Exemple',
-      region: 'Normandie',
-      postalCode: '14000',
+      street: 'Carrefour Saint-Barnabé, Quartier Col de Vence',
+      locality: 'Coursegoules',
+      region: "Alpes-Maritimes",
+      postalCode: '06140',
       country: 'FR',
     },
     geo: {
-      latitude: '49.1829',
-      longitude: '-0.3707',
+      // Coursegoules, Col de Vence (approximatif — à affiner)
+      latitude: '43.7939',
+      longitude: '7.0547',
     },
   },
   socials: {

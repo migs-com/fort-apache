@@ -1,14 +1,15 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { LinkButton } from '@/components/ui/Button';
+import { ffeImages } from '@/lib/images';
 
 export function Hero() {
   return (
     <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0">
         <Image
-          src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=1920&q=80"
-          alt="Cavalier et cheval dans un pré au lever du soleil"
+          src={ffeImages.top3}
+          alt="Fort Apache — Club équestre"
           fill
           priority
           sizes="100vw"

@@ -6,6 +6,10 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
+        hostname: 'fortapache.ffe.com',
+      },
+      {
+        protocol: 'https',
         hostname: 'placehold.co',
       },
       {

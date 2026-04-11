@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { PageHeader } from '@/components/ui/PageHeader';
 import { LinkButton } from '@/components/ui/Button';
+import { ffeImages } from '@/lib/images';
 
 export const metadata: Metadata = {
   title: 'Disciplines équestres — Cours, stages et randonnées',
@@ -23,48 +24,42 @@ const disciplines: Discipline[] = [
     name: 'Cours collectifs',
     excerpt:
       "Apprenez et progressez en groupe, dans une ambiance conviviale. Séances d'une heure par niveau.",
-    image:
-      'https://images.unsplash.com/photo-1594768816441-1dd241ffaa57?w=800&q=80',
+    image: ffeImages.album[6],
   },
   {
     slug: 'cours-particuliers',
     name: 'Cours particuliers',
     excerpt:
       "Un moniteur rien que pour vous. Idéal pour un perfectionnement ciblé ou un retour en selle.",
-    image:
-      'https://images.unsplash.com/photo-1534307671554-9a6d81f4d629?w=800&q=80',
+    image: ffeImages.album[7],
   },
   {
     slug: 'ecole-poney',
     name: 'École poney',
     excerpt:
       "Pour les enfants de 4 à 8 ans : premier contact avec le poney, jeux, soins et petits parcours.",
-    image:
-      'https://images.unsplash.com/photo-1493962853295-0fd70327578a?w=800&q=80',
+    image: ffeImages.album[8],
   },
   {
     slug: 'randonnees',
     name: 'Randonnées',
     excerpt:
       "Partez à la découverte de nos sentiers boisés lors de balades d'1 heure à la journée complète.",
-    image:
-      'https://images.unsplash.com/photo-1518883631804-39c75990b040?w=800&q=80',
+    image: ffeImages.album[9],
   },
   {
     slug: 'stages-vacances',
     name: 'Stages vacances',
     excerpt:
       "Toussaint, Noël, hiver, Pâques, été : des stages thématiques de 3 à 5 jours pour tous niveaux.",
-    image:
-      'https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?w=800&q=80',
+    image: ffeImages.article1,
   },
   {
     slug: 'competitions',
     name: 'Compétitions',
     excerpt:
       "Préparation et accompagnement sur les circuits FFE : CSO, dressage, TREC et concours club.",
-    image:
-      'https://images.unsplash.com/photo-1564329494258-3ef0f4c1a2bd?w=800&q=80',
+    image: ffeImages.article2,
   },
 ];
 
