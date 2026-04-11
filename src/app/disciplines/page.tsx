@@ -64,10 +64,17 @@ const disciplines: Discipline[] = [
     image: ffeImages.article1,
   },
   {
-    slug: 'competitions',
-    name: 'Compétitions',
+    slug: 'pension-chevaux',
+    name: 'Pension de chevaux',
     excerpt:
-      "Préparation et accompagnement sur les circuits FFE : CSO, dressage, TREC et concours club.",
+      "Vous souhaitez avoir votre cheval ou votre poney ? Pénélope vous conseille sur le choix de la monture, son entretien, son travail et ses soins, et en assure un suivi personnalisé.",
+    image: ffeImages.album[11],
+  },
+  {
+    slug: 'competitions',
+    name: 'Compétitions & disciplines variées',
+    excerpt:
+      "Obstacle, dressage, cross, équitation américaine, monte en amazone, attelage, voltige, skijoring, horse-ball : à Fort Apache, vous pratiquez la discipline qui vous plaît.",
     image: ffeImages.article2,
   },
 ];

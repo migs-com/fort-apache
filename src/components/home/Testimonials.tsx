@@ -7,21 +7,21 @@ type Testimonial = {
 const testimonials: Testimonial[] = [
   {
     quote:
-      "Ma fille a découvert l'équitation à Fort Apache il y a deux ans. L'accompagnement de Pénélope et de l'équipe est remarquable, elle progresse avec plaisir et sécurité.",
-    name: 'Claire M.',
-    niveau: 'Parent — École poney',
+      "On apprend vraiment à tout gérer par rapport au cheval, pas seulement à monter. Quoi qu'il se passe — pour le donner à manger, s'il est malade — on sait quoi faire.",
+    name: 'Une élève',
+    niveau: 'Cavalière de Fort Apache',
   },
   {
     quote:
-      "Un cadre magnifique, une cavalerie très bien entretenue et des cours adaptés. Je recommande sans hésiter, que ce soit pour débuter ou progresser.",
-    name: 'Thomas L.',
-    niveau: 'Cavalier Galop 5',
+      "C'est un club où on a plaisir à venir parce qu'il y a du sens. On apprend à connaître son cheval, à connaître l'équitation. Le cheval a beaucoup d'importance.",
+    name: 'Un parent',
+    niveau: "France 3 — Reportage",
   },
   {
     quote:
-      "Les stages d'été sont le moment que mes enfants attendent le plus dans l'année. L'ambiance est familiale, bienveillante, et ils reviennent avec des étoiles plein les yeux.",
-    name: 'Sophie D.',
-    niveau: 'Parent — Stages',
+      "Quand j'ai des petits problèmes, soit au collège ou avec des copains, je vais voir les chevaux. Il m'aide un peu, il m'apaise.",
+    name: 'Une jeune cavalière',
+    niveau: 'France 3 — Reportage',
   },
 ];
 

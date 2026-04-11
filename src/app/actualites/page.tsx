@@ -5,9 +5,9 @@ import { PageHeader } from '@/components/ui/PageHeader';
 import { getArticles } from '@/lib/notion';
 
 export const metadata: Metadata = {
-  title: 'Actualités du club',
+  title: 'Blog & Actualités du club',
   description:
-    'Retrouvez toutes les actualités du club Fort Apache : stages, compétitions, vie du club, conseils et portraits.',
+    'Le blog de Fort Apache : récits de stages, vie du club, portraits de cavaliers et de chevaux, conseils et coulisses.',
 };
 
 export const revalidate = 3600;
@@ -29,8 +29,9 @@ export default async function ActualitesPage() {
 
   return (
     <>
-      <PageHeader overline="Actualités" title="Les dernières nouvelles du club">
-        Stages, compétitions, vie du club et moments forts de la saison.
+      <PageHeader overline="Blog & Actualités" title="Les dernières nouvelles du club">
+        Récits de stages, vie du club, portraits de chevaux et de cavaliers,
+        coulisses et moments forts.
       </PageHeader>
 
       <section className="section bg-creme">
@@ -38,12 +39,18 @@ export default async function ActualitesPage() {
           {articles.length === 0 ? (
             <div className="max-w-xl mx-auto text-center text-charbon/70 bg-white rounded-lg border border-sable/40 p-10">
               <p className="font-serif text-2xl text-foret-dark mb-2">
-                Aucun article pour le moment
+                Le blog arrive très bientôt
               </p>
               <p>
-                Revenez très bientôt : nous publierons régulièrement des
-                actualités, des stages à venir et des portraits de nos
-                cavaliers.
+                En attendant nos premiers articles, retrouvez toute la vie
+                du club au quotidien sur Instagram et Facebook —
+                <a
+                  href="/#social-wall"
+                  className="text-bordeaux underline ml-1"
+                >
+                  voir nos derniers posts
+                </a>
+                .
               </p>
             </div>
           ) : (

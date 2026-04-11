@@ -23,9 +23,10 @@ export const siteConfig = {
     },
   },
   socials: {
-    // Pas de réseaux sociaux pour le moment.
-    facebook: null as string | null,
-    instagram: null as string | null,
+    // À remplir une fois les comptes créés.
+    // Mettre `null` pour masquer un lien dans le footer.
+    facebook: 'https://www.facebook.com/fortapache06' as string | null,
+    instagram: 'https://www.instagram.com/fortapache06' as string | null,
   },
   openingHours: [
     { day: '7 jours / 7', hours: '10h — 18h' },
@@ -39,5 +40,5 @@ export const navItems = [
   { href: '/cours-et-stages', label: 'Cours & Stages' },
   { href: '/tarifs', label: 'Tarifs' },
   { href: '/galerie', label: 'Galerie' },
-  { href: '/actualites', label: 'Actualités' },
+  { href: '/actualites', label: 'Blog' },
 ] as const;

@@ -24,25 +24,29 @@ export function Hero() {
 
       <div className="relative z-10 container mx-auto text-center text-white px-4 py-24">
         <p className="font-sans uppercase tracking-[0.3em] text-sable-light text-xs md:text-sm mb-6 animate-fade-in">
-          Club équestre
+          Club équestre — Coursegoules · Col de Vence
         </p>
         <h1 className="font-serif text-white mb-6 animate-slide-up max-w-4xl mx-auto">
-          Découvrez l&apos;équitation <br className="hidden md:block" />
-          dans un cadre exceptionnel
+          Au royaume des poneys, <br className="hidden md:block" />
+          au cœur des Préalpes d&apos;Azur
         </h1>
         <p className="text-lg md:text-xl text-creme/90 max-w-2xl mx-auto mb-10 font-light animate-slide-up">
-          Cours pour tous les niveaux, stages vacances, randonnées et
-          compétitions. Rejoignez une communauté passionnée.
+          Balades à poney en famille dès 2 ans, cours d&apos;équitation,
+          stages vacances et randonnées. Ouvert 7 jours sur 7.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up">
-          <LinkButton href="/contact" variant="primary" size="lg">
-            Prendre rendez-vous
+          <LinkButton
+            href="/contact?objet=Renseignements"
+            variant="primary"
+            size="lg"
+          >
+            Réserver une balade
           </LinkButton>
           <Link
             href="/disciplines"
             className="text-white underline underline-offset-4 decoration-sable hover:decoration-white transition"
           >
-            Voir nos disciplines →
+            Découvrir le club →
           </Link>
         </div>
       </div>

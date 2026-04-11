@@ -14,30 +14,44 @@ export const metadata: Metadata = {
 
 const equipements = [
   {
-    name: 'Carrière extérieure',
-    desc: '60 × 30 m en sable fibré, éclairée pour les cours en soirée.',
+    name: 'Carrière 1 000 m²',
+    desc: 'Notre grande carrière pour les cours, le travail sur le plat et l\'obstacle.',
   },
   {
-    name: 'Manège couvert',
-    desc: "30 × 20 m, praticable toute l'année quel que soit le temps.",
+    name: 'Carrière 500 m²',
+    desc: 'Une seconde carrière pour les groupes plus petits et les débutants.',
   },
   {
-    name: 'Paddocks & prairies',
-    desc: '12 hectares de pâtures pour le bien-être de nos chevaux.',
+    name: 'Cross & parcours de fond',
+    desc: 'Cross de niveau galop 7 et parcours de fond de 450 m sur 3 hectares.',
   },
   {
-    name: 'Club house',
-    desc: "Espace convivial pour se retrouver avant et après les cours.",
+    name: 'Carrière naturelle 3 000 m²',
+    desc: 'Une grande carrière en herbe pour le travail en extérieur.',
+  },
+  {
+    name: '11 boxes & 4 stabulations',
+    desc: 'Des boxes spacieux (3,20 × 3,20 m) et de grandes stabulations pour la cavalerie.',
+  },
+  {
+    name: '10 paddocks',
+    desc: '2 grands paddocks de 5 000 m² + 8 paddocks de 500 à 800 m² pour les sorties.',
   },
 ];
 
 const cavalerie = [
-  { name: 'Equinox', race: 'Selle Français', usage: 'Saut / Dressage', photo: ffeImages.album[0] },
-  { name: 'Sahara', race: 'Arabe', usage: 'Randonnée', photo: ffeImages.album[1] },
-  { name: 'Orion', race: 'Lusitanien', usage: 'Dressage', photo: ffeImages.album[2] },
-  { name: 'Mistral', race: 'Poney Welsh', usage: 'École poney', photo: ffeImages.album[3] },
-  { name: 'Nuage', race: 'Connemara', usage: 'Enfants / Débutants', photo: ffeImages.album[4] },
-  { name: 'Romeo', race: 'Selle Français', usage: 'Saut confirmés', photo: ffeImages.album[5] },
+  { name: 'Criquet', tag: 'Le poney le plus gentil du monde', photo: ffeImages.album[0] },
+  { name: 'Flamenco', tag: 'Tendre et patient', photo: ffeImages.album[1] },
+  { name: 'Lounka', tag: 'Adoré des enfants', photo: ffeImages.album[2] },
+  { name: 'Rasta', tag: 'Spécialiste de l\'obstacle', photo: ffeImages.album[3] },
+  { name: 'Polux', tag: 'Maître de l\'attelage', photo: ffeImages.album[4] },
+  { name: 'Paquerette', tag: 'Pour les petites filles', photo: ffeImages.album[5] },
+  { name: 'Calypso', tag: 'Gentille avec du caractère', photo: ffeImages.album[6] },
+  { name: 'Lolita', tag: 'Gentille avec du caractère', photo: ffeImages.album[7] },
+  { name: 'Mouche', tag: 'Gentille avec du caractère', photo: ffeImages.album[8] },
+  { name: 'Coccinelle', tag: 'Apprentie « M.P.M »', photo: ffeImages.album[9] },
+  { name: 'Grillon', tag: 'Apprenti « M.P.M »', photo: ffeImages.album[10] },
+  { name: 'Ulysse', tag: 'Champion de la sieste', photo: ffeImages.album[11] },
 ];
 
 export default function LeClubPage() {
@@ -67,15 +81,28 @@ export default function LeClubPage() {
             <h2 className="text-foret-dark mb-6">Pénélope, fondatrice</h2>
             <div className="space-y-4 text-charbon/85">
               <p>
-                Cavalière depuis son plus jeune âge et titulaire du BPJEPS,
-                Pénélope a fondé Fort Apache avec une conviction simple :
-                l&apos;équitation doit rester un plaisir, une rencontre entre
-                le cavalier et son cheval.
+                Cavalière depuis l&apos;âge de 5 ans, Pénélope a passé
+                plusieurs années aux côtés de{' '}
+                <strong className="text-foret-dark">Bartabas</strong>, à
+                s&apos;occuper des chevaux du célèbre{' '}
+                <strong className="text-foret-dark">
+                  Théâtre équestre Zingaro
+                </strong>
+                . De cette expérience exigeante, elle a tiré une rigueur
+                profonde dans la sélection, l&apos;éducation et le soin de sa
+                cavalerie.
               </p>
               <p>
-                Entourée d&apos;une équipe de moniteurs diplômés, elle
-                accueille aujourd&apos;hui plus de 150 cavaliers toute
-                l&apos;année, du baby poney aux cavaliers de compétition.
+                Aujourd&apos;hui, elle dirige Fort Apache et près de{' '}
+                <strong>25 chevaux et poneys</strong>, entourée d&apos;une
+                équipe de moniteurs diplômés. Sa philosophie : transmettre
+                bien plus qu&apos;une technique équestre — apprendre la vie
+                d&apos;écurie, le respect de l&apos;animal, et faire de chaque
+                séance « une école de la vie ».
+              </p>
+              <p className="font-serif italic text-foret-dark text-lg pt-2 border-l-4 border-bordeaux pl-4">
+                « Ce que j&apos;aimerais, c&apos;est leur transmettre ce que
+                j&apos;ai reçu : l&apos;apprentissage total du cheval. »
               </p>
             </div>
           </div>
@@ -165,8 +192,9 @@ export default function LeClubPage() {
             </p>
             <h2 className="text-foret-dark">Nos compagnons à quatre sabots</h2>
             <p className="mt-3 text-charbon/75 max-w-2xl mx-auto">
-              Une cavalerie variée et bien entretenue, pour chaque cavalier un
-              cheval ou un poney adapté.
+              Du shetland au grand cheval, près de 25 montures soigneusement
+              sélectionnées pour leur générosité. Chaque cavalier trouve son
+              compagnon, quel que soit son âge, sa taille ou son ambition.
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
@@ -183,13 +211,54 @@ export default function LeClubPage() {
                 </div>
                 <CardBody className="p-4">
                   <p className="font-serif text-xl text-foret-dark">{c.name}</p>
-                  <p className="text-xs text-charbon/60 uppercase tracking-wide">
-                    {c.race}
-                  </p>
-                  <p className="text-sm text-bordeaux mt-1">{c.usage}</p>
+                  <p className="text-sm text-bordeaux italic mt-1">{c.tag}</p>
                 </CardBody>
               </Card>
             ))}
+          </div>
+          <p className="text-center mt-8 text-sm italic text-charbon/60 max-w-2xl mx-auto">
+            Une pensée pour Dum-Dum, « le cheval le plus gentil du monde »,
+            parti trop tôt mais toujours dans nos cœurs.
+          </p>
+        </div>
+      </section>
+
+      {/* Environnement / Parc Naturel */}
+      <section className="section bg-foret-dark text-creme">
+        <div className="container mx-auto grid md:grid-cols-2 gap-10 lg:gap-16 items-center">
+          <div>
+            <p className="font-sans uppercase tracking-[0.25em] text-sable-light text-xs mb-3">
+              Notre cadre
+            </p>
+            <h2 className="text-white mb-6">
+              Au cœur du Parc Naturel des Préalpes d&apos;Azur
+            </h2>
+            <div className="space-y-4 text-creme/90">
+              <p>
+                À 40 minutes de la mer, niché au Col de Vence, Fort Apache
+                bénéficie d&apos;un cadre exceptionnel : vues sur la mer et
+                les montagnes, géologie unique, faune et flore protégées.
+              </p>
+              <p>
+                Au fil des balades, il est fréquent de croiser des biches,
+                des chevreuils, parfois un sanglier. Nous organisons même des
+                promenades nocturnes pour écouter le brame du cerf, ou pour
+                aller voir les feux d&apos;artifice depuis les hauteurs.
+              </p>
+              <p className="text-sable-light italic">
+                Un terrain de 3 hectares, point de départ vers les quatre
+                points cardinaux pour la randonnée.
+              </p>
+            </div>
+          </div>
+          <div className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-xl">
+            <Image
+              src={ffeImages.album[12]}
+              alt="Le Col de Vence depuis Fort Apache"
+              fill
+              sizes="(min-width: 768px) 50vw, 100vw"
+              className="object-cover"
+            />
           </div>
         </div>
       </section>
@@ -201,6 +270,7 @@ export default function LeClubPage() {
           </h2>
           <p className="text-creme/85 max-w-xl mx-auto mb-6">
             Venez visiter le club et discuter de votre projet équestre.
+            Ouvert 7 jours / 7 de 10h à 18h.
           </p>
           <LinkButton href="/contact" variant="primary" size="lg">
             Prendre rendez-vous

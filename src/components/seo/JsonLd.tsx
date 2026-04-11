@@ -41,6 +41,9 @@ export function JsonLd() {
         closes: '18:00',
       },
     ],
+    sameAs: [siteConfig.socials.facebook, siteConfig.socials.instagram].filter(
+      (u): u is string => Boolean(u)
+    ),
   };
 
   return (
