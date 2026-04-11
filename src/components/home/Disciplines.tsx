@@ -10,6 +10,28 @@ const iconCls = 'w-10 h-10 text-foret group-hover:text-bordeaux transition';
 
 const disciplines: Discipline[] = [
   {
+    slug: 'balades-poney',
+    name: 'Balades à poney',
+    icon: (
+      <svg className={iconCls} viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+        <path d="M12 48c0-10 8-18 18-18h4c10 0 18 8 18 18" />
+        <circle cx="22" cy="38" r="3" />
+        <circle cx="42" cy="38" r="3" />
+        <path d="M30 22c-2-2-4-6-2-10M34 22c2-2 4-6 2-10" />
+      </svg>
+    ),
+  },
+  {
+    slug: 'ecole-poney',
+    name: 'École poney',
+    icon: (
+      <svg className={iconCls} viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+        <circle cx="32" cy="18" r="6" />
+        <path d="M20 52v-8c0-6 5-10 12-10s12 4 12 10v8" />
+      </svg>
+    ),
+  },
+  {
     slug: 'cours-collectifs',
     name: 'Cours collectifs',
     icon: (
@@ -18,26 +40,6 @@ const disciplines: Discipline[] = [
         <circle cx="32" cy="20" r="4" />
         <circle cx="44" cy="24" r="4" />
         <path d="M14 52c0-6 4-12 10-12 3 0 5 2 8 2s5-2 8-2c6 0 10 6 10 12" />
-      </svg>
-    ),
-  },
-  {
-    slug: 'dressage',
-    name: 'Dressage',
-    icon: (
-      <svg className={iconCls} viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-        <path d="M12 44h40M16 44v-8M48 44v-8M20 36c0-8 5-14 12-14s12 6 12 14" />
-        <circle cx="32" cy="16" r="2" />
-      </svg>
-    ),
-  },
-  {
-    slug: 'saut-obstacles',
-    name: 'Saut d\'obstacles',
-    icon: (
-      <svg className={iconCls} viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-        <path d="M8 48h48M16 48V28M48 48V28M16 28h32M16 36h32" />
-        <path d="M6 48c4-12 12-20 22-20" strokeDasharray="3 3" />
       </svg>
     ),
   },

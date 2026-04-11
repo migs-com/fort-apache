@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { PageHeader } from '@/components/ui/PageHeader';
 import { Card, CardBody, CardTitle } from '@/components/ui/Card';
 import { LinkButton } from '@/components/ui/Button';
+import { Reportage } from '@/components/ui/Reportage';
 import { ffeImages } from '@/lib/images';
 
 export const metadata: Metadata = {
@@ -89,13 +90,33 @@ export default function LeClubPage() {
           </p>
           <h2 className="text-foret-dark mb-6">Un lieu construit avec le temps</h2>
           <p className="text-lg text-charbon/85 leading-relaxed">
-            Fondé en 2004 sur un ancien domaine agricole, Fort Apache a grandi
-            au fil des années. Chaque installation a été pensée pour offrir le
-            meilleur aux chevaux et à leurs cavaliers : manège couvert,
-            carrière fibrée, paddocks spacieux, parcours de cross. Nous
-            cultivons un esprit de famille où chaque cavalier, chaque cheval,
-            trouve sa place.
+            Niché à Coursegoules, au Quartier Col de Vence, Fort Apache a
+            grandi au fil des années dans un cadre naturel exceptionnel des
+            Alpes-Maritimes. Chaque installation a été pensée pour offrir le
+            meilleur aux chevaux et à leurs cavaliers. Nous cultivons un
+            esprit de famille où chaque cavalier, chaque cheval, trouve sa
+            place.
           </p>
+        </div>
+      </section>
+
+      {/* Reportage vidéo */}
+      <section className="section bg-foret-dark text-creme">
+        <div className="container mx-auto">
+          <div className="text-center mb-10">
+            <p className="font-sans uppercase tracking-[0.25em] text-sable-light text-xs mb-3">
+              Ils en parlent
+            </p>
+            <h2 className="text-white">Reportage sur Fort Apache</h2>
+            <p className="mt-3 text-creme/80 max-w-2xl mx-auto">
+              Découvrez le club, son cadre et son ambiance en images.
+            </p>
+          </div>
+          <Reportage
+            videoId="m_POi9XlYC8"
+            startSeconds={35}
+            title="Reportage Fort Apache — Club équestre à Coursegoules"
+          />
         </div>
       </section>
 

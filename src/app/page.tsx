@@ -1,15 +1,16 @@
 import type { Metadata } from 'next';
 import { Hero } from '@/components/home/Hero';
 import { Disciplines } from '@/components/home/Disciplines';
+import { BaladePoney } from '@/components/home/BaladePoney';
 import { Testimonials } from '@/components/home/Testimonials';
 import { MapEmbed } from '@/components/home/MapEmbed';
 import { LinkButton } from '@/components/ui/Button';
 import { siteConfig } from '@/lib/site-config';
 
 export const metadata: Metadata = {
-  title: `${siteConfig.fullName} — Club d'équitation pour tous niveaux`,
+  title: `${siteConfig.fullName} — Balades à poney & équitation à Coursegoules`,
   description:
-    "Bienvenue à Fort Apache : cours d'équitation, stages vacances, randonnées et compétitions dans un cadre exceptionnel. Inscriptions ouvertes.",
+    "Club équestre à Coursegoules (06140), au Col de Vence. Balades à poney, cours d'équitation, stages vacances et randonnées. Ouvert 7j/7 de 10h à 18h.",
 };
 
 export default function HomePage() {
@@ -32,6 +33,8 @@ export default function HomePage() {
       </section>
 
       <Disciplines />
+
+      <BaladePoney />
 
       <Testimonials />
 

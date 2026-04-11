@@ -10,32 +10,12 @@ export function Footer() {
         <div className="md:col-span-2">
           <p className="font-serif text-3xl text-white mb-3">Fort Apache</p>
           <p className="text-creme/80 max-w-sm leading-relaxed">
-            Club équestre pour tous les niveaux. Cours, stages, randonnées et
-            compétitions dans un cadre exceptionnel.
+            Club équestre pour tous les niveaux. Cours, stages, balades à
+            poney et randonnées au cœur des Alpes-Maritimes, à Coursegoules.
           </p>
-          <div className="mt-6 flex gap-4">
-            <a
-              href={siteConfig.socials.facebook}
-              className="text-creme/70 hover:text-white transition"
-              aria-label="Facebook"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Facebook
-            </a>
-            <span className="text-creme/40" aria-hidden>
-              ·
-            </span>
-            <a
-              href={siteConfig.socials.instagram}
-              className="text-creme/70 hover:text-white transition"
-              aria-label="Instagram"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Instagram
-            </a>
-          </div>
+          <p className="mt-6 text-sm text-sable-light">
+            Ouvert 7 jours / 7 — de 10h à 18h
+          </p>
         </div>
 
         <div>

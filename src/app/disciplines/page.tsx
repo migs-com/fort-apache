@@ -6,9 +6,9 @@ import { LinkButton } from '@/components/ui/Button';
 import { ffeImages } from '@/lib/images';
 
 export const metadata: Metadata = {
-  title: 'Disciplines équestres — Cours, stages et randonnées',
+  title: 'Disciplines équestres — Balades à poney, cours et stages',
   description:
-    "Toutes nos disciplines à Fort Apache : cours collectifs et particuliers, école poney, randonnées, stages vacances et compétitions.",
+    "Toutes nos disciplines à Fort Apache (Coursegoules, 06140) : balades à poney en famille, cours collectifs et particuliers, école poney, randonnées, stages vacances et compétitions.",
 };
 
 type Discipline = {
@@ -16,9 +16,18 @@ type Discipline = {
   name: string;
   excerpt: string;
   image: string;
+  featured?: boolean;
 };
 
 const disciplines: Discipline[] = [
+  {
+    slug: 'balades-poney',
+    name: 'Balades à poney',
+    excerpt:
+      "L'incontournable de Fort Apache : partez en balade accompagnée à dos de poney au cœur du Col de Vence. Idéal en famille, même sans aucune expérience.",
+    image: ffeImages.top3,
+    featured: true,
+  },
   {
     slug: 'cours-collectifs',
     name: 'Cours collectifs',
@@ -42,9 +51,9 @@ const disciplines: Discipline[] = [
   },
   {
     slug: 'randonnees',
-    name: 'Randonnées',
+    name: 'Randonnées équestres',
     excerpt:
-      "Partez à la découverte de nos sentiers boisés lors de balades d'1 heure à la journée complète.",
+      "Pour les cavaliers expérimentés : sorties de plusieurs heures à la demi-journée à travers les sentiers du Col de Vence.",
     image: ffeImages.album[9],
   },
   {
@@ -64,17 +73,64 @@ const disciplines: Discipline[] = [
 ];
 
 export default function DisciplinesPage() {
+  const featured = disciplines.find((d) => d.featured)!;
+  const others = disciplines.filter((d) => !d.featured);
+
   return (
     <>
       <PageHeader overline="Disciplines" title="Trouvez votre passion équestre">
-        Six disciplines principales, toutes accessibles du débutant au
-        cavalier confirmé.
+        Sept activités, du baptême à poney en famille au perfectionnement en
+        compétition.
       </PageHeader>
 
+      {/* Featured : Balades à poney */}
       <section className="section bg-creme">
         <div className="container mx-auto">
+          <article
+            id={featured.slug}
+            className="group grid md:grid-cols-2 bg-white rounded-lg overflow-hidden shadow-lg scroll-mt-24"
+          >
+            <div className="relative aspect-[4/3] md:aspect-auto md:min-h-[400px] overflow-hidden">
+              <Image
+                src={featured.image}
+                alt={featured.name}
+                fill
+                sizes="(min-width: 768px) 50vw, 100vw"
+                className="object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <span className="absolute top-4 left-4 inline-block bg-bordeaux text-white text-xs uppercase tracking-wide px-3 py-1.5 rounded-full">
+                ★ Activité phare
+              </span>
+            </div>
+            <div className="p-8 md:p-12 flex flex-col justify-center">
+              <p className="font-sans uppercase tracking-[0.25em] text-bordeaux text-xs mb-3">
+                À ne pas manquer
+              </p>
+              <h2 className="font-serif text-3xl md:text-4xl text-foret-dark mb-4">
+                {featured.name}
+              </h2>
+              <p className="text-charbon/85 mb-6 leading-relaxed">
+                {featured.excerpt}
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <LinkButton
+                  href="/contact?objet=Renseignements"
+                  variant="primary"
+                  size="md"
+                >
+                  Réserver une balade
+                </LinkButton>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      {/* Autres disciplines */}
+      <section className="bg-creme pb-16 md:pb-24">
+        <div className="container mx-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {disciplines.map((d) => (
+            {others.map((d) => (
               <article
                 key={d.slug}
                 id={d.slug}
