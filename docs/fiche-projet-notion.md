@@ -12,7 +12,7 @@
 
 | Élément | Lien |
 |---|---|
-| **Site en ligne** | `https://fort-apache.vercel.app` *(remplacer par fortapache.fr une fois le domaine configuré)* |
+| **Site en ligne** | `https://fort-apache.vercel.app` *(remplacer par fort-apache-equitation-vence.fr une fois le domaine configuré)* |
 | **Code source (GitHub)** | `github.com/amignari-stack/fort-apache` · Branche : `claude/fort-apache-site-p08OD` |
 | **Dashboard Vercel** | `vercel.com` → projet `fort-apache` |
 | **Notion CMS (blog)** | *À configurer — voir section "Blog" ci-dessous* |
@@ -23,11 +23,11 @@
 ## 🏗️ Architecture — Comment ça fonctionne
 
 ```
-Le visiteur tape : www.fortapache.fr
+Le visiteur tape : www.fort-apache-equitation-vence.fr
         │
         ▼
    DNS (chez o2switch ou registrar)
-   "fortapache.fr pointe vers Vercel"
+   "fort-apache-equitation-vence.fr pointe vers Vercel"
         │
         ▼
    ☁️ VERCEL (hébergement cloud pro)
@@ -43,7 +43,7 @@ Le visiteur tape : www.fortapache.fr
 ```
 
 ### En résumé
-- **Le domaine** `fortapache.fr` est acheté chez o2switch (ou autre registrar)
+- **Le domaine** `fort-apache-equitation-vence.fr` est acheté chez o2switch (ou autre registrar)
 - **Le DNS** pointe vers Vercel (2 lignes à configurer une seule fois dans cPanel)
 - **Le site** est hébergé sur Vercel (cloud professionnel, CDN mondial, ~18€/mois en Pro)
 - **Le code** est stocké sur GitHub (coffre-fort du projet, accessible à tout développeur)
@@ -100,7 +100,7 @@ Le visiteur tape : www.fortapache.fr
 | Service | Coût réel | Qui paie | Notes |
 |---|---|---|---|
 | **Vercel Pro** | ~18 €/mois | Agence | Hébergement cloud + CDN + HTTPS |
-| **Domaine fortapache.fr** | ~12 €/an (~1 €/mois) | Client ou agence | Chez o2switch, OVH, Gandi, etc. |
+| **Domaine fort-apache-equitation-vence.fr** | ~12 €/an (~1 €/mois) | Client ou agence | Chez o2switch, OVH, Gandi, etc. |
 | **Notion** | Gratuit | — | Plan gratuit suffisant pour le blog |
 | **Resend** | Gratuit | — | 3 000 emails/mois (largement suffisant) |
 | **GitHub** | Gratuit | — | Repo privé gratuit |
@@ -221,8 +221,8 @@ src/
 | `NOTION_DATABASE_ID` | ID de la database Notion | Pour le blog |
 | `RESEND_API_KEY` | Clé API Resend | Pour le formulaire contact |
 | `CONTACT_EMAIL` | Email qui reçoit les demandes | Pour le formulaire contact |
-| `NEXT_PUBLIC_SITE_URL` | `https://fortapache.fr` | SEO |
-| `NEXT_PUBLIC_PLAUSIBLE_DOMAIN` | `fortapache.fr` | Analytics (optionnel) |
+| `NEXT_PUBLIC_SITE_URL` | `https://fort-apache-equitation-vence.fr` | SEO |
+| `NEXT_PUBLIC_PLAUSIBLE_DOMAIN` | `fort-apache-equitation-vence.fr` | Analytics (optionnel) |
 
 ### Commandes utiles (pour le dev)
 
@@ -239,7 +239,7 @@ git push             # Déployer (Vercel redéploie automatiquement)
 
 ## 🚀 Checklist avant mise en production finale
 
-- [ ] Acheter le domaine `fortapache.fr`
+- [ ] Acheter le domaine `fort-apache-equitation-vence.fr`
 - [ ] Configurer le DNS pour pointer vers Vercel
 - [ ] Passer Vercel en plan Pro (20$/mois)
 - [ ] Créer les comptes Instagram et Facebook

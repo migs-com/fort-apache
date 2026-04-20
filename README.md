@@ -63,14 +63,14 @@ NOTION_DATABASE_ID=       # ID de la database des articles
 
 # Resend (formulaire de contact)
 RESEND_API_KEY=           # Clé API Resend (https://resend.com)
-CONTACT_EMAIL=            # Email qui reçoit les demandes (ex: contact@fortapache.fr)
-CONTACT_FROM_EMAIL=       # From authentifié (ex: Fort Apache <noreply@fortapache.fr>)
+CONTACT_EMAIL=            # Email qui reçoit les demandes (ex: contact@fort-apache-equitation-vence.fr)
+CONTACT_FROM_EMAIL=       # From authentifié (ex: Fort Apache <noreply@fort-apache-equitation-vence.fr>)
 
 # Plausible Analytics (optionnel)
-NEXT_PUBLIC_PLAUSIBLE_DOMAIN=fortapache.fr
+NEXT_PUBLIC_PLAUSIBLE_DOMAIN=fort-apache-equitation-vence.fr
 
 # URL canonique du site
-NEXT_PUBLIC_SITE_URL=https://fortapache.fr
+NEXT_PUBLIC_SITE_URL=https://fort-apache-equitation-vence.fr
 ```
 
 > **Mode dev sans Resend** : si `RESEND_API_KEY` n'est pas défini, le formulaire
@@ -151,4 +151,4 @@ src/
 - [ ] Renseigner l'adresse et les coordonnées GPS réelles dans `site-config.ts`
 - [ ] Vérifier que le domaine `From` de Resend est validé (DNS)
 - [ ] Connecter la database Notion des actualités
-- [ ] Configurer le domaine `fortapache.fr` sur Vercel
+- [ ] Configurer le domaine `fort-apache-equitation-vence.fr` sur Vercel

@@ -3,10 +3,10 @@ export const siteConfig = {
   fullName: 'Fort Apache — Club Équestre',
   description:
     "Club équestre Fort Apache à Coursegoules (06140), au Col de Vence : balades à poney, cours d'équitation, stages, randonnées et compétitions. Ouvert 7j/7 de 10h à 18h.",
-  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://fortapache.fr',
+  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://fort-apache-equitation-vence.fr',
   ogImage: '/images/og-default.jpg',
   contact: {
-    email: 'contact@fortapache.fr',
+    email: 'contact@fort-apache-equitation-vence.fr',
     phone: '+33493589143',
     phoneDisplay: '04 93 58 91 43',
     address: {

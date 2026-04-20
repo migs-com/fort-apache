@@ -2,7 +2,7 @@ import { Resend } from 'resend';
 import type { ContactInput } from '@/lib/contact-schema';
 
 const apiKey = process.env.RESEND_API_KEY;
-const contactEmail = process.env.CONTACT_EMAIL || 'contact@fortapache.fr';
+const contactEmail = process.env.CONTACT_EMAIL || 'contact@fort-apache-equitation-vence.fr';
 const fromEmail =
   process.env.CONTACT_FROM_EMAIL || 'Fort Apache <onboarding@resend.dev>';
 
@@ -51,7 +51,7 @@ export async function sendContactEmail(data: ContactInput) {
           : ''
       }
       <hr style="border: none; border-top: 1px solid #C9B99A; margin: 24px 0;" />
-      <p style="font-size: 12px; color: #888;">Message envoyé depuis le formulaire de contact fortapache.fr</p>
+      <p style="font-size: 12px; color: #888;">Message envoyé depuis le formulaire de contact fort-apache-equitation-vence.fr</p>
     </div>
   `;
 
