@@ -33,7 +33,7 @@ const activites: Activite[] = [
   },
   {
     slug: 'cours-collectifs',
-    name: 'Cours collectifs',
+    name: 'Cours collectifs ou privés',
     icon: (
       <svg className={iconCls} viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
         <circle cx="20" cy="24" r="4" />

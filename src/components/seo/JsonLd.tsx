@@ -38,7 +38,7 @@ export function JsonLd() {
           'Sunday',
         ],
         opens: '10:00',
-        closes: '18:00',
+        closes: '17:00',
       },
     ],
     sameAs: [siteConfig.socials.facebook, siteConfig.socials.instagram].filter(

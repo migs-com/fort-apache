@@ -3,7 +3,6 @@ import { Hero } from '@/components/home/Hero';
 import { WhyUs } from '@/components/home/WhyUs';
 import { Activites } from '@/components/home/Activites';
 import { BaladePoney } from '@/components/home/BaladePoney';
-import { BartabasHighlight } from '@/components/home/BartabasHighlight';
 import { Testimonials } from '@/components/home/Testimonials';
 import { SocialWall } from '@/components/home/SocialWall';
 import { MapEmbed } from '@/components/home/MapEmbed';
@@ -11,9 +10,9 @@ import { LinkButton } from '@/components/ui/Button';
 import { siteConfig } from '@/lib/site-config';
 
 export const metadata: Metadata = {
-  title: `${siteConfig.fullName} — Balades à poney & équitation à Coursegoules`,
+  title: `${siteConfig.fullName} — Balades à poney & équitation à Vence`,
   description:
-    "Club équestre à Coursegoules (06140), au Col de Vence. Balades à poney dès 2 ans, cours d'équitation, stages vacances et randonnées. Ouvert 7j/7 de 10h à 18h.",
+    "Club équestre à Vence (06140), quartier Col de Vens. Balades à poney dès 2 ans, cours d'équitation, stages vacances et randonnées. Ouvert tous les jours de 10h à 17h.",
 };
 
 export default function HomePage() {
@@ -21,26 +20,38 @@ export default function HomePage() {
     <>
       <Hero />
 
-      {/* Présentation */}
+      {/* Présentation — formation Pénélope (intègre l'héritage Zingaro) */}
       <section className="section bg-white">
         <div className="container-narrow text-center">
           <p className="font-sans uppercase tracking-[0.25em] text-bordeaux text-xs mb-3">
             Bienvenue à Fort Apache
           </p>
-          <p className="font-serif italic text-2xl md:text-3xl text-foret-dark leading-relaxed">
-            Vous allez vivre des moments de détente en famille, entre amis ou
-            seul. Notre équipe disponible et compétente vous guide pas à pas
-            vers votre objectif — promenade à poney, balade à cheval,
-            initiation, perfectionnement — en toute sécurité.
-          </p>
+          <h2 className="text-foret-dark mb-6">
+            Une formation exceptionnelle, une passion transmise
+          </h2>
+          <div className="space-y-5 text-charbon/85 text-lg leading-relaxed">
+            <p>
+              Pénélope monte à cheval depuis ses cinq ans. Au fil de sa
+              carrière, elle a eu la chance de travailler pour et avec de
+              grands noms de l&apos;équitation, dont le célèbre{' '}
+              <strong className="text-foret-dark">Bartabas</strong> du{' '}
+              <strong className="text-foret-dark">théâtre Zingaro</strong>.
+              De ces rencontres, elle a tiré une exigence rare dans la
+              sélection, l&apos;éducation et le soin des chevaux.
+            </p>
+            <p>
+              Sa philosophie aujourd&apos;hui : transmettre ce qu&apos;elle a
+              reçu — l&apos;apprentissage total du cheval. Des bi-poney aux
+              compétiteurs confirmés, chaque cavalier trouve sa place à Fort
+              Apache.
+            </p>
+          </div>
         </div>
       </section>
 
       <WhyUs />
 
       <BaladePoney />
-
-      <BartabasHighlight />
 
       <Activites />
 
@@ -56,8 +67,8 @@ export default function HomePage() {
           </h2>
           <p className="text-creme/80 max-w-xl mx-auto mb-8">
             Notre équipe vous accompagne pour trouver la formule qui vous
-            correspond — du baby poney au cavalier confirmé. Ouvert 7 jours
-            sur 7 de 10h à 18h.
+            correspond — du baby poney au cavalier confirmé. Ouvert tous les
+            jours de 10h à 17h.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <LinkButton href="/contact" variant="primary" size="lg">

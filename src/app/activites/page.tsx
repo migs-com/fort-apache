@@ -8,7 +8,7 @@ import { ffeImages } from '@/lib/images';
 export const metadata: Metadata = {
   title: 'Activités équestres — Balades à poney, cours et stages',
   description:
-    "Toutes nos activités à Fort Apache (Coursegoules, 06140) : balades à poney en famille, cours collectifs et particuliers, école poney, randonnées, stages vacances et compétitions.",
+    "Toutes nos activités à Fort Apache (Vence, 06140) : balades à poney en famille, cours collectifs ou privés, école poney, randonnées, stages vacances et compétitions.",
 };
 
 type Activite = {

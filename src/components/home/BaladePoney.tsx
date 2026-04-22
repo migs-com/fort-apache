@@ -21,10 +21,10 @@ export function BaladePoney() {
 
         <div className="order-1 lg:order-2">
           <p className="font-sans uppercase tracking-[0.25em] text-bordeaux text-xs mb-3">
-            Plus de 30 ans d&apos;expérience
+            L&apos;activité préférée des familles
           </p>
           <h2 className="text-foret-dark mb-6">
-            Partez en balade à poney
+            Depuis 1975, partez en balade à poney
           </h2>
           <p className="text-charbon/85 text-lg leading-relaxed mb-4">
             C&apos;est <strong>l&apos;activité préférée des familles</strong>{' '}
@@ -55,7 +55,7 @@ export function BaladePoney() {
               <span className="text-foret font-bold" aria-hidden>
                 ✓
               </span>
-              Cavalerie sélectionnée pour sa douceur, depuis 30 ans
+              Cavalerie sélectionnée pour sa douceur, depuis 1975
             </li>
             <li className="flex gap-2">
               <span className="text-foret font-bold" aria-hidden>
@@ -67,7 +67,7 @@ export function BaladePoney() {
               <span className="text-foret font-bold" aria-hidden>
                 ✓
               </span>
-              Ouvert tous les jours, de 10h à 18h
+              Ouvert tous les jours, de 10h à 17h
             </li>
           </ul>
           <LinkButton
