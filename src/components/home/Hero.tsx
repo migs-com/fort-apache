@@ -43,7 +43,7 @@ export function Hero() {
             Réserver une balade
           </LinkButton>
           <Link
-            href="/disciplines"
+            href="/activites"
             className="text-white underline underline-offset-4 decoration-sable hover:decoration-white transition"
           >
             Découvrir le club →

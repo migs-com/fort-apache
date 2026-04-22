@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-type Discipline = {
+type Activite = {
   slug: string;
   name: string;
   icon: React.ReactNode;
@@ -8,7 +8,7 @@ type Discipline = {
 
 const iconCls = 'w-10 h-10 text-foret group-hover:text-bordeaux transition';
 
-const disciplines: Discipline[] = [
+const activites: Activite[] = [
   {
     slug: 'balades-poney',
     name: 'Balades à poney',
@@ -55,7 +55,7 @@ const disciplines: Discipline[] = [
   },
 ];
 
-export function Disciplines() {
+export function Activites() {
   return (
     <section className="section bg-creme">
       <div className="container mx-auto">
@@ -63,18 +63,18 @@ export function Disciplines() {
           <p className="font-sans uppercase tracking-[0.25em] text-bordeaux text-xs mb-3">
             Nos activités
           </p>
-          <h2 className="text-foret-dark mb-4">Des disciplines pour tous</h2>
+          <h2 className="text-foret-dark mb-4">Des activités pour tous</h2>
           <p className="max-w-2xl mx-auto text-charbon/75">
             Que vous soyez débutant ou cavalier confirmé, nous vous proposons
-            une discipline adaptée à votre envie et votre niveau.
+            une activité adaptée à votre envie et votre niveau.
           </p>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-          {disciplines.map((d) => (
+          {activites.map((d) => (
             <Link
               key={d.slug}
-              href={`/disciplines#${d.slug}`}
+              href={`/activites#${d.slug}`}
               className="group flex flex-col items-center text-center p-6 md:p-8 rounded-lg bg-white border border-sable/40 hover:border-foret hover:-translate-y-1 transition-all duration-300"
             >
               <div className="mb-4">{d.icon}</div>

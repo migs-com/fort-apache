@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Hero } from '@/components/home/Hero';
 import { WhyUs } from '@/components/home/WhyUs';
-import { Disciplines } from '@/components/home/Disciplines';
+import { Activites } from '@/components/home/Activites';
 import { BaladePoney } from '@/components/home/BaladePoney';
 import { BartabasHighlight } from '@/components/home/BartabasHighlight';
 import { Testimonials } from '@/components/home/Testimonials';
@@ -42,7 +42,7 @@ export default function HomePage() {
 
       <BartabasHighlight />
 
-      <Disciplines />
+      <Activites />
 
       <SocialWall />
 

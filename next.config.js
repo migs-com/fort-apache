@@ -30,6 +30,15 @@ const nextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: '/disciplines',
+        destination: '/activites',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;

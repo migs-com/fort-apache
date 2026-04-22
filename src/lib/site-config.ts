@@ -36,7 +36,7 @@ export const siteConfig = {
 export const navItems = [
   { href: '/', label: 'Accueil' },
   { href: '/le-club', label: 'Le Club' },
-  { href: '/disciplines', label: 'Disciplines' },
+  { href: '/activites', label: 'Activités' },
   { href: '/cours-et-stages', label: 'Cours & Stages' },
   { href: '/tarifs', label: 'Tarifs' },
   { href: '/galerie', label: 'Galerie' },
