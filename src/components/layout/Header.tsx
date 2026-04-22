@@ -107,14 +107,14 @@ export function Header() {
       </div>
 
       <div
-        className={`lg:hidden fixed inset-x-0 top-[72px] bottom-0 bg-creme transition-transform duration-300 ease-out ${
+        className={`lg:hidden fixed inset-0 z-40 bg-creme transition-transform duration-300 ease-out ${
           open ? 'translate-x-0' : 'translate-x-full'
         }`}
         aria-hidden={!open}
       >
         <nav
           aria-label="Menu mobile"
-          className="flex flex-col px-6 py-8 gap-1 h-full overflow-y-auto"
+          className="flex flex-col px-6 pt-24 pb-10 gap-1 h-full overflow-y-auto"
         >
           {navItems.map((item) => {
             const active =
@@ -125,7 +125,8 @@ export function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`py-4 text-xl font-serif border-b border-sable/30 ${
+                onClick={() => setOpen(false)}
+                className={`block py-4 text-xl font-serif border-b border-sable/30 ${
                   active ? 'text-bordeaux' : 'text-foret-dark'
                 }`}
               >
@@ -139,6 +140,7 @@ export function Header() {
               variant="primary"
               size="lg"
               className="w-full"
+              onClick={() => setOpen(false)}
             >
               Nous contacter
             </LinkButton>
