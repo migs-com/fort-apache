@@ -37,6 +37,16 @@ const nextConfig = {
         destination: '/activites',
         permanent: true,
       },
+      {
+        source: '/cours-et-stages',
+        destination: '/cours',
+        permanent: true,
+      },
+      {
+        source: '/cours-stages',
+        destination: '/cours',
+        permanent: true,
+      },
     ];
   },
 };
