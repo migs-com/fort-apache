@@ -3,13 +3,32 @@
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
+import { useLocale, useTranslations } from 'next-intl';
 import { navItems, siteConfig } from '@/lib/site-config';
 import { LinkButton } from '@/components/ui/Button';
+import { LanguageSwitcher } from '@/components/layout/LanguageSwitcher';
+
+const enNavItems = [
+  { href: '/en', label: 'Home' },
+  { href: '/en/activities', label: 'Activities' },
+  { href: '/en/pricing', label: 'Pricing' },
+  { href: '/en/contact', label: 'Contact us' },
+] as const;
 
 export function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
+  const locale = useLocale();
+  const tHeader = useTranslations('Header');
+  const isEn = locale === 'en';
+
+  const contactHref = isEn ? '/en/contact' : '/contact';
+  const homeHref = isEn ? '/en' : '/';
+
+  const items: ReadonlyArray<{ href: string; label: string }> = isEn
+    ? enNavItems.filter((item) => item.href !== '/en/contact')
+    : navItems.map((item) => ({ href: item.href, label: item.label }));
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -29,6 +48,11 @@ export function Header() {
     };
   }, [open]);
 
+  const isActive = (href: string) => {
+    if (href === '/' || href === '/en') return pathname === href;
+    return pathname === href || pathname.startsWith(`${href}/`);
+  };
+
   return (
     <>
       <header
@@ -40,7 +64,7 @@ export function Header() {
       >
         <div className="container mx-auto flex items-center justify-between py-4">
           <Link
-            href="/"
+            href={homeHref}
             className="font-serif text-2xl md:text-3xl font-semibold text-foret-dark tracking-tight"
             aria-label={siteConfig.fullName}
           >
@@ -48,14 +72,11 @@ export function Header() {
           </Link>
 
           <nav
-            aria-label="Navigation principale"
+            aria-label={isEn ? 'Main navigation' : 'Navigation principale'}
             className="hidden lg:flex items-center gap-7"
           >
-            {navItems.map((item) => {
-              const active =
-                item.href === '/'
-                  ? pathname === '/'
-                  : pathname.startsWith(item.href);
+            {items.map((item) => {
+              const active = isActive(item.href);
               return (
                 <Link
                   key={item.href}
@@ -70,15 +91,24 @@ export function Header() {
                 </Link>
               );
             })}
-            <LinkButton href="/contact" variant="primary" size="sm">
-              Nous contacter
+            <LanguageSwitcher className="ml-1" />
+            <LinkButton href={contactHref} variant="primary" size="sm">
+              {isEn ? tHeader('contactCta') : 'Nous contacter'}
             </LinkButton>
           </nav>
 
           <button
             type="button"
             className="lg:hidden relative z-[70] p-2 -mr-2 text-foret-dark"
-            aria-label={open ? 'Fermer le menu' : 'Ouvrir le menu'}
+            aria-label={
+              open
+                ? isEn
+                  ? tHeader('closeMenu')
+                  : 'Fermer le menu'
+                : isEn
+                  ? tHeader('openMenu')
+                  : 'Ouvrir le menu'
+            }
             aria-expanded={open}
             aria-controls="mobile-menu"
             onClick={() => setOpen((v) => !v)}
@@ -120,14 +150,11 @@ export function Header() {
         aria-hidden={!open}
       >
         <nav
-          aria-label="Menu mobile"
+          aria-label={isEn ? 'Mobile menu' : 'Menu mobile'}
           className="flex flex-col px-6 pt-24 pb-10 gap-1 h-full overflow-y-auto"
         >
-          {navItems.map((item) => {
-            const active =
-              item.href === '/'
-                ? pathname === '/'
-                : pathname.startsWith(item.href);
+          {items.map((item) => {
+            const active = isActive(item.href);
             return (
               <Link
                 key={item.href}
@@ -141,15 +168,22 @@ export function Header() {
               </Link>
             );
           })}
-          <div className="mt-8">
+          <div className="mt-8 flex justify-center">
+            <LanguageSwitcher
+              tone="light"
+              onNavigate={() => setOpen(false)}
+              className="text-base"
+            />
+          </div>
+          <div className="mt-6">
             <LinkButton
-              href="/contact"
+              href={contactHref}
               variant="primary"
               size="lg"
               className="w-full"
               onClick={() => setOpen(false)}
             >
-              Nous contacter
+              {isEn ? tHeader('contactCta') : 'Nous contacter'}
             </LinkButton>
           </div>
         </nav>
