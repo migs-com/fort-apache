@@ -59,7 +59,7 @@ const formules = [
   },
 ];
 
-const faq = [
+const faq: { q: string; a: string }[] = [
   {
     q: "À partir de quel âge mon enfant peut-il commencer ?",
     a: "Dès 4 ans pour l'éveil à poney du mercredi ou samedi. À partir de 6 ans pour les demi-journées et journées complètes le mercredi et samedi.",
@@ -86,9 +86,26 @@ const faq = [
   },
 ];
 
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faq.map((item) => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.a,
+    },
+  })),
+};
+
 export default function CoursPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <PageHeader overline="Cours" title="Cours">
         De l&apos;éveil à poney dès 4 ans aux cours adultes à la séance, en
         passant par les demi-journées et les journées complètes du mercredi et
