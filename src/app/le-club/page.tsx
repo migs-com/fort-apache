@@ -41,23 +41,22 @@ const equipements = [
 
 const cavalerie = [
   { name: 'Criquet', tag: 'Le poney le plus gentil du monde', photo: ffeImages.album[0] },
-  { name: 'Flamenco', tag: 'Tendre et patient', photo: ffeImages.album[1] },
-  { name: 'Lounka', tag: 'Adoré des enfants', photo: ffeImages.album[2] },
-  { name: 'Rasta', tag: 'Spécialiste de l\'obstacle', photo: ffeImages.album[3] },
-  { name: 'Polux', tag: 'Maître de l\'attelage', photo: ffeImages.album[4] },
-  { name: 'Paquerette', tag: 'Pour les petites filles', photo: ffeImages.album[5] },
-  { name: 'Calypso', tag: 'Gentille avec du caractère', photo: ffeImages.album[6] },
-  { name: 'Lolita', tag: 'Gentille avec du caractère', photo: ffeImages.album[7] },
-  { name: 'Mouche', tag: 'Gentille avec du caractère', photo: ffeImages.album[8] },
-  { name: 'Coccinelle', tag: 'Apprentie « M.P.M »', photo: ffeImages.album[9] },
-  { name: 'Grillon', tag: 'Apprenti « M.P.M »', photo: ffeImages.album[10] },
-  { name: 'Ulysse', tag: 'Champion de la sieste', photo: ffeImages.album[11] },
+  { name: 'Ulysse', tag: 'Tendre et patient', photo: ffeImages.album[1] },
+  { name: 'Bambou', tag: "Un crack à l'obstacle", photo: ffeImages.album[2] },
+  { name: 'Chonchon', tag: 'Un cheval de Grand Prix de dressage', photo: ffeImages.album[3] },
+  { name: 'Rasta', tag: 'Une super prof pour les enfants', photo: ffeImages.album[4] },
+  { name: 'Olive', tag: 'À la retraite', photo: ffeImages.album[5] },
+  { name: 'Flamenco', tag: 'Pour les petites filles', photo: ffeImages.album[7] },
+  { name: 'Coca', tag: 'Gentil, avec du caractère', photo: ffeImages.album[8] },
+  { name: 'Grillon', tag: 'Apprenti MPM, expert des balades', photo: ffeImages.album[9] },
+  { name: 'Grillon et Bourdon', tag: 'Bourdon : gentil mais coquin', photo: ffeImages.album[10] },
+  { name: 'Jo', tag: 'Un ancien crack en dressage', photo: ffeImages.album[11] },
 ];
 
 export default function LeClubPage() {
   return (
     <>
-      <PageHeader overline="Le Club" title="Une passion partagée depuis 20 ans">
+      <PageHeader overline="Le Club" title="Une passion partagée depuis 1975">
         Fort Apache, c&apos;est avant tout une équipe, un lieu et une
         philosophie de l&apos;équitation tournée vers le respect du cheval.
       </PageHeader>
@@ -81,24 +80,22 @@ export default function LeClubPage() {
             <h2 className="text-foret-dark mb-6">Pénélope, fondatrice</h2>
             <div className="space-y-4 text-charbon/85">
               <p>
-                Cavalière depuis l&apos;âge de 5 ans, Pénélope a passé
-                plusieurs années aux côtés de{' '}
-                <strong className="text-foret-dark">Bartabas</strong>, à
-                s&apos;occuper des chevaux du célèbre{' '}
+                Pénélope est tombée amoureuse du cheval à cinq ans et ne
+                l&apos;a jamais quitté. Au fil de plus de quarante ans de
+                pratique, elle a eu la chance de rencontrer et de travailler
+                aux côtés de grands noms de l&apos;équitation, dont le célèbre{' '}
+                <strong className="text-foret-dark">Bartabas</strong> du{' '}
                 <strong className="text-foret-dark">
-                  Théâtre équestre Zingaro
+                  théâtre Zingaro
                 </strong>
-                . De cette expérience exigeante, elle a tiré une rigueur
-                profonde dans la sélection, l&apos;éducation et le soin de sa
-                cavalerie.
+                . De chacune de ces rencontres, elle a retenu des exigences
+                précises sur la sélection, l&apos;éducation et le soin des
+                chevaux.
               </p>
               <p>
-                Aujourd&apos;hui, elle dirige Fort Apache et près de{' '}
-                <strong>25 chevaux et poneys</strong>, entourée d&apos;une
-                équipe de moniteurs diplômés. Sa philosophie : transmettre
-                bien plus qu&apos;une technique équestre — apprendre la vie
-                d&apos;écurie, le respect de l&apos;animal, et faire de chaque
-                séance « une école de la vie ».
+                Ce qu&apos;elle transmet aujourd&apos;hui à Fort Apache tient
+                en une phrase : l&apos;apprentissage total du cheval. Pas
+                seulement monter, mais comprendre, respecter, soigner.
               </p>
               <p className="font-serif italic text-foret-dark text-lg pt-2 border-l-4 border-bordeaux pl-4">
                 « Ce que j&apos;aimerais, c&apos;est leur transmettre ce que
@@ -117,8 +114,8 @@ export default function LeClubPage() {
           </p>
           <h2 className="text-foret-dark mb-6">Un lieu construit avec le temps</h2>
           <p className="text-lg text-charbon/85 leading-relaxed">
-            Niché à Coursegoules, au Quartier Col de Vence, Fort Apache a
-            grandi au fil des années dans un cadre naturel exceptionnel des
+            Niché à Vence, au quartier Col de Vence, Fort Apache a grandi au
+            fil des années dans un cadre naturel exceptionnel des
             Alpes-Maritimes. Chaque installation a été pensée pour offrir le
             meilleur aux chevaux et à leurs cavaliers. Nous cultivons un
             esprit de famille où chaque cavalier, chaque cheval, trouve sa
@@ -142,7 +139,7 @@ export default function LeClubPage() {
           <Reportage
             videoId="m_POi9XlYC8"
             startSeconds={35}
-            title="Reportage Fort Apache — Club équestre à Coursegoules"
+            title="Reportage Fort Apache — Club équestre à Vence"
           />
         </div>
       </section>
@@ -217,7 +214,7 @@ export default function LeClubPage() {
             ))}
           </div>
           <p className="text-center mt-8 text-sm italic text-charbon/60 max-w-2xl mx-auto">
-            Une pensée pour Dum-Dum, « le cheval le plus gentil du monde »,
+            Une pensée pour Dom-dom, « le cheval le plus gentil du monde »,
             parti trop tôt mais toujours dans nos cœurs.
           </p>
         </div>
@@ -270,7 +267,7 @@ export default function LeClubPage() {
           </h2>
           <p className="text-creme/85 max-w-xl mx-auto mb-6">
             Venez visiter le club et discuter de votre projet équestre.
-            Ouvert 7 jours / 7 de 10h à 18h.
+            Ouvert tous les jours de 10h à 17h.
           </p>
           <LinkButton href="/contact" variant="primary" size="lg">
             Prendre rendez-vous

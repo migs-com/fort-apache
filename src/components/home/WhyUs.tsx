@@ -8,9 +8,9 @@ const iconCls = 'w-12 h-12 text-bordeaux';
 
 const reasons: Reason[] = [
   {
-    title: '30 ans d\'expérience',
+    title: '40 ans d\'expérience',
     description:
-      "Plus de trente ans à louer des poneys et accueillir des familles, dans un esprit de transmission et d'amélioration constante.",
+      "Plus de quarante ans à louer des poneys et accueillir des familles, dans un esprit de transmission et d'amélioration constante.",
     icon: (
       <svg className={iconCls} viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
         <circle cx="24" cy="24" r="20" />
@@ -40,9 +40,9 @@ const reasons: Reason[] = [
     ),
   },
   {
-    title: 'Ouvert 7j/7',
+    title: 'Ouvert tous les jours',
     description:
-      "Le club vous accueille tous les jours de l'année, de 10h à 18h. Cours, balades, stages : à vous de choisir.",
+      "Le club vous accueille tous les jours de l'année, de 10h à 17h. Cours, balades, stages : à vous de choisir.",
     icon: (
       <svg className={iconCls} viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
         <rect x="6" y="10" width="36" height="32" rx="2" />

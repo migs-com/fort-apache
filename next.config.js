@@ -30,6 +30,25 @@ const nextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: '/disciplines',
+        destination: '/activites',
+        permanent: true,
+      },
+      {
+        source: '/cours-et-stages',
+        destination: '/cours',
+        permanent: true,
+      },
+      {
+        source: '/cours-stages',
+        destination: '/cours',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;

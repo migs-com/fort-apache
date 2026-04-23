@@ -1,21 +1,22 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
 import { PageHeader } from '@/components/ui/PageHeader';
 import { LinkButton } from '@/components/ui/Button';
 import { Card, CardBody, CardTitle } from '@/components/ui/Card';
 import { ffeImages } from '@/lib/images';
 
 export const metadata: Metadata = {
-  title: 'Cours & Stages — De 2 ans aux adultes, tous niveaux',
+  title: 'Cours d\'équitation — De l\'éveil poney aux adultes',
   description:
-    "À Fort Apache (Coursegoules 06140) : éveil poney dès 2 ans, demi-journées et journées complètes pour les enfants, cours adultes personnalisés et stages vacances avec hébergement.",
+    "À Fort Apache (Vence 06140) : éveil poney dès 4 ans, demi-journées et journées complètes pour les enfants, cours adultes à la séance. Cours collectifs ou particuliers, tous niveaux.",
 };
 
 const formules = [
   {
-    titre: 'Éveil poney',
-    public: 'À partir de 2 ans',
-    duree: '2h le mercredi matin',
+    titre: 'Éveil à poney',
+    public: 'À partir de 4 ans',
+    duree: '2h, le mercredi ou le samedi',
     objectifs: [
       'Aller chercher son poney à son rythme',
       'Le panser et l\'équiper avec du matériel adapté',
@@ -24,20 +25,20 @@ const formules = [
     ],
   },
   {
-    titre: 'Enfants — demi-journée',
+    titre: 'Enfant — demi-journée',
     public: 'À partir de 6 ans',
-    duree: '4h, mercredi & samedi',
+    duree: 'Mercredi et samedi',
     objectifs: [
-      'Matin 9h-13h ou après-midi 13h30-18h',
       '1 cours par demi-journée',
       "Participation à la vie de l'écurie : soins, alimentation, nettoyage",
       'Préparation aux Galops fédéraux',
+      'Progression à son rythme',
     ],
   },
   {
-    titre: 'Enfants — journée complète',
+    titre: 'Enfant — journée complète',
     public: 'À partir de 6 ans',
-    duree: '9h-18h, vacances scolaires',
+    duree: '10h à 17h, mercredi et samedi',
     objectifs: [
       '2 cours dans la journée',
       'Pique-nique et goûter à apporter',
@@ -46,7 +47,7 @@ const formules = [
     ],
   },
   {
-    titre: 'Adultes',
+    titre: 'Adulte à la séance',
     public: 'Tous niveaux',
     duree: 'À la séance, en semaine',
     objectifs: [
@@ -58,37 +59,10 @@ const formules = [
   },
 ];
 
-const stages = [
-  {
-    periode: "Vacances d'été",
-    description:
-      'Vacances équestres avec hébergement, du dimanche soir au vendredi soir. Une immersion totale, places limitées.',
-    prix: '400 € / semaine',
-  },
-  {
-    periode: 'Toussaint',
-    description:
-      'Stages « à la carte » de 3 à 5 jours, quel que soit votre niveau ou votre âge. Sur réservation.',
-    prix: 'Sur réservation',
-  },
-  {
-    periode: 'Noël & Nouvel An',
-    description:
-      'Stages de fin d\'année, parfaits pour passer un Galop ou se perfectionner dans sa discipline préférée.',
-    prix: 'Sur réservation',
-  },
-  {
-    periode: 'Pâques',
-    description:
-      "Le grand stage du printemps, avec sortie en randonnée extérieure le dernier jour.",
-    prix: 'Sur réservation',
-  },
-];
-
-const faq = [
+const faq: { q: string; a: string }[] = [
   {
     q: "À partir de quel âge mon enfant peut-il commencer ?",
-    a: "Dès 2 ans pour l'éveil poney du mercredi matin. À partir de 6 ans pour les demi-journées et journées complètes le mercredi, samedi et pendant les vacances.",
+    a: "Dès 4 ans pour l'éveil à poney du mercredi ou samedi. À partir de 6 ans pour les demi-journées et journées complètes le mercredi et samedi.",
   },
   {
     q: "Faut-il avoir déjà fait de l'équitation ?",
@@ -96,29 +70,46 @@ const faq = [
   },
   {
     q: "Que faut-il apporter ?",
-    a: "Une tenue souple, des chaussures fermées (idéalement à petit talon), et un pantalon long. Pour les stages à la journée : pique-nique et goûter. Le casque est fourni par le club, désinfecté et aux normes CE.",
+    a: "Une tenue souple, des chaussures fermées (idéalement à petit talon), et un pantalon long et souple. Pour les stages à la journée : pique-nique et goûter. Le casque est fourni par le club, désinfecté et aux normes CE.",
   },
   {
     q: "Le casque est-il fourni ?",
-    a: "Oui, le club fournit des casques pour toutes les activités. Ils sont régulièrement désinfectés et conformes aux normes CE. Nous avons également des étriers de sécurité.",
+    a: "Oui, le club fournit des casques (avec charlottes à usage unique pour l'hygiène de chaque cavalier) pour toutes les activités. Ils sont conformes aux normes CE. Nous avons également des étriers de sécurité.",
   },
   {
-    q: "Peut-on faire une séance d'essai ?",
-    a: "Bien sûr ! Contactez-nous au 04 93 58 91 43 pour convenir d'un créneau. Nous vous proposerons une formule adaptée à votre niveau et à vos envies.",
+    q: "Peut-on faire une ou plusieurs séances d'essai ?",
+    a: "Oui, bien sûr. Pénélope conseille même deux à trois séances d'essai avant de prendre une licence, pour que le cavalier trouve le bon rythme et le bon groupe. Contactez-nous au 04 93 58 91 43 pour convenir d'un premier créneau.",
   },
   {
     q: "Le club est-il accessible toute l'année ?",
-    a: "Oui, Fort Apache est ouvert 7 jours / 7, de 10h à 18h, toute l'année.",
+    a: "Oui, Fort Apache est ouvert tous les jours, de 10h à 17h, toute l'année.",
   },
 ];
 
-export default function CoursEtStagesPage() {
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faq.map((item) => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.a,
+    },
+  })),
+};
+
+export default function CoursPage() {
   return (
     <>
-      <PageHeader overline="Cours & Stages" title="Progressez à votre rythme">
-        De l&apos;éveil poney dès 2 ans aux cours adultes personnalisés, en
-        passant par les vacances équestres avec hébergement, Fort Apache
-        propose une formule pour chacun.
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <PageHeader overline="Cours" title="Cours">
+        De l&apos;éveil à poney dès 4 ans aux cours adultes à la séance, en
+        passant par les demi-journées et les journées complètes du mercredi et
+        du samedi, Fort Apache propose une formule pour chacun.
       </PageHeader>
 
       {/* Formules par âge */}
@@ -170,6 +161,16 @@ export default function CoursEtStagesPage() {
               </Card>
             ))}
           </div>
+
+          <p className="text-center mt-10 text-charbon/75">
+            Vous cherchez plutôt un stage de vacances ?{' '}
+            <Link
+              href="/stages"
+              className="text-bordeaux font-medium hover:underline"
+            >
+              Découvrir nos stages vacances →
+            </Link>
+          </p>
         </div>
       </section>
 
@@ -210,56 +211,6 @@ export default function CoursEtStagesPage() {
               className="object-cover"
             />
           </div>
-        </div>
-      </section>
-
-      {/* Stages vacances */}
-      <section className="section bg-white">
-        <div className="container mx-auto">
-          <div className="text-center mb-12">
-            <p className="font-sans uppercase tracking-[0.25em] text-bordeaux text-xs mb-3">
-              Stages vacances
-            </p>
-            <h2 className="text-foret-dark">Vacances équestres « à la carte »</h2>
-            <p className="mt-3 text-charbon/75 max-w-2xl mx-auto">
-              Pour chaque vacance scolaire, des stages adaptés à tous les
-              niveaux et tous les âges. L&apos;été, la formule complète avec
-              hébergement immerge vos enfants pendant une semaine.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            {stages.map((s) => (
-              <Card key={s.periode} variant="bordered">
-                <CardBody>
-                  <div className="flex items-start justify-between gap-4 mb-3">
-                    <CardTitle>{s.periode}</CardTitle>
-                    <span className="font-serif text-xl text-bordeaux whitespace-nowrap">
-                      {s.prix}
-                    </span>
-                  </div>
-                  <p className="text-charbon/80 text-sm mb-5">{s.description}</p>
-                  <LinkButton
-                    href="/contact?objet=Stage+vacances"
-                    variant="outline"
-                    size="sm"
-                  >
-                    Réserver
-                  </LinkButton>
-                </CardBody>
-              </Card>
-            ))}
-          </div>
-
-          <p className="text-center mt-8 text-sm text-charbon/70">
-            Places limitées — pensez à réserver tôt au{' '}
-            <a
-              href="tel:+33493589143"
-              className="text-bordeaux font-medium hover:underline"
-            >
-              04 93 58 91 43
-            </a>
-          </p>
         </div>
       </section>
 

@@ -24,15 +24,15 @@ export function Hero() {
 
       <div className="relative z-10 container mx-auto text-center text-white px-4 py-24">
         <p className="font-sans uppercase tracking-[0.3em] text-sable-light text-xs md:text-sm mb-6 animate-fade-in">
-          Club équestre — Coursegoules · Col de Vence
+          Club équestre — Vence · Col de Vence
         </p>
         <h1 className="font-serif text-white mb-6 animate-slide-up max-w-4xl mx-auto">
-          Au royaume des poneys, <br className="hidden md:block" />
+          Au royaume des chevaux, <br className="hidden md:block" />
           au cœur des Préalpes d&apos;Azur
         </h1>
         <p className="text-lg md:text-xl text-creme/90 max-w-2xl mx-auto mb-10 font-light animate-slide-up">
           Balades à poney en famille dès 2 ans, cours d&apos;équitation,
-          stages vacances et randonnées. Ouvert 7 jours sur 7.
+          stages vacances et randonnées. Ouvert tous les jours de 10h à 17h.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up">
           <LinkButton
@@ -43,7 +43,7 @@ export function Hero() {
             Réserver une balade
           </LinkButton>
           <Link
-            href="/disciplines"
+            href="/activites"
             className="text-white underline underline-offset-4 decoration-sable hover:decoration-white transition"
           >
             Découvrir le club →

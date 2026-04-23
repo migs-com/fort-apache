@@ -11,10 +11,10 @@ export function Footer() {
           <p className="font-serif text-3xl text-white mb-3">Fort Apache</p>
           <p className="text-creme/80 max-w-sm leading-relaxed">
             Club équestre pour tous les niveaux. Cours, stages, balades à
-            poney et randonnées au cœur des Alpes-Maritimes, à Coursegoules.
+            poney et randonnées au cœur des Alpes-Maritimes, à Vence.
           </p>
           <p className="mt-6 text-sm text-sable-light">
-            Ouvert 7 jours / 7 — de 10h à 18h
+            Ouvert tous les jours — de 10h à 17h
           </p>
           {(siteConfig.socials.facebook || siteConfig.socials.instagram) && (
             <div className="mt-6 flex items-center gap-3">

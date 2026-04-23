@@ -53,6 +53,7 @@ type LinkButtonProps = BaseProps & {
   href: string;
   target?: string;
   rel?: string;
+  onClick?: () => void;
 };
 
 export function LinkButton({

@@ -6,12 +6,12 @@ import { LinkButton } from '@/components/ui/Button';
 import { ffeImages } from '@/lib/images';
 
 export const metadata: Metadata = {
-  title: 'Disciplines équestres — Balades à poney, cours et stages',
+  title: 'Activités équestres — Balades à poney, cours et stages',
   description:
-    "Toutes nos disciplines à Fort Apache (Coursegoules, 06140) : balades à poney en famille, cours collectifs et particuliers, école poney, randonnées, stages vacances et compétitions.",
+    "Toutes nos activités à Fort Apache (Vence, 06140) : balades à poney en famille, cours collectifs ou privés, école poney, randonnées, stages vacances et compétitions.",
 };
 
-type Discipline = {
+type Activite = {
   slug: string;
   name: string;
   excerpt: string;
@@ -19,7 +19,7 @@ type Discipline = {
   featured?: boolean;
 };
 
-const disciplines: Discipline[] = [
+const activites: Activite[] = [
   {
     slug: 'balades-poney',
     name: 'Balades à poney',
@@ -79,15 +79,15 @@ const disciplines: Discipline[] = [
   },
 ];
 
-export default function DisciplinesPage() {
-  const featured = disciplines.find((d) => d.featured)!;
-  const others = disciplines.filter((d) => !d.featured);
+export default function ActivitesPage() {
+  const featured = activites.find((d) => d.featured)!;
+  const others = activites.filter((d) => !d.featured);
 
   return (
     <>
-      <PageHeader overline="Disciplines" title="Trouvez votre passion équestre">
-        Sept activités, du baptême à poney en famille au perfectionnement en
-        compétition.
+      <PageHeader overline="Activités" title="Trouvez votre passion équestre">
+        Des activités pour tous les âges, du baptême à poney en famille au
+        perfectionnement en compétition.
       </PageHeader>
 
       {/* Featured : Balades à poney */}
@@ -133,7 +133,7 @@ export default function DisciplinesPage() {
         </div>
       </section>
 
-      {/* Autres disciplines */}
+      {/* Autres activités */}
       <section className="bg-creme pb-16 md:pb-24">
         <div className="container mx-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
@@ -175,7 +175,7 @@ export default function DisciplinesPage() {
       <section className="bg-charbon text-white">
         <div className="container mx-auto py-16 text-center">
           <h2 className="text-white mb-4">
-            Une discipline vous intéresse ?
+            Une activité vous intéresse ?
           </h2>
           <p className="text-creme/80 mb-8 max-w-xl mx-auto">
             Contactez-nous pour en discuter et trouver la formule adaptée.

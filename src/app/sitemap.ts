@@ -7,8 +7,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticPaths = [
     '',
     '/le-club',
-    '/disciplines',
-    '/cours-et-stages',
+    '/activites',
+    '/cours',
+    '/stages',
     '/tarifs',
     '/galerie',
     '/actualites',
