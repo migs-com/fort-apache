@@ -86,8 +86,8 @@ export default function ActivitesPage() {
   return (
     <>
       <PageHeader overline="Activités" title="Trouvez votre passion équestre">
-        Sept activités, du baptême à poney en famille au perfectionnement en
-        compétition.
+        Des activités pour tous les âges, du baptême à poney en famille au
+        perfectionnement en compétition.
       </PageHeader>
 
       {/* Featured : Balades à poney */}

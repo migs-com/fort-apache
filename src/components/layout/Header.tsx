@@ -30,84 +30,91 @@ export function Header() {
   }, [open]);
 
   return (
-    <header
-      className={`sticky top-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? 'bg-creme/90 backdrop-blur-md shadow-sm'
-          : 'bg-creme/70 backdrop-blur-sm'
-      }`}
-    >
-      <div className="container mx-auto flex items-center justify-between py-4">
-        <Link
-          href="/"
-          className="font-serif text-2xl md:text-3xl font-semibold text-foret-dark tracking-tight"
-          aria-label={siteConfig.fullName}
-        >
-          Fort Apache
-        </Link>
-
-        <nav
-          aria-label="Navigation principale"
-          className="hidden lg:flex items-center gap-7"
-        >
-          {navItems.map((item) => {
-            const active =
-              item.href === '/'
-                ? pathname === '/'
-                : pathname.startsWith(item.href);
-            return (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={`text-sm font-medium transition-colors ${
-                  active
-                    ? 'text-bordeaux'
-                    : 'text-charbon hover:text-bordeaux'
-                }`}
-              >
-                {item.label}
-              </Link>
-            );
-          })}
-          <LinkButton href="/contact" variant="primary" size="sm">
-            Nous contacter
-          </LinkButton>
-        </nav>
-
-        <button
-          type="button"
-          className="lg:hidden p-2 -mr-2 text-foret-dark"
-          aria-label={open ? 'Fermer le menu' : 'Ouvrir le menu'}
-          aria-expanded={open}
-          onClick={() => setOpen((v) => !v)}
-        >
-          <svg
-            className="w-7 h-7"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
+    <>
+      <header
+        className={`sticky top-0 z-50 transition-all duration-300 ${
+          scrolled
+            ? 'bg-creme/90 backdrop-blur-md shadow-sm'
+            : 'bg-creme/70 backdrop-blur-sm'
+        }`}
+      >
+        <div className="container mx-auto flex items-center justify-between py-4">
+          <Link
+            href="/"
+            className="font-serif text-2xl md:text-3xl font-semibold text-foret-dark tracking-tight"
+            aria-label={siteConfig.fullName}
           >
-            {open ? (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            ) : (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            )}
-          </svg>
-        </button>
-      </div>
+            Fort Apache
+          </Link>
 
+          <nav
+            aria-label="Navigation principale"
+            className="hidden lg:flex items-center gap-7"
+          >
+            {navItems.map((item) => {
+              const active =
+                item.href === '/'
+                  ? pathname === '/'
+                  : pathname.startsWith(item.href);
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`text-sm font-medium transition-colors ${
+                    active
+                      ? 'text-bordeaux'
+                      : 'text-charbon hover:text-bordeaux'
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
+            <LinkButton href="/contact" variant="primary" size="sm">
+              Nous contacter
+            </LinkButton>
+          </nav>
+
+          <button
+            type="button"
+            className="lg:hidden relative z-[70] p-2 -mr-2 text-foret-dark"
+            aria-label={open ? 'Fermer le menu' : 'Ouvrir le menu'}
+            aria-expanded={open}
+            aria-controls="mobile-menu"
+            onClick={() => setOpen((v) => !v)}
+          >
+            <svg
+              className="w-7 h-7"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              {open ? (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              ) : (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              )}
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      {/* Panneau mobile rendu en dehors du <header> pour échapper au containing
+          block créé par backdrop-filter (sinon inset-0 se calcule par rapport
+          au header ~72px et non au viewport). */}
       <div
-        className={`lg:hidden fixed inset-0 z-40 bg-creme transition-transform duration-300 ease-out ${
+        id="mobile-menu"
+        className={`lg:hidden fixed inset-0 z-[60] bg-creme transition-transform duration-300 ease-out ${
           open ? 'translate-x-0' : 'translate-x-full'
         }`}
         aria-hidden={!open}
@@ -147,6 +154,6 @@ export function Header() {
           </div>
         </nav>
       </div>
-    </header>
+    </>
   );
 }

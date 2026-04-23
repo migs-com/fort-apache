@@ -12,7 +12,7 @@ import { siteConfig } from '@/lib/site-config';
 export const metadata: Metadata = {
   title: `${siteConfig.fullName} — Balades à poney & équitation à Vence`,
   description:
-    "Club équestre à Vence (06140), quartier Col de Vens. Balades à poney dès 2 ans, cours d'équitation, stages vacances et randonnées. Ouvert tous les jours de 10h à 17h.",
+    "Club équestre à Vence (06140), quartier Col de Vence. Balades à poney dès 2 ans, cours d'équitation, stages vacances et randonnées. Ouvert tous les jours de 10h à 17h.",
 };
 
 export default function HomePage() {

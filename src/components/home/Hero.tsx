@@ -24,7 +24,7 @@ export function Hero() {
 
       <div className="relative z-10 container mx-auto text-center text-white px-4 py-24">
         <p className="font-sans uppercase tracking-[0.3em] text-sable-light text-xs md:text-sm mb-6 animate-fade-in">
-          Club équestre — Vence · Col de Vens
+          Club équestre — Vence · Col de Vence
         </p>
         <h1 className="font-serif text-white mb-6 animate-slide-up max-w-4xl mx-auto">
           Au royaume des chevaux, <br className="hidden md:block" />

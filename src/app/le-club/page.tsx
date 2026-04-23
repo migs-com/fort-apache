@@ -114,7 +114,7 @@ export default function LeClubPage() {
           </p>
           <h2 className="text-foret-dark mb-6">Un lieu construit avec le temps</h2>
           <p className="text-lg text-charbon/85 leading-relaxed">
-            Niché à Vence, au quartier Col de Vens, Fort Apache a grandi au
+            Niché à Vence, au quartier Col de Vence, Fort Apache a grandi au
             fil des années dans un cadre naturel exceptionnel des
             Alpes-Maritimes. Chaque installation a été pensée pour offrir le
             meilleur aux chevaux et à leurs cavaliers. Nous cultivons un
