@@ -41,17 +41,16 @@ const equipements = [
 
 const cavalerie = [
   { name: 'Criquet', tag: 'Le poney le plus gentil du monde', photo: ffeImages.album[0] },
-  { name: 'Flamenco', tag: 'Tendre et patient', photo: ffeImages.album[1] },
-  { name: 'Lounka', tag: 'Adoré des enfants', photo: ffeImages.album[2] },
-  { name: 'Rasta', tag: 'Spécialiste de l\'obstacle', photo: ffeImages.album[3] },
-  { name: 'Polux', tag: 'Maître de l\'attelage', photo: ffeImages.album[4] },
-  { name: 'Paquerette', tag: 'Pour les petites filles', photo: ffeImages.album[5] },
-  { name: 'Calypso', tag: 'Gentille avec du caractère', photo: ffeImages.album[6] },
-  { name: 'Lolita', tag: 'Gentille avec du caractère', photo: ffeImages.album[7] },
-  { name: 'Mouche', tag: 'Gentille avec du caractère', photo: ffeImages.album[8] },
-  { name: 'Coccinelle', tag: 'Apprentie « M.P.M »', photo: ffeImages.album[9] },
-  { name: 'Grillon', tag: 'Apprenti « M.P.M »', photo: ffeImages.album[10] },
-  { name: 'Ulysse', tag: 'Champion de la sieste', photo: ffeImages.album[11] },
+  { name: 'Ulysse', tag: 'Tendre et patient', photo: ffeImages.album[1] },
+  { name: 'Bambou', tag: "Un crack à l'obstacle", photo: ffeImages.album[2] },
+  { name: 'Chonchon', tag: 'Un cheval de Grand Prix de dressage', photo: ffeImages.album[3] },
+  { name: 'Rasta', tag: 'Une super prof pour les enfants', photo: ffeImages.album[4] },
+  { name: 'Olive', tag: 'À la retraite', photo: ffeImages.album[5] },
+  { name: 'Flamenco', tag: 'Pour les petites filles', photo: ffeImages.album[7] },
+  { name: 'Coca', tag: 'Gentil, avec du caractère', photo: ffeImages.album[8] },
+  { name: 'Grillon', tag: 'Apprenti MPM, expert des balades', photo: ffeImages.album[9] },
+  { name: 'Grillon et Bourdon', tag: 'Bourdon : gentil mais coquin', photo: ffeImages.album[10] },
+  { name: 'Jo', tag: 'Un ancien crack en dressage', photo: ffeImages.album[11] },
 ];
 
 export default function LeClubPage() {
