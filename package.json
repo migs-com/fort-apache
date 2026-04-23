@@ -12,6 +12,7 @@
     "@hookform/resolvers": "^3.9.0",
     "@notionhq/client": "^2.2.15",
     "next": "14.2.18",
+    "next-intl": "^4.9.1",
     "notion-to-md": "^3.1.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

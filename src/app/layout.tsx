@@ -1,11 +1,15 @@
 import type { Metadata, Viewport } from 'next';
 import { Cormorant_Garamond, DM_Sans } from 'next/font/google';
 import Script from 'next/script';
+import { headers } from 'next/headers';
+import { NextIntlClientProvider } from 'next-intl';
+import { getMessages } from 'next-intl/server';
 import '@/styles/globals.css';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { siteConfig } from '@/lib/site-config';
+import { detectLocaleFromPathname } from '@/i18n/request';
 
 const serif = Cormorant_Garamond({
   subsets: ['latin'],
@@ -75,15 +79,18 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   const plausibleDomain = process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN;
+  const pathname = headers().get('x-pathname') ?? '';
+  const locale = detectLocaleFromPathname(pathname);
+  const messages = await getMessages();
 
   return (
-    <html lang="fr" className={`${serif.variable} ${sans.variable}`}>
+    <html lang={locale} className={`${serif.variable} ${sans.variable}`}>
       <head>
         <JsonLd />
         {plausibleDomain && (
@@ -96,9 +103,11 @@ export default function RootLayout({
         )}
       </head>
       <body className="min-h-screen flex flex-col">
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </NextIntlClientProvider>
       </body>
     </html>
   );
