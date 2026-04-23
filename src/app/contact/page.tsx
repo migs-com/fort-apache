@@ -7,6 +7,14 @@ export const metadata: Metadata = {
   title: 'Contact — Prendre rendez-vous',
   description:
     "Contactez Fort Apache pour une inscription, un stage, un cours particulier ou un simple renseignement. Notre équipe vous répond rapidement.",
+  alternates: {
+    canonical: `${siteConfig.url}/contact`,
+    languages: {
+      fr: `${siteConfig.url}/contact`,
+      en: `${siteConfig.url}/en/contact`,
+      'x-default': `${siteConfig.url}/contact`,
+    },
+  },
 };
 
 type SearchParams = {

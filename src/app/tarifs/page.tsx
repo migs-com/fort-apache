@@ -9,6 +9,11 @@ export const metadata: Metadata = {
     "Tarifs complets du club Fort Apache à Vence : séances, forfaits mensuels, trimestriels et annuels. Baby poney, cours enfants, adultes, cours particuliers. Licence FFE incluse.",
   alternates: {
     canonical: `${siteConfig.url}/tarifs`,
+    languages: {
+      fr: `${siteConfig.url}/tarifs`,
+      en: `${siteConfig.url}/en/pricing`,
+      'x-default': `${siteConfig.url}/tarifs`,
+    },
   },
 };
 
