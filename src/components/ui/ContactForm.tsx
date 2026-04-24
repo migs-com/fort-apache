@@ -3,7 +3,7 @@
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useMemo, useState } from 'react';
-import { useLocale, useTranslations } from 'next-intl';
+import { usePathname } from 'next/navigation';
 import {
   makeContactSchema,
   niveaux,
@@ -21,7 +21,7 @@ const labelClass =
   'block text-sm font-medium text-foret-dark mb-1.5';
 const errorClass = 'text-xs text-bordeaux mt-1';
 
-type FrStrings = {
+type Strings = {
   ariaLabel: string;
   firstName: string;
   lastName: string;
@@ -51,7 +51,7 @@ type FrStrings = {
   phoneInvalid: string;
 };
 
-const frStrings: FrStrings = {
+const frStrings: Strings = {
   ariaLabel: 'Formulaire de contact',
   firstName: 'Prénom',
   lastName: 'Nom',
@@ -81,73 +81,74 @@ const frStrings: FrStrings = {
   phoneInvalid: 'Numéro invalide',
 };
 
+const enStrings: Strings = {
+  ariaLabel: 'Contact form',
+  firstName: 'First name',
+  lastName: 'Last name',
+  email: 'Email',
+  phone: 'Phone',
+  riderAge: "Rider's age",
+  riderAgeHelper: 'For minors, parental authorisation will be required.',
+  level: 'Level',
+  levelPlaceholder: 'Choose a level',
+  subject: 'Subject',
+  subjectPlaceholder: 'Choose a subject',
+  message: 'Your message',
+  messagePlaceholder: 'Tell us about your equestrian project…',
+  website: 'Website',
+  submitNormal: 'Send my request',
+  submitSending: 'Sending…',
+  requiredNotice: 'Fields marked with * are required.',
+  successHeading: 'Thank you for your message',
+  successParagraph: 'We will get back to you as soon as possible.',
+  successReset: 'Send another message',
+  serverErrorFallback: 'Unable to send',
+  unknownError: 'An error occurred',
+  firstNameShort: 'First name too short',
+  lastNameShort: 'Last name too short',
+  emailInvalid: 'Invalid email',
+  phoneShort: 'Phone number too short',
+  phoneInvalid: 'Invalid phone number',
+};
+
+// Libellés d'options affichés (EN) mappés vers les valeurs FR envoyées au
+// backend. Les valeurs restent en français pour que Pénélope reçoive des
+// emails cohérents quelle que soit la langue du formulaire.
+const enLevelOptions: ReadonlyArray<{ label: string; value: (typeof niveaux)[number] }> = [
+  { label: 'Beginner', value: niveauEnToFr['Beginner'] },
+  { label: 'Basic notions', value: niveauEnToFr['Basic notions'] },
+  { label: 'Intermediate', value: niveauEnToFr['Intermediate'] },
+  { label: 'Advanced', value: niveauEnToFr['Advanced'] },
+  { label: 'Not sure', value: niveauEnToFr['Not sure'] },
+];
+
+const enSubjectOptions: ReadonlyArray<{ label: string; value: (typeof objets)[number] }> = [
+  { label: 'Lessons registration', value: 'Inscription cours' },
+  { label: 'Holiday camp', value: 'Stage vacances' },
+  { label: 'Private lesson', value: 'Cours particulier' },
+  { label: 'General enquiry', value: 'Renseignements' },
+  { label: 'Other', value: 'Autre' },
+];
+
+// Source de vérité unique côté client : l'URL. On évite useLocale() /
+// useTranslations() car le provider next-intl peut rester périmé après
+// une navigation client-side dans l'App Router.
+function isEnPath(pathname: string): boolean {
+  return pathname === '/en' || pathname.startsWith('/en/');
+}
+
 export function ContactForm({ defaultObjet }: { defaultObjet?: string }) {
-  const locale = useLocale();
-  const isEn = locale === 'en';
+  const pathname = usePathname();
+  const isEn = isEnPath(pathname);
   const [status, setStatus] = useState<Status>('idle');
   const [serverError, setServerError] = useState<string | null>(null);
 
-  const tLabels = useTranslations('Contact.Form.Labels');
-  const tPlaceholders = useTranslations('Contact.Form.Placeholders');
-  const tErrors = useTranslations('Contact.Form.Errors');
-  const tLevel = useTranslations('Contact.Form.LevelOptions');
-  const tSubject = useTranslations('Contact.Form.SubjectOptions');
-  const tButtons = useTranslations('Contact.Form.Buttons');
-  const tSuccess = useTranslations('Contact.Form.SuccessScreen');
-  const tForm = useTranslations('Contact.Form');
-
-  const s: FrStrings = isEn
-    ? {
-        ariaLabel: tForm('ariaLabel'),
-        firstName: tLabels('firstName'),
-        lastName: tLabels('lastName'),
-        email: tLabels('email'),
-        phone: tLabels('phone'),
-        riderAge: tLabels('riderAge'),
-        riderAgeHelper: tLabels('riderAgeHelper'),
-        level: tLabels('level'),
-        levelPlaceholder: tPlaceholders('level'),
-        subject: tLabels('subject'),
-        subjectPlaceholder: tPlaceholders('subject'),
-        message: tLabels('message'),
-        messagePlaceholder: tPlaceholders('message'),
-        website: tLabels('website'),
-        submitNormal: tButtons('submitNormal'),
-        submitSending: tButtons('submitSending'),
-        requiredNotice: tButtons('requiredNotice'),
-        successHeading: tSuccess('heading'),
-        successParagraph: tSuccess('paragraph'),
-        successReset: tSuccess('resetButton'),
-        serverErrorFallback: tErrors('serverError'),
-        unknownError: tErrors('unknownError'),
-        firstNameShort: tErrors('firstNameShort'),
-        lastNameShort: tErrors('lastNameShort'),
-        emailInvalid: tErrors('emailInvalid'),
-        phoneShort: tErrors('phoneShort'),
-        phoneInvalid: tErrors('phoneInvalid'),
-      }
-    : frStrings;
-
-  // Level options — display label (locale) → FR value (backend)
+  const s: Strings = isEn ? enStrings : frStrings;
   const levelOptions = isEn
-    ? [
-        { label: tLevel('beginner'), value: niveauEnToFr['Beginner'] },
-        { label: tLevel('basic'), value: niveauEnToFr['Basic notions'] },
-        { label: tLevel('intermediate'), value: niveauEnToFr['Intermediate'] },
-        { label: tLevel('advanced'), value: niveauEnToFr['Advanced'] },
-        { label: tLevel('unsure'), value: niveauEnToFr['Not sure'] },
-      ]
+    ? enLevelOptions
     : niveaux.map((n) => ({ label: n, value: n }));
-
-  // Subject options — display label (locale) → FR value (backend)
   const subjectOptions = isEn
-    ? [
-        { label: tSubject('lessonsRegistration'), value: 'Inscription cours' },
-        { label: tSubject('holidayCamp'), value: 'Stage vacances' },
-        { label: tSubject('privateLesson'), value: 'Cours particulier' },
-        { label: tSubject('generalEnquiry'), value: 'Renseignements' },
-        { label: tSubject('other'), value: 'Autre' },
-      ]
+    ? enSubjectOptions
     : objets.map((o) => ({ label: o, value: o }));
 
   const schema = useMemo(

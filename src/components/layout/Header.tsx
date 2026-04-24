@@ -3,36 +3,43 @@
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
-import { useLocale, useTranslations } from 'next-intl';
 import { navItems as frNavItems, siteConfig } from '@/lib/site-config';
 import { LinkButton } from '@/components/ui/Button';
 import { LanguageSwitcher } from '@/components/layout/LanguageSwitcher';
+
+// Source de vérité unique côté client : l'URL. On évite useLocale() /
+// useTranslations() car le provider next-intl peut rester périmé après
+// une navigation client-side dans l'App Router (le root layout n'est pas
+// systématiquement re-rendu). L'URL, elle, est toujours à jour.
+function isEnPath(pathname: string): boolean {
+  return pathname === '/en' || pathname.startsWith('/en/');
+}
+
+const enItems: ReadonlyArray<{ href: string; label: string }> = [
+  { href: '/en', label: 'Home' },
+  { href: '/le-club', label: 'The Club' },
+  { href: '/en/activities', label: 'Activities' },
+  { href: '/cours', label: 'Lessons' },
+  { href: '/stages', label: 'Camps' },
+  { href: '/en/pricing', label: 'Pricing' },
+  { href: '/galerie', label: 'Gallery' },
+  { href: '/actualites', label: 'Blog' },
+];
 
 export function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
-  const locale = useLocale();
-  const tHeader = useTranslations('Header');
-  const isEn = locale === 'en';
+  const isEn = isEnPath(pathname);
 
   const contactHref = isEn ? '/en/contact' : '/contact';
   const homeHref = isEn ? '/en' : '/';
-  const contactCta = isEn ? tHeader('contactCta') : 'Nous contacter';
-  const openMenuLabel = isEn ? tHeader('openMenu') : 'Ouvrir le menu';
-  const closeMenuLabel = isEn ? tHeader('closeMenu') : 'Fermer le menu';
+  const contactCta = isEn ? 'Contact us' : 'Nous contacter';
+  const openMenuLabel = isEn ? 'Open menu' : 'Ouvrir le menu';
+  const closeMenuLabel = isEn ? 'Close menu' : 'Fermer le menu';
 
   const items: ReadonlyArray<{ href: string; label: string }> = isEn
-    ? [
-        { href: '/en', label: tHeader('home') },
-        { href: '/le-club', label: tHeader('theClub') },
-        { href: '/en/activities', label: tHeader('activities') },
-        { href: '/cours', label: tHeader('lessons') },
-        { href: '/stages', label: tHeader('camps') },
-        { href: '/en/pricing', label: tHeader('pricing') },
-        { href: '/galerie', label: tHeader('gallery') },
-        { href: '/actualites', label: tHeader('blog') },
-      ]
+    ? enItems
     : frNavItems.map((item) => ({ href: item.href, label: item.label }));
 
   useEffect(() => {
