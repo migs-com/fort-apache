@@ -1,0 +1,336 @@
+{
+  "Header": {
+    "home": "Home",
+    "theClub": "The Club",
+    "activities": "Activities",
+    "lessons": "Lessons",
+    "camps": "Camps",
+    "pricing": "Pricing",
+    "gallery": "Gallery",
+    "blog": "Blog",
+    "contactCta": "Contact us",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "Footer": {
+    "presentation": "Equestrian club for all levels. Lessons, camps, pony rides and trail rides in the heart of the Alpes-Maritimes, in Vence.",
+    "hours": "Open every day — 10am to 5pm",
+    "followUs": "Follow us",
+    "navTitle": "Navigation",
+    "findUsTitle": "Find us",
+    "street": "75 route de Saint-Barnabé, Quartier Col de Vence",
+    "city": "06140 Vence",
+    "copyright": "© {year} Fort Apache — Equestrian Club. All rights reserved.",
+    "credits": "Website by Mig's Communication"
+  },
+  "Common": {
+    "contactUs": "Contact us",
+    "bookRide": "Book a ride",
+    "discoverClub": "Discover the club →",
+    "meetTeam": "Meet the team and the club →",
+    "learnMore": "Learn more →",
+    "signUp": "Sign up",
+    "bookAppointment": "Book an appointment",
+    "sendRequest": "Send my request",
+    "sendAnother": "Send another message"
+  },
+  "LanguageSwitcher": {
+    "ariaLabel": "Language",
+    "fr": "FR",
+    "en": "EN"
+  },
+  "Home": {
+    "Metadata": {
+      "title": "Fort Apache — Equestrian Club — Pony rides & riding lessons in Vence",
+      "description": "Equestrian club in Vence (06140), at the Col de Vence. Pony rides from age 2, riding lessons, school holiday camps and trail rides. Open every day from 10am to 5pm."
+    },
+    "Hero": {
+      "eyebrow": "Equestrian club — Vence · Col de Vence",
+      "h1Line1": "A home for horses,",
+      "h1Line2": "in the heart of the Préalpes d'Azur",
+      "subtitle": "Family pony rides from age 2, riding lessons, school holiday camps and trail rides. Open every day.",
+      "primaryCta": "Book a ride",
+      "secondaryCta": "Discover the club →"
+    },
+    "Intro": {
+      "eyebrow": "Welcome to Fort Apache",
+      "heading": "An exceptional training, a shared passion",
+      "paragraph1": "Pénélope has been riding since the age of five. Over her career, she has had the chance to work with and for great names in horse riding, including the renowned Bartabas and his Théâtre équestre Zingaro. From these encounters, she has drawn a rare sense of rigour in the selection, training and care of her horses.",
+      "paragraph2": "Her philosophy today: to pass on what she has received — the complete apprenticeship of the horse. From the youngest pony riders to advanced competitors, every rider finds their place at Fort Apache."
+    },
+    "WhyUs": {
+      "eyebrow": "What sets us apart",
+      "heading": "Why choose Fort Apache",
+      "subtitle": "An equestrian club unlike any other — by its history, its team, and its setting.",
+      "item1Title": "40 years of experience",
+      "item1Desc": "Over forty years welcoming families and sharing our love of horses, in a spirit of transmission and constant improvement.",
+      "item2Title": "An exceptional training",
+      "item2Desc": "Pénélope, founder, has worked alongside leading figures of the equestrian world, including the renowned Bartabas and his Théâtre équestre Zingaro.",
+      "item3Title": "Préalpes Natural Park",
+      "item3Desc": "An exceptional setting at the Col de Vence, 40 minutes from the sea, within a preserved regional natural park.",
+      "item4Title": "Open every day",
+      "item4Desc": "The club welcomes you all year round, from 10am to 5pm. Lessons, rides, camps — the choice is yours."
+    },
+    "BaladePoney": {
+      "imageAlt": "Pony ride at the Col de Vence",
+      "badge": "★ Signature activity",
+      "eyebrow": "Since 1975",
+      "heading": "Go on a pony ride",
+      "paragraph1Before": "This is the ",
+      "paragraph1Strong1": "favourite activity of families",
+      "paragraph1Middle": " at Fort Apache. We welcome children ",
+      "paragraph1Strong2": "from age 2",
+      "paragraph1After": " for rides through wild countryside, on marked trails in the heart of the Col de Vence.",
+      "paragraph2": "From 10 minutes to several hours: after a short safety briefing, you set off with your children on the back of a pony that you lead by hand. From Shetlands for the youngest to large ponies for teenagers.",
+      "bullet1": "Children welcome from age 2",
+      "bullet2": "CE-compliant helmets and safety stirrups provided",
+      "bullet3": "Ponies carefully selected for their gentleness, for over 40 years",
+      "bullet4": "In the heart of the Préalpes d'Azur Regional Natural Park",
+      "bullet5": "Open every day, from 10am to 5pm",
+      "cta": "Book a ride"
+    },
+    "FounderJourney": {
+      "eyebrow": "An exceptional journey",
+      "heading": "A founder trained by the masters of the discipline",
+      "quote": "Over a lifetime in the saddle, Pénélope had the chance to work with and for some of the most respected names in horse riding, including Bartabas and his renowned Théâtre équestre Zingaro.",
+      "paragraph": "From each of these encounters, she has drawn a rare sense of rigour in the selection, training and care of her horses. A philosophy she now passes on to every rider, from the youngest beginner to the advanced competitor.",
+      "link": "Meet the team and the club →"
+    },
+    "Activities": {
+      "eyebrow": "Our activities",
+      "heading": "Activities for every rider",
+      "subtitle": "Whether you are a complete beginner or an experienced rider, we offer an activity suited to your wishes and level.",
+      "card1": "Pony rides",
+      "card2": "Pony school",
+      "card3": "Group or private lessons",
+      "card4": "Trail rides",
+      "hover": "Learn more →"
+    },
+    "SocialWall": {
+      "eyebrow": "#FortApache · #ColDeVence",
+      "heading": "Follow the club",
+      "subtitle": "Photos, shared moments, behind-the-scenes and news — find us daily on our social media."
+    },
+    "Testimonials": {
+      "eyebrow": "They trust us",
+      "heading": "What our riders say",
+      "quote1": "You really learn everything about caring for a horse, not just riding. Whatever happens — feeding, illness — you know what to do.",
+      "name1": "A rider",
+      "role1": "Fort Apache student",
+      "quote2": "It's a club where coming here actually means something. You learn to know your horse, to understand horse riding. The horse truly matters.",
+      "name2": "A parent",
+      "role2": "France 3 — Television report",
+      "quote3": "When I'm having small problems, at school or with friends, I go see the horses. It helps me, it calms me down.",
+      "name3": "A young rider",
+      "role3": "France 3 — Television report"
+    },
+    "CTABanner": {
+      "heading": "Ready to saddle up? Get in touch",
+      "paragraph": "Our team is here to help you find the right programme — from the youngest pony rider to the seasoned competitor. Open every day from 10am to 5pm.",
+      "cta1": "Contact us",
+      "phone": "+33 4 93 58 91 43"
+    },
+    "MapEmbed": {
+      "ariaLabel": "Map and directions",
+      "eyebrow": "Come and see us",
+      "heading": "Find us",
+      "address": "75 route de Saint-Barnabé, Quartier Col de Vence, 06140 Vence",
+      "iframeTitle": "Map — Fort Apache Equestrian Club"
+    }
+  },
+  "Activities": {
+    "Metadata": {
+      "title": "Equestrian activities — Pony rides, lessons and camps",
+      "description": "All our activities at Fort Apache (Vence, 06140): family pony rides, group and private lessons, pony school, trail rides, school holiday camps and competition riding."
+    },
+    "Header": {
+      "overline": "Activities",
+      "title": "Find your equestrian passion",
+      "subtitle": "A range of activities for every age — from a family pony ride to competition-level training."
+    },
+    "Featured": {
+      "badge": "★ Signature activity",
+      "eyebrow": "Not to be missed",
+      "heading": "Pony rides",
+      "text": "The Fort Apache signature experience: guided pony rides in the heart of the Col de Vence. Ideal for families, even with no prior experience.",
+      "cta": "Book a ride"
+    },
+    "Cards": {
+      "groupLessonsTitle": "Group lessons",
+      "groupLessonsDesc": "Learn and progress in a group, in a friendly atmosphere. One-hour sessions by level.",
+      "privateLessonsTitle": "Private lessons",
+      "privateLessonsDesc": "A dedicated instructor just for you. Perfect for focused progress or returning to the saddle.",
+      "ponySchoolTitle": "Pony school",
+      "ponySchoolDesc": "For children aged 4 to 8: first contact with the pony, games, horse care and small courses.",
+      "trailRidesTitle": "Trail rides",
+      "trailRidesDesc": "For experienced riders: multi-hour or half-day rides along the trails of the Col de Vence.",
+      "campsTitle": "School holiday camps",
+      "campsDesc": "Autumn, Christmas, winter, Easter, summer: themed camps of 3 to 5 days for all levels.",
+      "boardingTitle": "Horse boarding",
+      "boardingDesc": "Looking to own your own horse or pony? Pénélope advises you on choosing, caring for, training and looking after your mount, with personalised follow-up.",
+      "competitionsTitle": "Competitions & disciplines",
+      "competitionsDesc": "Show jumping, dressage, cross-country, Western riding, side-saddle, driving, vaulting, skijoring, horse-ball — at Fort Apache, you practise the discipline you love.",
+      "learnMore": "Learn more →"
+    },
+    "CtaBanner": {
+      "heading": "Interested in an activity?",
+      "paragraph": "Get in touch so we can discuss and find the right programme for you.",
+      "cta": "Contact us"
+    }
+  },
+  "Pricing": {
+    "Metadata": {
+      "title": "Pricing — Lessons, camps and yearly packages",
+      "description": "Discover Fort Apache's pricing: weekly lessons, annual packages, camps and private lessons. Complete transparency."
+    },
+    "Header": {
+      "overline": "Pricing",
+      "title": "Clear and transparent pricing",
+      "subtitle": "Find all our rates here. Our team remains at your disposal for any further information."
+    },
+    "Tables": {
+      "programme": "Programme",
+      "age": "Age",
+      "price": "Price"
+    },
+    "Block1": {
+      "header": "Rates per session",
+      "row1Label": "Pony school (baby pony)",
+      "row1Age": "Ages 4–6",
+      "row1Price": "€20 per session",
+      "row2Label": "Child half-day",
+      "row2Age": "From age 6",
+      "row2Price": "€25",
+      "row3Label": "Child full day",
+      "row3Age": "From age 6",
+      "row3Price": "€38",
+      "row4Label": "Adult per session",
+      "row4Age": "—",
+      "row4Price": "€20",
+      "row5Label": "Private lesson",
+      "row5Age": "All ages",
+      "row5Price": "€50 per session"
+    },
+    "Block2": {
+      "header": "Monthly pass",
+      "intro": "4 sessions to be used within the month.",
+      "row1Label": "Child half-day",
+      "row1Price": "€92",
+      "row2Label": "Child full day",
+      "row2Price": "€140",
+      "row3Label": "Adult",
+      "row3Price": "€92"
+    },
+    "Block3": {
+      "header": "Quarterly package",
+      "intro": "10 sessions + 1 free session, to be used over the quarter.",
+      "row1Label": "Quarter child half-day",
+      "row1Price": "€230",
+      "row2Label": "Quarter child full day",
+      "row2Price": "€350",
+      "row3Label": "Quarter adult",
+      "row3Price": "€180"
+    },
+    "Block4": {
+      "header": "Annual package",
+      "row1Label": "Year child half-day",
+      "row1Price": "€600",
+      "row2Label": "Year child full day",
+      "row2Price": "€900",
+      "row3Label": "Year adult",
+      "row3Price": "€600"
+    },
+    "Block5": {
+      "header": "FFE Licence",
+      "strong1": "Compulsory FFE licence",
+      "intro": "The licence is required to practise horse riding in a club. It is paid directly to the French Equestrian Federation (not kept by Fort Apache).",
+      "childLabel": "Child licence",
+      "childValue": "€29",
+      "adultLabel": "Adult licence",
+      "adultValue": "€40",
+      "noFee": "No club membership fee.",
+      "noFeeDesc": "Fort Apache does not charge annual membership fees."
+    },
+    "Block6": {
+      "header": "Payment options",
+      "strong": "Payment plans",
+      "text": "Up to 6 interest-free instalments available. Cheques accepted, monthly drawdowns.",
+      "contact": "For any question, contact us at"
+    },
+    "FinalCta": "Sign up"
+  },
+  "Contact": {
+    "Metadata": {
+      "title": "Contact — Book an appointment",
+      "description": "Contact Fort Apache for registration, a camp, a private lesson or any enquiry. Our team will get back to you quickly."
+    },
+    "PageHeader": {
+      "overline": "Contact",
+      "title": "Let's talk about your equestrian project",
+      "subtitle": "A question, a registration, a camp to plan? We'll reply as quickly as possible."
+    },
+    "LeftColumn": {
+      "heading": "Get in touch",
+      "phoneLabel": "Phone",
+      "emailLabel": "Email",
+      "addressLabel": "Address",
+      "addressLine1": "75 route de Saint-Barnabé, Quartier Col de Vence",
+      "addressLine2": "06140 Vence",
+      "hoursHeading": "Opening hours",
+      "hoursLine": "Every day — 10am to 5pm"
+    },
+    "Form": {
+      "ariaLabel": "Contact form",
+      "Labels": {
+        "firstName": "First name",
+        "lastName": "Last name",
+        "email": "Email",
+        "phone": "Phone",
+        "riderAge": "Rider's age",
+        "riderAgeHelper": "For minors, parental authorisation will be required.",
+        "level": "Level",
+        "subject": "Subject",
+        "message": "Your message",
+        "website": "Website"
+      },
+      "Placeholders": {
+        "level": "Choose a level",
+        "subject": "Choose a subject",
+        "message": "Tell us about your equestrian project…"
+      },
+      "Errors": {
+        "firstNameShort": "First name too short",
+        "lastNameShort": "Last name too short",
+        "emailInvalid": "Invalid email",
+        "phoneShort": "Phone number too short",
+        "phoneInvalid": "Invalid phone number",
+        "serverError": "Unable to send",
+        "unknownError": "An error occurred"
+      },
+      "LevelOptions": {
+        "beginner": "Beginner",
+        "basic": "Basic notions",
+        "intermediate": "Intermediate",
+        "advanced": "Advanced",
+        "unsure": "Not sure"
+      },
+      "SubjectOptions": {
+        "lessonsRegistration": "Lessons registration",
+        "holidayCamp": "Holiday camp",
+        "privateLesson": "Private lesson",
+        "generalEnquiry": "General enquiry",
+        "other": "Other"
+      },
+      "Buttons": {
+        "submitNormal": "Send my request",
+        "submitSending": "Sending…",
+        "requiredNotice": "Fields marked with * are required."
+      },
+      "SuccessScreen": {
+        "heading": "Thank you for your message",
+        "paragraph": "We will get back to you as soon as possible.",
+        "resetButton": "Send another message"
+      }
+    }
+  }
+}
