@@ -8,13 +8,6 @@ import { navItems, siteConfig } from '@/lib/site-config';
 import { LinkButton } from '@/components/ui/Button';
 import { LanguageSwitcher } from '@/components/layout/LanguageSwitcher';
 
-const enNavItems = [
-  { href: '/en', label: 'Home' },
-  { href: '/en/activities', label: 'Activities' },
-  { href: '/en/pricing', label: 'Pricing' },
-  { href: '/en/contact', label: 'Contact us' },
-] as const;
-
 export function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -26,8 +19,19 @@ export function Header() {
   const contactHref = isEn ? '/en/contact' : '/contact';
   const homeHref = isEn ? '/en' : '/';
 
+  const enNavItems: ReadonlyArray<{ href: string; label: string }> = [
+    { href: '/en', label: tHeader('home') },
+    { href: '/le-club', label: tHeader('theClub') },
+    { href: '/en/activities', label: tHeader('activities') },
+    { href: '/cours', label: tHeader('lessons') },
+    { href: '/stages', label: tHeader('camps') },
+    { href: '/en/pricing', label: tHeader('pricing') },
+    { href: '/galerie', label: tHeader('gallery') },
+    { href: '/actualites', label: tHeader('blog') },
+  ];
+
   const items: ReadonlyArray<{ href: string; label: string }> = isEn
-    ? enNavItems.filter((item) => item.href !== '/en/contact')
+    ? enNavItems
     : navItems.map((item) => ({ href: item.href, label: item.label }));
 
   useEffect(() => {
