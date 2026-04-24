@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import { useLocale, useTranslations } from 'next-intl';
-import { navItems, siteConfig } from '@/lib/site-config';
+import { navItems as frNavItems, siteConfig } from '@/lib/site-config';
 import { LinkButton } from '@/components/ui/Button';
 import { LanguageSwitcher } from '@/components/layout/LanguageSwitcher';
 
@@ -18,21 +18,22 @@ export function Header() {
 
   const contactHref = isEn ? '/en/contact' : '/contact';
   const homeHref = isEn ? '/en' : '/';
-
-  const enNavItems: ReadonlyArray<{ href: string; label: string }> = [
-    { href: '/en', label: tHeader('home') },
-    { href: '/le-club', label: tHeader('theClub') },
-    { href: '/en/activities', label: tHeader('activities') },
-    { href: '/cours', label: tHeader('lessons') },
-    { href: '/stages', label: tHeader('camps') },
-    { href: '/en/pricing', label: tHeader('pricing') },
-    { href: '/galerie', label: tHeader('gallery') },
-    { href: '/actualites', label: tHeader('blog') },
-  ];
+  const contactCta = isEn ? tHeader('contactCta') : 'Nous contacter';
+  const openMenuLabel = isEn ? tHeader('openMenu') : 'Ouvrir le menu';
+  const closeMenuLabel = isEn ? tHeader('closeMenu') : 'Fermer le menu';
 
   const items: ReadonlyArray<{ href: string; label: string }> = isEn
-    ? enNavItems
-    : navItems.map((item) => ({ href: item.href, label: item.label }));
+    ? [
+        { href: '/en', label: tHeader('home') },
+        { href: '/le-club', label: tHeader('theClub') },
+        { href: '/en/activities', label: tHeader('activities') },
+        { href: '/cours', label: tHeader('lessons') },
+        { href: '/stages', label: tHeader('camps') },
+        { href: '/en/pricing', label: tHeader('pricing') },
+        { href: '/galerie', label: tHeader('gallery') },
+        { href: '/actualites', label: tHeader('blog') },
+      ]
+    : frNavItems.map((item) => ({ href: item.href, label: item.label }));
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -97,22 +98,14 @@ export function Header() {
             })}
             <LanguageSwitcher className="ml-1" />
             <LinkButton href={contactHref} variant="primary" size="sm">
-              {isEn ? tHeader('contactCta') : 'Nous contacter'}
+              {contactCta}
             </LinkButton>
           </nav>
 
           <button
             type="button"
             className="lg:hidden relative z-[70] p-2 -mr-2 text-foret-dark"
-            aria-label={
-              open
-                ? isEn
-                  ? tHeader('closeMenu')
-                  : 'Fermer le menu'
-                : isEn
-                  ? tHeader('openMenu')
-                  : 'Ouvrir le menu'
-            }
+            aria-label={open ? closeMenuLabel : openMenuLabel}
             aria-expanded={open}
             aria-controls="mobile-menu"
             onClick={() => setOpen((v) => !v)}
@@ -187,7 +180,7 @@ export function Header() {
               className="w-full"
               onClick={() => setOpen(false)}
             >
-              {isEn ? tHeader('contactCta') : 'Nous contacter'}
+              {contactCta}
             </LinkButton>
           </div>
         </nav>
