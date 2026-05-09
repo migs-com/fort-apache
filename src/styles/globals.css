@@ -3,23 +3,18 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --font-serif: 'Cormorant Garamond', Georgia, serif;
-    --font-sans: 'DM Sans', system-ui, sans-serif;
-  }
-
   html {
     scroll-behavior: smooth;
   }
 
   body {
-    @apply bg-creme text-charbon font-sans antialiased;
+    @apply bg-cream text-midnight font-sans antialiased;
   }
 
   h1,
   h2,
   h3 {
-    @apply font-serif tracking-tight;
+    @apply font-display font-bold tracking-tight;
   }
 
   h1 {
@@ -51,15 +46,15 @@
   .prose-fort h1,
   .prose-fort h2,
   .prose-fort h3 {
-    @apply font-serif text-foret-dark mt-8 mb-4;
+    @apply font-display text-midnight mt-8 mb-4;
   }
 
   .prose-fort p {
-    @apply mb-4 text-charbon/90;
+    @apply mb-4 text-midnight/90;
   }
 
   .prose-fort a {
-    @apply text-bordeaux underline decoration-bordeaux/30 hover:decoration-bordeaux;
+    @apply text-terracotta underline decoration-terracotta/30 hover:decoration-terracotta;
   }
 
   .prose-fort ul {
@@ -71,7 +66,7 @@
   }
 
   .prose-fort blockquote {
-    @apply border-l-4 border-bordeaux pl-4 italic text-charbon/80 my-4;
+    @apply border-l-4 border-terracotta pl-4 italic text-midnight/80 my-4;
   }
 
   .prose-fort img {
