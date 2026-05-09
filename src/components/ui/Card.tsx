@@ -12,9 +12,11 @@ export function Card({
   ...props
 }: CardProps) {
   const variants = {
-    default: 'bg-white',
-    elevated: 'bg-white shadow-lg hover:shadow-xl transition-shadow',
-    bordered: 'bg-white border border-sable/40',
+    default:
+      'bg-cream border border-sage/30 shadow-sm hover:shadow-md transition-shadow duration-200',
+    elevated:
+      'bg-cream border border-sage/30 shadow-md hover:shadow-lg transition-shadow duration-200',
+    bordered: 'bg-cream border border-sage/30',
   };
 
   return (
@@ -45,7 +47,7 @@ export function CardTitle({
   className?: string;
 }) {
   return (
-    <h3 className={`font-serif text-2xl text-foret-dark mb-2 ${className}`}>
+    <h3 className={`font-display text-midnight font-bold text-xl mb-2 ${className}`}>
       {children}
     </h3>
   );
