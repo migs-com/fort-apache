@@ -43,7 +43,7 @@ export function SocialWall({ locale }: SocialWallProps) {
 
         <div className="text-center mt-10">
           <a
-            href="https://www.instagram.com/fort.apache.equitation.vence"
+            href="https://www.instagram.com/fort.apache.equitation.vence/"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-terracotta hover:bg-terracotta-dark text-cream font-bold px-6 py-3 rounded-md transition-colors"
