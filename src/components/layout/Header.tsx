@@ -16,6 +16,32 @@ function isEnPath(pathname: string): boolean {
   return pathname === '/en' || pathname.startsWith('/en/');
 }
 
+function useScrolled(threshold: number): boolean {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    let rafId: number | null = null;
+
+    const handleScroll = () => {
+      if (rafId !== null) return;
+      rafId = requestAnimationFrame(() => {
+        setIsScrolled(window.scrollY > threshold);
+        rafId = null;
+      });
+    };
+
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (rafId !== null) cancelAnimationFrame(rafId);
+    };
+  }, [threshold]);
+
+  return isScrolled;
+}
+
 const enItems: ReadonlyArray<{ href: string; label: string }> = [
   { href: '/en', label: 'Home' },
   { href: '/le-club', label: 'The Club' },
@@ -29,9 +55,10 @@ const enItems: ReadonlyArray<{ href: string; label: string }> = [
 
 export function Header() {
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
   const isEn = isEnPath(pathname);
+  const scrolled = useScrolled(20);
+  const isScrolledLogo = useScrolled(50);
 
   const contactHref = isEn ? '/en/contact' : '/contact';
   const homeHref = isEn ? '/en' : '/';
@@ -42,13 +69,6 @@ export function Header() {
   const items: ReadonlyArray<{ href: string; label: string }> = isEn
     ? enItems
     : frNavItems.map((item) => ({ href: item.href, label: item.label }));
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
 
   useEffect(() => {
     setOpen(false);
@@ -75,7 +95,11 @@ export function Header() {
             : 'bg-cream/70 backdrop-blur-sm'
         }`}
       >
-        <div className="container mx-auto flex items-center justify-between py-4">
+        <div
+          className={`container mx-auto flex items-center justify-between py-4 transition-all duration-300 ease-out motion-reduce:transition-none ${
+            isScrolledLogo ? '' : 'lg:py-6'
+          }`}
+        >
           <Link
             href={homeHref}
             className="flex items-center"
@@ -84,10 +108,12 @@ export function Header() {
             <Image
               src="/logos/logo-horizontal-b.svg"
               alt="Fort Apache — Équitation Vence"
-              width={137}
-              height={56}
+              width={200}
+              height={82}
               priority
-              className="hidden lg:block h-14 w-auto"
+              className={`hidden lg:block w-auto transition-all duration-300 ease-out motion-reduce:transition-none ${
+                isScrolledLogo ? 'h-14' : 'h-20'
+              }`}
             />
             <Image
               src="/logos/logo-original.svg"
