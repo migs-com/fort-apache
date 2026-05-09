@@ -2,10 +2,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { getLocale } from 'next-intl/server';
 import { LinkButton } from '@/components/ui/Button';
-import { ffeImages } from '@/lib/images';
-
-// TODO V1.5: Remplacer par photo officielle Fort Apache fournie par Pénélope
-// Photo actuelle conservée à titre provisoire pour cohérence visuelle FR/EN
 
 const FR = {
   eyebrow: 'Club équestre — Vence · Col de Vence',
@@ -42,7 +38,7 @@ export async function Hero() {
     <section className="relative min-h-[70vh] md:min-h-[80vh] flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0">
         <Image
-          src={ffeImages.top3}
+          src="/photos/hero-fort-apache.jpg"
           alt={t.alt}
           fill
           priority
