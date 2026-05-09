@@ -3,9 +3,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { getTranslations } from 'next-intl/server';
 import { Hero } from '@/components/home/Hero';
+import { SocialWall } from '@/components/home/SocialWall';
 import { LinkButton } from '@/components/ui/Button';
 import { ffeImages } from '@/lib/images';
-import { socialWallPosts } from '@/lib/social-wall';
 import { siteConfig } from '@/lib/site-config';
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -293,74 +293,6 @@ async function ActivitiesGridEN() {
   );
 }
 
-async function SocialWallEN() {
-  const t = await getTranslations('Home.SocialWall');
-  const { facebook, instagram } = siteConfig.socials;
-
-  return (
-    <section className="section bg-creme" id="social-wall">
-      <div className="container mx-auto">
-        <div className="text-center mb-10 md:mb-12">
-          <p className="font-sans uppercase tracking-[0.25em] text-bordeaux text-xs mb-3">
-            {t('eyebrow')}
-          </p>
-          <h2 className="text-foret-dark mb-4">{t('heading')}</h2>
-          <p className="max-w-2xl mx-auto text-charbon/75 mb-6">
-            {t('subtitle')}
-          </p>
-          <div className="flex justify-center gap-3">
-            {instagram && (
-              <a
-                href={instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2.5 bg-foret-dark text-white rounded-full hover:bg-foret transition text-sm font-medium"
-              >
-                @fortapache06
-              </a>
-            )}
-            {facebook && (
-              <a
-                href={facebook}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2.5 bg-foret-dark text-white rounded-full hover:bg-foret transition text-sm font-medium"
-              >
-                Fort Apache
-              </a>
-            )}
-          </div>
-        </div>
-
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
-          {socialWallPosts.map((post) => (
-            <a
-              key={post.id}
-              href={post.link ?? '#'}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative aspect-square overflow-hidden rounded-lg bg-foret-dark"
-            >
-              <Image
-                src={post.image}
-                alt={post.caption}
-                fill
-                sizes="(min-width: 768px) 33vw, 50vw"
-                className="object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-charbon/0 group-hover:bg-charbon/75 transition-colors duration-300 flex items-end p-4">
-                <p className="text-white text-xs md:text-sm leading-snug opacity-0 group-hover:opacity-100 transition-opacity duration-300 line-clamp-4">
-                  {post.caption}
-                </p>
-              </div>
-            </a>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
 async function TestimonialsEN() {
   const t = await getTranslations('Home.Testimonials');
   const items = [
@@ -472,7 +404,6 @@ export default async function HomeENPage() {
     balade,
     founder,
     activities,
-    social,
     testimonials,
     cta,
     map,
@@ -482,7 +413,6 @@ export default async function HomeENPage() {
     BaladePoneyEN(),
     FounderJourneyEN(),
     ActivitiesGridEN(),
-    SocialWallEN(),
     TestimonialsEN(),
     CTABannerEN(),
     MapEmbedEN(),
@@ -496,7 +426,7 @@ export default async function HomeENPage() {
       {balade}
       {founder}
       {activities}
-      {social}
+      <SocialWall locale="en" />
       {testimonials}
       {cta}
       {map}
