@@ -22,8 +22,8 @@ export const siteConfig = {
     },
   },
   socials: {
-    facebook: 'https://www.facebook.com/fortapache06' as string | null,
-    instagram: 'https://www.instagram.com/fortapache06' as string | null,
+    facebook: 'https://www.facebook.com/profile.php?id=61570761456647' as string | null,
+    instagram: 'https://www.instagram.com/fort.apache.equitation.vence/' as string | null,
   },
   openingHours: [
     { day: 'Tous les jours', hours: '10h — 17h' },

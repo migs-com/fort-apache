@@ -63,7 +63,7 @@ export default function HomePage() {
 
       <Activites />
 
-      <SocialWall />
+      <SocialWall locale="fr" />
 
       <Testimonials />
 

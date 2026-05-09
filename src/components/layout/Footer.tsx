@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { getLocale, getTranslations } from 'next-intl/server';
 import { navItems, siteConfig } from '@/lib/site-config';
@@ -24,35 +25,41 @@ export async function Footer() {
       ];
 
   return (
-    <footer className="bg-foret-dark text-creme mt-24">
+    <footer className="bg-midnight text-cream mt-24 border-t border-cream/10">
       <div className="container mx-auto py-16 grid gap-12 md:grid-cols-4">
         <div className="md:col-span-2">
-          <p className="font-serif text-3xl text-white mb-3">Fort Apache</p>
-          <p className="text-creme/80 max-w-sm leading-relaxed">
+          <Image
+            src="/logos/logo-vertical-blanc.svg"
+            alt="Fort Apache — Club Équestre"
+            width={91}
+            height={100}
+            className="h-24 w-auto mb-4"
+          />
+          <p className="text-cream/80 max-w-sm leading-relaxed">
             {isEn
               ? tFooter!('presentation')
               : 'Club équestre pour tous les niveaux. Cours, stages, balades à poney et randonnées au cœur des Alpes-Maritimes, à Vence.'}
           </p>
-          <p className="mt-6 text-sm text-sable-light">
+          <p className="mt-6 text-sm text-cream/70">
             {isEn
               ? tFooter!('hours')
               : 'Ouvert tous les jours — de 10h à 17h'}
           </p>
           {(siteConfig.socials.facebook || siteConfig.socials.instagram) && (
             <div className="mt-6 flex items-center gap-3">
-              <span className="text-xs uppercase tracking-wide text-creme/60">
+              <span className="text-xs uppercase tracking-wide text-cream/60">
                 {isEn ? tFooter!('followUs') : 'Suivez-nous'}
               </span>
               {siteConfig.socials.facebook && (
                 <a
                   href={siteConfig.socials.facebook}
-                  className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 transition"
+                  className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-cream/10 hover:bg-cream/20 transition"
                   aria-label="Facebook Fort Apache"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <svg
-                    className="w-4 h-4 text-white"
+                    className="w-4 h-4 text-cream"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                     aria-hidden="true"
@@ -64,13 +71,13 @@ export async function Footer() {
               {siteConfig.socials.instagram && (
                 <a
                   href={siteConfig.socials.instagram}
-                  className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 transition"
+                  className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-cream/10 hover:bg-cream/20 transition"
                   aria-label="Instagram Fort Apache"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <svg
-                    className="w-4 h-4 text-white"
+                    className="w-4 h-4 text-cream"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                     aria-hidden="true"
@@ -88,7 +95,7 @@ export async function Footer() {
         </div>
 
         <div>
-          <h4 className="font-serif text-lg text-white mb-4">
+          <h4 className="font-display font-bold text-lg text-cream mb-4">
             {isEn ? tFooter!('navTitle') : 'Navigation'}
           </h4>
           <ul className="space-y-2">
@@ -96,7 +103,7 @@ export async function Footer() {
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className="text-sm text-creme/80 hover:text-white transition"
+                  className="text-sm text-cream hover:text-sage transition"
                 >
                   {item.label}
                 </Link>
@@ -106,10 +113,10 @@ export async function Footer() {
         </div>
 
         <div>
-          <h4 className="font-serif text-lg text-white mb-4">
+          <h4 className="font-display font-bold text-lg text-cream mb-4">
             {isEn ? tFooter!('findUsTitle') : 'Nous trouver'}
           </h4>
-          <address className="not-italic text-sm text-creme/80 space-y-1">
+          <address className="not-italic text-sm text-cream/80 space-y-1">
             <p>
               {isEn
                 ? tFooter!('street')
@@ -123,7 +130,7 @@ export async function Footer() {
             <p className="pt-2">
               <a
                 href={`tel:${siteConfig.contact.phone.replace(/\s/g, '')}`}
-                className="hover:text-white transition"
+                className="hover:text-sage transition"
               >
                 {siteConfig.contact.phoneDisplay}
               </a>
@@ -131,7 +138,7 @@ export async function Footer() {
             <p>
               <a
                 href={`mailto:${siteConfig.contact.email}`}
-                className="hover:text-white transition"
+                className="hover:text-sage transition"
               >
                 {siteConfig.contact.email}
               </a>
@@ -140,8 +147,8 @@ export async function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-white/10">
-        <div className="container mx-auto py-6 flex flex-col md:flex-row gap-2 md:items-center md:justify-between text-xs text-creme/60">
+      <div className="border-t border-cream/10">
+        <div className="container mx-auto py-6 flex flex-col md:flex-row gap-2 md:items-center md:justify-between text-xs text-cream/60">
           <p>
             {isEn
               ? tFooter!('copyright', { year })

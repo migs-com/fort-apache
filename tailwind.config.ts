@@ -9,31 +9,54 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // Charte Fort Apache (Laurence — Mig's Communication)
+        sage: {
+          DEFAULT: '#A4B49E',
+          dark: '#8B9C85',
+        },
+        midnight: {
+          DEFAULT: '#3E515D',
+          dark: '#2A3942',
+        },
+        cream: {
+          DEFAULT: '#F8F4E8',
+          dark: '#EDE6D2',
+        },
+        terracotta: {
+          DEFAULT: '#C1643D',
+          dark: '#A55333',
+        },
+
+        // Alias rétro-compatibles : remappent les anciennes clés vers la
+        // palette charte pour éviter les régressions visuelles sur les
+        // composants/pages non explicitement réécrits dans cette V1.
         foret: {
-          DEFAULT: '#2C4A2E',
-          light: '#3D6B40',
-          dark: '#1A2E1B',
+          DEFAULT: '#3E515D',
+          light: '#4D6573',
+          dark: '#3E515D',
         },
         sable: {
-          DEFAULT: '#C9B99A',
-          light: '#E8DCC8',
-          dark: '#A89070',
+          DEFAULT: '#A4B49E',
+          light: '#C5D1C0',
+          dark: '#8B9C85',
         },
         bordeaux: {
-          DEFAULT: '#7B2D3E',
-          light: '#9E3D52',
-          dark: '#5A1F2C',
+          DEFAULT: '#C1643D',
+          light: '#D17850',
+          dark: '#A55333',
         },
         creme: {
-          DEFAULT: '#F5F0E8',
+          DEFAULT: '#F8F4E8',
         },
         charbon: {
-          DEFAULT: '#1C1C1C',
+          DEFAULT: '#3E515D',
         },
       },
       fontFamily: {
-        serif: ['var(--font-serif)', 'Georgia', 'serif'],
-        sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
+        display: ['var(--font-roboto)', 'system-ui', 'sans-serif'],
+        sans: ['system-ui', '-apple-system', 'sans-serif'],
+        // Alias rétro-compat : mappe l'ancien font-serif vers Roboto charte.
+        serif: ['var(--font-roboto)', 'system-ui', 'sans-serif'],
       },
       container: {
         center: true,

@@ -2,9 +2,10 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { getTranslations } from 'next-intl/server';
+import { Hero } from '@/components/home/Hero';
+import { SocialWall } from '@/components/home/SocialWall';
 import { LinkButton } from '@/components/ui/Button';
 import { ffeImages } from '@/lib/images';
-import { socialWallPosts } from '@/lib/social-wall';
 import { siteConfig } from '@/lib/site-config';
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -33,74 +34,6 @@ export async function generateMetadata(): Promise<Metadata> {
 
 const iconCls = 'w-12 h-12 text-bordeaux';
 const activityIconCls = 'w-10 h-10 text-foret group-hover:text-bordeaux transition';
-
-async function HeroEN() {
-  const t = await getTranslations('Home.Hero');
-  return (
-    <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0">
-        <Image
-          src={ffeImages.top3}
-          alt="Fort Apache — Equestrian Club"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-charbon/50" aria-hidden="true" />
-        <div
-          className="absolute inset-0 bg-gradient-to-t from-charbon/70 via-charbon/20 to-transparent"
-          aria-hidden="true"
-        />
-      </div>
-
-      <div className="relative z-10 container mx-auto text-center text-white px-4 py-24">
-        <p className="font-sans uppercase tracking-[0.3em] text-sable-light text-xs md:text-sm mb-6 animate-fade-in">
-          {t('eyebrow')}
-        </p>
-        <h1 className="font-serif text-white mb-6 animate-slide-up max-w-4xl mx-auto">
-          {t('h1Line1')} <br className="hidden md:block" />
-          {t('h1Line2')}
-        </h1>
-        <p className="text-lg md:text-xl text-creme/90 max-w-2xl mx-auto mb-10 font-light animate-slide-up">
-          {t('subtitle')}
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up">
-          <LinkButton
-            href="/en/contact?objet=Renseignements"
-            variant="primary"
-            size="lg"
-          >
-            {t('primaryCta')}
-          </LinkButton>
-          <Link
-            href="/en/activities"
-            className="text-white underline underline-offset-4 decoration-sable hover:decoration-white transition"
-          >
-            {t('secondaryCta')}
-          </Link>
-        </div>
-      </div>
-
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/70 animate-bounce">
-        <svg
-          className="w-6 h-6"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-          aria-hidden="true"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M19 14l-7 7m0 0l-7-7m7 7V3"
-          />
-        </svg>
-      </div>
-    </section>
-  );
-}
 
 async function IntroEN() {
   const t = await getTranslations('Home.Intro');
@@ -360,74 +293,6 @@ async function ActivitiesGridEN() {
   );
 }
 
-async function SocialWallEN() {
-  const t = await getTranslations('Home.SocialWall');
-  const { facebook, instagram } = siteConfig.socials;
-
-  return (
-    <section className="section bg-creme" id="social-wall">
-      <div className="container mx-auto">
-        <div className="text-center mb-10 md:mb-12">
-          <p className="font-sans uppercase tracking-[0.25em] text-bordeaux text-xs mb-3">
-            {t('eyebrow')}
-          </p>
-          <h2 className="text-foret-dark mb-4">{t('heading')}</h2>
-          <p className="max-w-2xl mx-auto text-charbon/75 mb-6">
-            {t('subtitle')}
-          </p>
-          <div className="flex justify-center gap-3">
-            {instagram && (
-              <a
-                href={instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2.5 bg-foret-dark text-white rounded-full hover:bg-foret transition text-sm font-medium"
-              >
-                @fortapache06
-              </a>
-            )}
-            {facebook && (
-              <a
-                href={facebook}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2.5 bg-foret-dark text-white rounded-full hover:bg-foret transition text-sm font-medium"
-              >
-                Fort Apache
-              </a>
-            )}
-          </div>
-        </div>
-
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
-          {socialWallPosts.map((post) => (
-            <a
-              key={post.id}
-              href={post.link ?? '#'}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative aspect-square overflow-hidden rounded-lg bg-foret-dark"
-            >
-              <Image
-                src={post.image}
-                alt={post.caption}
-                fill
-                sizes="(min-width: 768px) 33vw, 50vw"
-                className="object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-charbon/0 group-hover:bg-charbon/75 transition-colors duration-300 flex items-end p-4">
-                <p className="text-white text-xs md:text-sm leading-snug opacity-0 group-hover:opacity-100 transition-opacity duration-300 line-clamp-4">
-                  {post.caption}
-                </p>
-              </div>
-            </a>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
 async function TestimonialsEN() {
   const t = await getTranslations('Home.Testimonials');
   const items = [
@@ -534,24 +399,20 @@ async function MapEmbedEN() {
 
 export default async function HomeENPage() {
   const [
-    hero,
     intro,
     whyUs,
     balade,
     founder,
     activities,
-    social,
     testimonials,
     cta,
     map,
   ] = await Promise.all([
-    HeroEN(),
     IntroEN(),
     WhyUsEN(),
     BaladePoneyEN(),
     FounderJourneyEN(),
     ActivitiesGridEN(),
-    SocialWallEN(),
     TestimonialsEN(),
     CTABannerEN(),
     MapEmbedEN(),
@@ -559,13 +420,13 @@ export default async function HomeENPage() {
 
   return (
     <>
-      {hero}
+      <Hero />
       {intro}
       {whyUs}
       {balade}
       {founder}
       {activities}
-      {social}
+      <SocialWall locale="en" />
       {testimonials}
       {cta}
       {map}

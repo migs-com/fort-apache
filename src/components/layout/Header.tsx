@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
@@ -15,6 +16,32 @@ function isEnPath(pathname: string): boolean {
   return pathname === '/en' || pathname.startsWith('/en/');
 }
 
+function useScrolled(threshold: number): boolean {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    let rafId: number | null = null;
+
+    const handleScroll = () => {
+      if (rafId !== null) return;
+      rafId = requestAnimationFrame(() => {
+        setIsScrolled(window.scrollY > threshold);
+        rafId = null;
+      });
+    };
+
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (rafId !== null) cancelAnimationFrame(rafId);
+    };
+  }, [threshold]);
+
+  return isScrolled;
+}
+
 const enItems: ReadonlyArray<{ href: string; label: string }> = [
   { href: '/en', label: 'Home' },
   { href: '/le-club', label: 'The Club' },
@@ -28,9 +55,10 @@ const enItems: ReadonlyArray<{ href: string; label: string }> = [
 
 export function Header() {
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
   const isEn = isEnPath(pathname);
+  const scrolled = useScrolled(20);
+  const isScrolledLogo = useScrolled(50);
 
   const contactHref = isEn ? '/en/contact' : '/contact';
   const homeHref = isEn ? '/en' : '/';
@@ -41,13 +69,6 @@ export function Header() {
   const items: ReadonlyArray<{ href: string; label: string }> = isEn
     ? enItems
     : frNavItems.map((item) => ({ href: item.href, label: item.label }));
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
 
   useEffect(() => {
     setOpen(false);
@@ -70,17 +91,38 @@ export function Header() {
       <header
         className={`sticky top-0 z-50 transition-all duration-300 ${
           scrolled
-            ? 'bg-creme/90 backdrop-blur-md shadow-sm'
-            : 'bg-creme/70 backdrop-blur-sm'
+            ? 'bg-cream/90 backdrop-blur-md shadow-sm'
+            : 'bg-cream/70 backdrop-blur-sm'
         }`}
       >
-        <div className="container mx-auto flex items-center justify-between py-4">
+        <div
+          className={`container mx-auto flex items-center justify-between py-4 transition-all duration-300 ease-out motion-reduce:transition-none ${
+            isScrolledLogo ? '' : 'lg:py-6'
+          }`}
+        >
           <Link
             href={homeHref}
-            className="font-serif text-2xl md:text-3xl font-semibold text-foret-dark tracking-tight"
+            className="flex items-center"
             aria-label={siteConfig.fullName}
           >
-            Fort Apache
+            <Image
+              src="/logos/logo-horizontal-b.svg"
+              alt="Fort Apache — Équitation Vence"
+              width={200}
+              height={82}
+              priority
+              className={`hidden lg:block w-auto transition-all duration-300 ease-out motion-reduce:transition-none ${
+                isScrolledLogo ? 'h-14' : 'h-20'
+              }`}
+            />
+            <Image
+              src="/logos/logo-original.svg"
+              alt="Fort Apache — Équitation Vence"
+              width={63}
+              height={44}
+              priority
+              className="lg:hidden h-11 w-auto"
+            />
           </Link>
 
           <nav
@@ -95,8 +137,8 @@ export function Header() {
                   href={item.href}
                   className={`text-sm font-medium transition-colors ${
                     active
-                      ? 'text-bordeaux'
-                      : 'text-charbon hover:text-bordeaux'
+                      ? 'text-terracotta'
+                      : 'text-midnight hover:text-terracotta'
                   }`}
                 >
                   {item.label}
@@ -111,7 +153,7 @@ export function Header() {
 
           <button
             type="button"
-            className="lg:hidden relative z-[70] p-2 -mr-2 text-foret-dark"
+            className="lg:hidden relative z-[70] p-2 -mr-2 text-midnight"
             aria-label={open ? closeMenuLabel : openMenuLabel}
             aria-expanded={open}
             aria-controls="mobile-menu"
@@ -148,7 +190,7 @@ export function Header() {
           au header ~72px et non au viewport). */}
       <div
         id="mobile-menu"
-        className={`lg:hidden fixed inset-0 z-[60] bg-creme transition-transform duration-300 ease-out ${
+        className={`lg:hidden fixed inset-0 z-[60] bg-cream transition-transform duration-300 ease-out ${
           open ? 'translate-x-0' : 'translate-x-full'
         }`}
         aria-hidden={!open}
@@ -164,8 +206,8 @@ export function Header() {
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className={`block py-4 text-xl font-serif border-b border-sable/30 ${
-                  active ? 'text-bordeaux' : 'text-foret-dark'
+                className={`block py-4 text-xl font-display border-b border-sage/30 ${
+                  active ? 'text-terracotta' : 'text-midnight'
                 }`}
               >
                 {item.label}

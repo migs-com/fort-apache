@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Cormorant_Garamond, DM_Sans } from 'next/font/google';
+import { Roboto } from 'next/font/google';
 import Script from 'next/script';
 import { headers } from 'next/headers';
 import { NextIntlClientProvider } from 'next-intl';
@@ -11,16 +11,10 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { siteConfig } from '@/lib/site-config';
 import { detectLocaleFromPathname } from '@/i18n/request';
 
-const serif = Cormorant_Garamond({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  variable: '--font-serif',
-  display: 'swap',
-});
-
-const sans = DM_Sans({
-  subsets: ['latin'],
-  variable: '--font-sans',
+const roboto = Roboto({
+  subsets: ['latin', 'latin-ext'],
+  weight: ['400', '700'],
+  variable: '--font-roboto',
   display: 'swap',
 });
 
@@ -71,10 +65,19 @@ export const metadata: Metadata = {
   alternates: {
     canonical: siteConfig.url,
   },
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+    ],
+    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180' }],
+  },
+  manifest: '/site.webmanifest',
 };
 
 export const viewport: Viewport = {
-  themeColor: '#2C4A2E',
+  themeColor: '#3E515D',
   width: 'device-width',
   initialScale: 1,
 };
@@ -90,7 +93,7 @@ export default async function RootLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} className={`${serif.variable} ${sans.variable}`}>
+    <html lang={locale} className={roboto.variable}>
       <head>
         <JsonLd />
         {plausibleDomain && (
