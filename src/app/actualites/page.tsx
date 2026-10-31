@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { PageHeader } from '@/components/ui/PageHeader';
-import { getArticles } from '@/lib/notion';
+import { getArticles, DEFAULT_ARTICLE_COVER } from '@/lib/notion';
 
 export const metadata: Metadata = {
   title: 'Blog & Actualités du club',
@@ -65,24 +65,15 @@ export default async function ActualitesPage() {
                   href={`/actualites/${article.slug}`}
                   className="group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-shadow"
                 >
-                  {article.coverImage ? (
-                    <div className="relative aspect-[16/10] overflow-hidden bg-sable/20">
-                      <Image
-                        src={article.coverImage}
-                        alt={article.title}
-                        fill
-                        sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-                        className="object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
-                    </div>
-                  ) : (
-                    <div
-                      className="aspect-[16/10] bg-foret-dark/90 flex items-center justify-center text-sable-light font-serif text-xl"
-                      aria-hidden
-                    >
-                      Fort Apache
-                    </div>
-                  )}
+                  <div className="relative aspect-[16/10] overflow-hidden bg-sable/20">
+                    <Image
+                      src={article.coverImage ?? DEFAULT_ARTICLE_COVER}
+                      alt={article.title}
+                      fill
+                      sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
                   <div className="p-6">
                     <time
                       dateTime={article.date}

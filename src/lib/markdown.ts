@@ -21,10 +21,17 @@ function inline(s: string): string {
     '<img alt="$1" src="$2" loading="lazy" />'
   );
   // Links: [text](url)
-  out = out.replace(
-    /\[([^\]]+)\]\(([^)]+)\)/g,
-    '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>'
-  );
+  // Les liens vers une page du site s'ouvrent dans le même onglet ; seuls les
+  // liens vers d'autres sites s'ouvrent dans un nouvel onglet.
+  out = out.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_m, text, href) => {
+    const internal =
+      href.startsWith('/') ||
+      href.startsWith('#') ||
+      /^https?:\/\/(www\.)?fort-apache-equitation-vence\.fr(\/|$)/.test(href);
+    return internal
+      ? `<a href="${href}">${text}</a>`
+      : `<a href="${href}" target="_blank" rel="noopener noreferrer">${text}</a>`;
+  });
   // Bold **text**
   out = out.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
   // Italic *text*

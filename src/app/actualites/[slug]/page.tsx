@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { getArticleBySlug } from '@/lib/notion';
+import { getArticleBySlug, DEFAULT_ARTICLE_COVER } from '@/lib/notion';
 import { renderMarkdown } from '@/lib/markdown';
 import { siteConfig } from '@/lib/site-config';
 
@@ -22,6 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!article) {
     return { title: 'Article introuvable' };
   }
+  const cover = coverUrl(article.coverImage);
   return {
     title: article.title,
     description: article.excerpt || undefined,
@@ -33,9 +34,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: article.excerpt || undefined,
       type: 'article',
       publishedTime: article.date,
-      images: article.coverImage ? [article.coverImage] : undefined,
+      images: [cover],
     },
   };
+}
+
+// Adresse complète de l'image de couverture (les réseaux sociaux et Google
+// exigent une adresse complète, pas un chemin relatif).
+function coverUrl(coverImage: string | null): string {
+  const src = coverImage ?? DEFAULT_ARTICLE_COVER;
+  return src.startsWith('/') ? `${siteConfig.url}${src}` : src;
 }
 
 function formatDate(date: string): string {
@@ -69,7 +77,7 @@ export default async function ArticlePage({ params }: Props) {
     url: articleUrl,
     mainEntityOfPage: articleUrl,
     inLanguage: 'fr-FR',
-    image: article.coverImage ? [article.coverImage] : undefined,
+    image: [coverUrl(article.coverImage)],
     author: {
       '@type': 'Organization',
       name: siteConfig.fullName,
@@ -90,7 +98,7 @@ export default async function ArticlePage({ params }: Props) {
         <div className="container-narrow">
           <Link
             href="/actualites"
-            className="inline-flex items-center gap-1 text-sable-light text-sm hover:text-white mb-6"
+            className="flex w-fit items-center gap-1 text-sable-light text-sm hover:text-white mb-6"
           >
             ← Retour aux actualités
           </Link>
@@ -107,20 +115,18 @@ export default async function ArticlePage({ params }: Props) {
         </div>
       </header>
 
-      {article.coverImage && (
-        <div className="relative max-w-4xl mx-auto -mt-8 px-4">
-          <div className="relative aspect-[16/9] rounded-lg overflow-hidden shadow-xl">
-            <Image
-              src={article.coverImage}
-              alt={article.title}
-              fill
-              sizes="(min-width: 1024px) 896px, 100vw"
-              priority
-              className="object-cover"
-            />
-          </div>
+      <div className="relative max-w-4xl mx-auto -mt-8 px-4">
+        <div className="relative aspect-[16/9] rounded-lg overflow-hidden shadow-xl">
+          <Image
+            src={article.coverImage ?? DEFAULT_ARTICLE_COVER}
+            alt={article.title}
+            fill
+            sizes="(min-width: 1024px) 896px, 100vw"
+            priority
+            className="object-cover"
+          />
         </div>
-      )}
+      </div>
 
       <section className="section bg-creme">
         <div

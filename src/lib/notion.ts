@@ -3,6 +3,10 @@ import { unstable_cache } from 'next/cache';
 import { Client } from '@notionhq/client';
 import { NotionToMarkdown } from 'notion-to-md';
 
+// Image utilisée quand un article n'a pas d'image de couverture dans Notion :
+// la photo du club de la page d'accueil, en attendant les photos des articles.
+export const DEFAULT_ARTICLE_COVER = '/photos/hero-fort-apache.jpg';
+
 export type Article = {
   id: string;
   slug: string;
