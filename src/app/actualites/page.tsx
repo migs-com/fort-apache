@@ -6,9 +6,9 @@ import { PageHeader } from '@/components/ui/PageHeader';
 import { getArticles, DEFAULT_ARTICLE_COVER } from '@/lib/notion';
 
 export const metadata: Metadata = {
-  title: 'Blog & Actualités du club',
+  title: 'Blog : balades à poney et conseils aux familles',
   description:
-    'Le blog de Fort Apache : récits de stages, vie du club, portraits de cavaliers et de chevaux, conseils et coulisses.',
+    'Le blog de Fort Apache au Col de Vence : idées de sorties en famille, balade à poney dès 2 ans, stages des vacances, anniversaires et vie du club.',
   alternates: {
     canonical: `${siteConfig.url}/actualites`,
   },
@@ -33,9 +33,9 @@ export default async function ActualitesPage() {
 
   return (
     <>
-      <PageHeader overline="Blog & Actualités" title="Les dernières nouvelles du club">
-        Récits de stages, vie du club, portraits de chevaux et de cavaliers,
-        coulisses et moments forts.
+      <PageHeader overline="Le blog de Fort Apache" title="Idées, conseils et vie du club">
+        Sorties en famille et idées cadeaux, première balade à poney, stages
+        des vacances, anniversaires, et les coulisses du club au Col de Vence.
       </PageHeader>
 
       <section className="section bg-creme">
