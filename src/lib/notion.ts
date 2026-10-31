@@ -47,7 +47,14 @@ function extractCover(page: unknown): string | null {
     | null
     | undefined;
   if (!cover) return null;
-  if (cover.type === 'external' && cover.external) return cover.external.url;
+  if (cover.type === 'external' && cover.external) {
+    // Une photo de la photothèque du site (public/photos/blog) est donnée dans
+    // Notion par son adresse complète : on la ramène à un chemin du site pour
+    // qu'elle soit optimisée comme les autres images.
+    const url = cover.external.url;
+    const own = /^https?:\/\/(www\.)?fort-apache-equitation-vence\.fr(\/.*)$/.exec(url);
+    return own ? own[2] : url;
+  }
   if (cover.type === 'file' && cover.file) return cover.file.url;
   return null;
 }
