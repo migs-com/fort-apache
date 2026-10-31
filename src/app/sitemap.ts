@@ -13,6 +13,10 @@ const translatedPagePairs: Array<{ fr: string; en: string }> = [
 
 const frOnlyPaths = ['/le-club', '/cours', '/stages', '/galerie', '/actualites'];
 
+// Le plan du site se régénère toutes les heures : les articles publiés dans
+// Notion y apparaissent sans attendre une nouvelle mise en ligne du site.
+export const revalidate = 3600;
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base = siteConfig.url;
 
