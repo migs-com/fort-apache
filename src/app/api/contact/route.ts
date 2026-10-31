@@ -40,7 +40,10 @@ export async function POST(request: Request) {
     // eslint-disable-next-line no-console
     console.error('[contact] send failed', e);
     return NextResponse.json(
-      { error: "Impossible d'envoyer le message pour le moment." },
+      {
+        error:
+          "Le message n'a pas pu partir. Appelez-nous directement au 04 93 58 91 43, tous les jours de 10h à 17h.",
+      },
       { status: 500 }
     );
   }

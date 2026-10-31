@@ -17,12 +17,14 @@ export function escapeHtml(value: string): string {
 
 export async function sendContactEmail(data: ContactInput) {
   if (!apiKey) {
-    // In dev without a key, log and treat as success so the form works in test mode.
+    // Sans clé d'envoi, le message ne peut pas partir. En production, on le
+    // dit au visiteur au lieu de simuler un succès : sinon la demande est
+    // perdue sans que personne le sache. En développement, on garde le mode test.
     // eslint-disable-next-line no-console
-    console.warn(
-      '[resend] RESEND_API_KEY not set — email not sent. Data:',
-      data
-    );
+    console.warn('[resend] RESEND_API_KEY not set — email not sent.');
+    if (process.env.NODE_ENV === 'production') {
+      throw new Error('RESEND_API_KEY missing');
+    }
     return { id: 'dev-mode', dev: true } as const;
   }
 
