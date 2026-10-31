@@ -69,8 +69,10 @@ function mapPageToArticle(page: unknown): Article | null {
     | { checkbox?: boolean }
     | undefined;
 
-  // Only surface explicitly published articles if the property exists
-  if (publishedProp && publishedProp.checkbox === false) return null;
+  // Un article n'apparaît sur le site que si sa case « Published » est
+  // cochée. Sans la case, il reste un brouillon : on évite ainsi de mettre
+  // en ligne par erreur un texte en cours de relecture.
+  if (!publishedProp || publishedProp.checkbox !== true) return null;
 
   const title = richText(titleProp?.title);
   if (!title) return null;
@@ -105,9 +107,12 @@ export async function getArticles(): Promise<Article[]> {
       page_size: 50,
     });
 
+    // Tri par date de publication (champ Date), la plus récente d'abord,
+    // et non par date de création de la page dans Notion.
     return response.results
       .map(mapPageToArticle)
-      .filter((a): a is Article => a !== null);
+      .filter((a): a is Article => a !== null)
+      .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
   } catch (e) {
     // eslint-disable-next-line no-console
     console.error('[notion] getArticles failed', e);

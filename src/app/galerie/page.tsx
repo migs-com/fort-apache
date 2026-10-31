@@ -1,3 +1,4 @@
+import { siteConfig } from '@/lib/site-config';
 import type { Metadata } from 'next';
 import { PageHeader } from '@/components/ui/PageHeader';
 import {
@@ -10,6 +11,9 @@ export const metadata: Metadata = {
   title: 'Galerie photos — Nos chevaux, nos cavaliers',
   description:
     "Découvrez en images la vie du club Fort Apache : cours, stages, compétitions, randonnées et portraits de notre cavalerie.",
+  alternates: {
+    canonical: `${siteConfig.url}/galerie`,
+  },
 };
 
 // Largeurs/hauteurs génériques en attendant les dimensions exactes.

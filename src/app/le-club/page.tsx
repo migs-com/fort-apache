@@ -1,3 +1,4 @@
+import { siteConfig } from '@/lib/site-config';
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import { PageHeader } from '@/components/ui/PageHeader';
@@ -10,6 +11,9 @@ export const metadata: Metadata = {
   title: 'Le Club — Histoire, équipe et cavalerie',
   description:
     "Découvrez Fort Apache : Pénélope, son équipe pédagogique, l'histoire du club, les équipements et notre cavalerie de chevaux et poneys.",
+  alternates: {
+    canonical: `${siteConfig.url}/le-club`,
+  },
 };
 
 const equipements = [
