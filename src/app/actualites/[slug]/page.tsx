@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { getArticles, getArticleBySlug } from '@/lib/notion';
+import { getArticleBySlug } from '@/lib/notion';
 import { renderMarkdown } from '@/lib/markdown';
 import { siteConfig } from '@/lib/site-config';
 
@@ -10,13 +10,12 @@ type Props = {
   params: { slug: string };
 };
 
-export const revalidate = 3600;
-export const dynamicParams = true;
-
-export async function generateStaticParams() {
-  const articles = await getArticles();
-  return articles.map((a) => ({ slug: a.slug }));
-}
+// La mise en page commune du site lit la langue dans l'en-tête de chaque
+// requête : aucune page ne peut donc être figée à l'avance. Un article publié
+// dans Notion après la mise en ligne du site faisait planter sa page (erreur
+// 500). La page est désormais construite à chaque visite ; les données Notion
+// restent en mémoire quelques minutes (voir src/lib/notion.ts).
+export const dynamic = 'force-dynamic';
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const article = await getArticleBySlug(params.slug);

@@ -1,3 +1,5 @@
+import { cache } from 'react';
+import { unstable_cache } from 'next/cache';
 import { Client } from '@notionhq/client';
 import { NotionToMarkdown } from 'notion-to-md';
 
@@ -96,11 +98,18 @@ function mapPageToArticle(page: unknown): Article | null {
   };
 }
 
-export async function getArticles(): Promise<Article[]> {
-  const client = getClient();
-  if (!client || !databaseId) return [];
+// Les pages du blog sont construites à chaque visite. Pour ne pas interroger
+// Notion à chaque fois (lenteur, limite de 3 appels par seconde), la liste
+// des articles et le texte de chaque article restent en mémoire 5 minutes :
+// un article publié dans Notion apparaît donc sur le site en 5 minutes au plus.
+// Une erreur Notion n'est jamais mise en mémoire : la visite suivante réessaie.
+const CACHE_SECONDS = 300;
 
-  try {
+const fetchArticlesCached = unstable_cache(
+  async (): Promise<Article[]> => {
+    const client = getClient();
+    if (!client || !databaseId) return [];
+
     const response = await client.databases.query({
       database_id: databaseId,
       sorts: [{ timestamp: 'created_time', direction: 'descending' }],
@@ -113,31 +122,48 @@ export async function getArticles(): Promise<Article[]> {
       .map(mapPageToArticle)
       .filter((a): a is Article => a !== null)
       .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  },
+  ['notion-articles'],
+  { revalidate: CACHE_SECONDS, tags: ['notion'] }
+);
+
+const fetchMarkdownCached = unstable_cache(
+  async (pageId: string): Promise<string> => {
+    const client = getClient();
+    if (!client) return '';
+    const n2m = new NotionToMarkdown({ notionClient: client });
+    const blocks = await n2m.pageToMarkdown(pageId);
+    return n2m.toMarkdownString(blocks).parent;
+  },
+  ['notion-article-markdown'],
+  { revalidate: CACHE_SECONDS, tags: ['notion'] }
+);
+
+export const getArticles = cache(async (): Promise<Article[]> => {
+  try {
+    return await fetchArticlesCached();
   } catch (e) {
     // eslint-disable-next-line no-console
     console.error('[notion] getArticles failed', e);
     return [];
   }
-}
+});
 
-export async function getArticleBySlug(
-  slug: string
-): Promise<ArticleWithContent | null> {
-  const client = getClient();
-  if (!client || !databaseId) return null;
+export const getArticleBySlug = cache(
+  async (slug: string): Promise<ArticleWithContent | null> => {
+    if (!apiKey || !databaseId) return null;
 
-  const articles = await getArticles();
-  const article = articles.find((a) => a.slug === slug);
-  if (!article) return null;
+    const articles = await getArticles();
+    const article = articles.find((a) => a.slug === slug);
+    if (!article) return null;
 
-  try {
-    const n2m = new NotionToMarkdown({ notionClient: client });
-    const blocks = await n2m.pageToMarkdown(article.id);
-    const md = n2m.toMarkdownString(blocks);
-    return { ...article, markdown: md.parent };
-  } catch (e) {
-    // eslint-disable-next-line no-console
-    console.error('[notion] getArticleBySlug failed', e);
-    return { ...article, markdown: '' };
+    try {
+      const markdown = await fetchMarkdownCached(article.id);
+      return { ...article, markdown };
+    } catch (e) {
+      // eslint-disable-next-line no-console
+      console.error('[notion] getArticleBySlug failed', e);
+      return { ...article, markdown: '' };
+    }
   }
-}
+);
