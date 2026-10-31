@@ -62,9 +62,6 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
-  alternates: {
-    canonical: siteConfig.url,
-  },
   icons: {
     icon: [
       { url: '/favicon.svg', type: 'image/svg+xml' },

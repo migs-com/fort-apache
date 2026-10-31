@@ -1,3 +1,4 @@
+import { siteConfig } from '@/lib/site-config';
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -8,6 +9,9 @@ export const metadata: Metadata = {
   title: 'Blog & Actualités du club',
   description:
     'Le blog de Fort Apache : récits de stages, vie du club, portraits de cavaliers et de chevaux, conseils et coulisses.',
+  alternates: {
+    canonical: `${siteConfig.url}/actualites`,
+  },
 };
 
 export const revalidate = 3600;

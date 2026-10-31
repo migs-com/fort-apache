@@ -1,3 +1,4 @@
+import { siteConfig } from '@/lib/site-config';
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -10,6 +11,9 @@ export const metadata: Metadata = {
   title: 'Cours d\'équitation — De l\'éveil poney aux adultes',
   description:
     "À Fort Apache (Vence 06140) : éveil poney dès 4 ans, demi-journées et journées complètes pour les enfants, cours adultes à la séance. Cours collectifs ou particuliers, tous niveaux.",
+  alternates: {
+    canonical: `${siteConfig.url}/cours`,
+  },
 };
 
 const formules = [
