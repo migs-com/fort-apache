@@ -1,0 +1,237 @@
+{
+  "note": "Photothèque du blog. Photos du club, sans visage d'enfant reconnaissable. Source : album partagé Fort Apache, copie sur Google Drive (WEB : RESEAUX > FORT APACHE > Photos site et blog).",
+  "photos": [
+    {
+      "fichier": "fort-apache-01-arc-en-ciel-relief.jpg",
+      "adresse": "https://fort-apache-equitation-vence.fr/photos/blog/fort-apache-01-arc-en-ciel-relief.jpg",
+      "description": "Arc-en-ciel au-dessus du relief et d'un village perché, ciel bleu",
+      "themes": [
+        "nature",
+        "paysage",
+        "saison",
+        "Col de Vence"
+      ]
+    },
+    {
+      "fichier": "fort-apache-02-cheval-bai-portrait.jpg",
+      "adresse": "https://fort-apache-equitation-vence.fr/photos/blog/fort-apache-02-cheval-bai-portrait.jpg",
+      "description": "Cheval bai à liste blanche, portrait de face au paddock",
+      "themes": [
+        "cavalerie",
+        "portrait",
+        "cheval"
+      ]
+    },
+    {
+      "fichier": "fort-apache-03-poneys-clairs-foin.jpg",
+      "adresse": "https://fort-apache-equitation-vence.fr/photos/blog/fort-apache-03-poneys-clairs-foin.jpg",
+      "description": "Deux poneys clairs côte à côte près du râtelier à foin",
+      "themes": [
+        "cavalerie",
+        "poney",
+        "soins",
+        "vie du club"
+      ]
+    },
+    {
+      "fichier": "fort-apache-04-poney-noir-paddock.jpg",
+      "adresse": "https://fort-apache-equitation-vence.fr/photos/blog/fort-apache-04-poney-noir-paddock.jpg",
+      "description": "Poney noir dans un paddock pierreux, arbres et ciel bleu",
+      "themes": [
+        "cavalerie",
+        "poney",
+        "nature"
+      ]
+    },
+    {
+      "fichier": "fort-apache-05-palomino-foin.jpg",
+      "adresse": "https://fort-apache-equitation-vence.fr/photos/blog/fort-apache-05-palomino-foin.jpg",
+      "description": "Cheval palomino à crinière claire, tête basse vers le foin, sous l'abri",
+      "themes": [
+        "cavalerie",
+        "soins",
+        "vie du club"
+      ]
+    },
+    {
+      "fichier": "fort-apache-06-cheval-dore-sous-bois.jpg",
+      "adresse": "https://fort-apache-equitation-vence.fr/photos/blog/fort-apache-06-cheval-dore-sous-bois.jpg",
+      "description": "Cheval doré au paddock sous les arbres, lumière du matin",
+      "themes": [
+        "cavalerie",
+        "nature"
+      ]
+    },
+    {
+      "fichier": "fort-apache-07-chevaux-foin-abri.jpg",
+      "adresse": "https://fort-apache-equitation-vence.fr/photos/blog/fort-apache-07-chevaux-foin-abri.jpg",
+      "description": "Trois chevaux qui mangent le foin ensemble sous l'abri",
+      "themes": [
+        "cavalerie",
+        "soins",
+        "vie du club"
+      ]
+    },
+    {
+      "fichier": "fort-apache-08-cheval-noir-paddock.jpg",
+      "adresse": "https://fort-apache-equitation-vence.fr/photos/blog/fort-apache-08-cheval-noir-paddock.jpg",
+      "description": "Cheval noir qui broute dans un paddock pierreux, collines boisées",
+      "themes": [
+        "cavalerie",
+        "nature",
+        "paysage"
+      ]
+    },
+    {
+      "fichier": "fort-apache-09-iris-sauvages-rochers.jpg",
+      "adresse": "https://fort-apache-equitation-vence.fr/photos/blog/fort-apache-09-iris-sauvages-rochers.jpg",
+      "description": "Iris sauvages violets entre les rochers calcaires",
+      "themes": [
+        "nature",
+        "printemps",
+        "Col de Vence"
+      ]
+    },
+    {
+      "fichier": "fort-apache-10-chemin-arbustes-fleuris.jpg",
+      "adresse": "https://fort-apache-equitation-vence.fr/photos/blog/fort-apache-10-chemin-arbustes-fleuris.jpg",
+      "description": "Chemin de terre bordé d'arbustes en fleurs, idéal balade",
+      "themes": [
+        "balade",
+        "nature",
+        "printemps",
+        "chemin"
+      ]
+    },
+    {
+      "fichier": "fort-apache-11-cheval-selle-arbres.jpg",
+      "adresse": "https://fort-apache-equitation-vence.fr/photos/blog/fort-apache-11-cheval-selle-arbres.jpg",
+      "description": "Cheval tacheté sellé, attaché à la barre sous les arbres",
+      "themes": [
+        "balade",
+        "préparation",
+        "équipement"
+      ]
+    },
+    {
+      "fichier": "fort-apache-12-poneys-selles-tapis-rouge.jpg",
+      "adresse": "https://fort-apache-equitation-vence.fr/photos/blog/fort-apache-12-poneys-selles-tapis-rouge.jpg",
+      "description": "Poneys sellés avec tapis rouge, attachés à la barre avant la balade",
+      "themes": [
+        "balade",
+        "poney",
+        "préparation",
+        "cadeau",
+        "première balade"
+      ]
+    },
+    {
+      "fichier": "fort-apache-13-chien-blanc.jpg",
+      "adresse": "https://fort-apache-equitation-vence.fr/photos/blog/fort-apache-13-chien-blanc.jpg",
+      "description": "Grand chien blanc couché dans la cour du club",
+      "themes": [
+        "vie du club",
+        "animaux",
+        "ferme"
+      ]
+    },
+    {
+      "fichier": "fort-apache-14-poneys-selles-barre.jpg",
+      "adresse": "https://fort-apache-equitation-vence.fr/photos/blog/fort-apache-14-poneys-selles-barre.jpg",
+      "description": "Poneys sellés qui patientent à la barre, foin au sol",
+      "themes": [
+        "balade",
+        "poney",
+        "préparation"
+      ]
+    },
+    {
+      "fichier": "fort-apache-15-poney-bai-licol-violet.jpg",
+      "adresse": "https://fort-apache-equitation-vence.fr/photos/blog/fort-apache-15-poney-bai-licol-violet.jpg",
+      "description": "Poney bai avec licol violet, de profil",
+      "themes": [
+        "poney",
+        "cavalerie",
+        "baby poney"
+      ]
+    },
+    {
+      "fichier": "fort-apache-16-pre-oies.jpg",
+      "adresse": "https://fort-apache-equitation-vence.fr/photos/blog/fort-apache-16-pre-oies.jpg",
+      "description": "Pré vert avec deux oies, installations du club au fond",
+      "themes": [
+        "vie du club",
+        "animaux",
+        "ferme",
+        "nature"
+      ]
+    },
+    {
+      "fichier": "fort-apache-17-depart-balade-de-dos.jpg",
+      "adresse": "https://fort-apache-equitation-vence.fr/photos/blog/fort-apache-17-depart-balade-de-dos.jpg",
+      "description": "Départ de balade vu de dos : poney tenu en main par un adulte, chèvre qui suit",
+      "themes": [
+        "balade",
+        "poney tenu en main",
+        "famille",
+        "première balade"
+      ]
+    },
+    {
+      "fichier": "fort-apache-18-poney-isabelle-portrait.jpg",
+      "adresse": "https://fort-apache-equitation-vence.fr/photos/blog/fort-apache-18-poney-isabelle-portrait.jpg",
+      "description": "Poney isabelle (robe couleur sable), portrait de face",
+      "themes": [
+        "poney",
+        "cavalerie",
+        "portrait",
+        "baby poney"
+      ]
+    },
+    {
+      "fichier": "fort-apache-19-coq.jpg",
+      "adresse": "https://fort-apache-equitation-vence.fr/photos/blog/fort-apache-19-coq.jpg",
+      "description": "Coq blanc à queue noire dans la cour",
+      "themes": [
+        "vie du club",
+        "animaux",
+        "ferme",
+        "enfants"
+      ]
+    },
+    {
+      "fichier": "fort-apache-20-balade-groupe-chevre.jpg",
+      "adresse": "https://fort-apache-equitation-vence.fr/photos/blog/fort-apache-20-balade-groupe-chevre.jpg",
+      "description": "Groupe de jeunes cavaliers casqués en balade, vus de dos, la chèvre suit",
+      "themes": [
+        "balade",
+        "groupe",
+        "stage",
+        "anniversaire",
+        "enfants"
+      ]
+    },
+    {
+      "fichier": "fort-apache-21-balade-chemin-chevre.jpg",
+      "adresse": "https://fort-apache-equitation-vence.fr/photos/blog/fort-apache-21-balade-chemin-chevre.jpg",
+      "description": "Cavaliers casqués sur le chemin, vus de dos, chèvre au premier plan",
+      "themes": [
+        "balade",
+        "groupe",
+        "stage",
+        "sortie scolaire"
+      ]
+    },
+    {
+      "fichier": "fort-apache-22-shetland-criniere-sombre.jpg",
+      "adresse": "https://fort-apache-equitation-vence.fr/photos/blog/fort-apache-22-shetland-criniere-sombre.jpg",
+      "description": "Petit poney à crinière sombre (shetland), de face, au paddock",
+      "themes": [
+        "poney",
+        "shetland",
+        "baby poney",
+        "portrait"
+      ]
+    }
+  ]
+}
