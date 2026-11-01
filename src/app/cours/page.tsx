@@ -86,7 +86,7 @@ const faq: { q: string; a: string }[] = [
   },
   {
     q: "Le club est-il accessible toute l'année ?",
-    a: "Oui, Fort Apache est ouvert tous les jours, de 10h à 17h, toute l'année.",
+    a: "Oui, Fort Apache est ouvert tous les jours, de 10h à 17h. Il ne ferme que le 25 décembre.",
   },
 ];
 

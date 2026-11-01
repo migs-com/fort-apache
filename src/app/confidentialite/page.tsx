@@ -22,7 +22,7 @@ export default function ConfidentialitePage() {
           <h2 className={sectionTitle}>Qui est responsable de vos données ?</h2>
           <p>
             Fort Apache, établissement équestre dirigé par Pénélope Purtell,
-            Carrefour Saint-Barnabé, quartier Col de Vence, 06140 Coursegoules.
+            75 route de Saint-Barnabé, quartier Col de Vence, 06140 Coursegoules.
           </p>
 
           <h2 className={sectionTitle}>Quelles informations recueillons-nous ?</h2>
@@ -57,9 +57,27 @@ export default function ConfidentialitePage() {
 
           <h2 className={sectionTitle}>Cookies et mesure d&apos;audience</h2>
           <p>
-            Le site ne dépose aucun cookie publicitaire. Si une mesure
-            d&apos;audience est mise en place, elle sera décrite ici avant son
-            activation.
+            Le site ne dépose aucun cookie publicitaire. Il utilise Google
+            Analytics, l&apos;outil de mesure d&apos;audience de Google, pour
+            compter les visites, savoir quelles pages sont consultées et combien
+            de personnes appellent le club ou lui écrivent depuis le site. Cet
+            outil n&apos;est chargé qu&apos;après votre accord, donné dans le
+            bandeau qui s&apos;affiche à votre première visite. Si vous refusez,
+            aucune information n&apos;est envoyée à Google.
+          </p>
+          <p className="mt-4">
+            Avec votre accord, Google Analytics dépose des cookies nommés
+            « _ga » et « _ga_ » suivis d&apos;un identifiant, conservés au plus
+            13 mois. Les fonctions publicitaires et le partage avec les services
+            publicitaires de Google sont désactivés. Les données sont traitées
+            par Google Ireland Limited et peuvent être transférées aux
+            États-Unis, dans le cadre prévu par la Commission européenne. Elles
+            sont conservées 14 mois dans l&apos;outil.
+          </p>
+          <p className="mt-4">
+            Votre choix est conservé 6 mois, puis la question vous est reposée.
+            Vous pouvez le modifier à tout moment par le lien « Gérer les
+            cookies » en bas de chaque page.
           </p>
 
           <h2 className={sectionTitle}>Vos droits</h2>

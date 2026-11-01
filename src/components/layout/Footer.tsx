@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { getLocale, getTranslations } from 'next-intl/server';
 import { navItems, siteConfig } from '@/lib/site-config';
 import { LanguageSwitcher } from '@/components/layout/LanguageSwitcher';
+import { CookieSettingsButton } from '@/components/analytics/CookieSettingsButton';
 
 const enNavItems = [
   { href: '/en', label: 'Home' },
@@ -43,7 +44,7 @@ export async function Footer() {
           <p className="mt-6 text-sm text-cream/70">
             {isEn
               ? tFooter!('hours')
-              : 'Ouvert tous les jours — de 10h à 17h'}
+              : 'Ouvert tous les jours de 10h à 17h, sauf le 25 décembre'}
           </p>
           {(siteConfig.socials.facebook || siteConfig.socials.instagram) && (
             <div className="mt-6 flex items-center gap-3">
@@ -156,7 +157,11 @@ export async function Footer() {
           </p>
           <p>
             {isEn ? (
-              tFooter!('credits')
+              <>
+                <CookieSettingsButton label="Manage cookies" />
+                {' · '}
+                {tFooter!('credits')}
+              </>
             ) : (
               <>
                 <Link href="/mentions-legales" className="hover:text-cream">
@@ -166,6 +171,8 @@ export async function Footer() {
                 <Link href="/confidentialite" className="hover:text-cream">
                   Confidentialité
                 </Link>
+                {' · '}
+                <CookieSettingsButton label="Gérer les cookies" />
                 {' · '}
                 Site réalisé par{' '}
                 <span className="font-medium">Mig&apos;s Communication</span>

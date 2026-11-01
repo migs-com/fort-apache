@@ -56,7 +56,8 @@ export default function StagesPage() {
       />
       <PageHeader overline="Stages" title="Stages équestres à Fort Apache">
         À Fort Apache, les stages sont proposés toute l&apos;année pendant les
-        vacances scolaires, à la journée entière ou à la demi-journée. Chaque
+        vacances scolaires, tous les jours sauf le dimanche et le 25 décembre,
+        à la journée entière ou à la demi-journée. Chaque
         stagiaire progresse à son rythme, entre apprentissage technique,
         préparation au galop et immersion totale dans la vie de l&apos;écurie.
       </PageHeader>

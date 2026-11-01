@@ -8,6 +8,7 @@ import '@/styles/globals.css';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { JsonLd } from '@/components/seo/JsonLd';
+import { Analytics } from '@/components/analytics/Analytics';
 import { siteConfig } from '@/lib/site-config';
 import { detectLocaleFromPathname } from '@/i18n/request';
 
@@ -107,6 +108,7 @@ export default async function RootLayout({
           <Header />
           <main className="flex-1">{children}</main>
           <Footer />
+          <Analytics />
         </NextIntlClientProvider>
       </body>
     </html>

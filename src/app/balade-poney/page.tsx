@@ -25,7 +25,7 @@ const faq: { q: string; a: string }[] = [
   },
   {
     q: "Peut-on faire une balade à poney en hiver ?",
-    a: "Oui, le club est ouvert toute l'année, tous les jours de 10h à 17h. En hiver, couvrez chaudement l'enfant en gardant des vêtements qui lui laissent les jambes libres. Pour les jours fériés, mieux vaut appeler avant de venir.",
+    a: "Oui, le club est ouvert tous les jours de 10h à 17h, hiver compris. Il ne ferme que le 25 décembre ; le 1er janvier, il est ouvert. En hiver, couvrez chaudement l'enfant en gardant des vêtements qui lui laissent les jambes libres.",
   },
   {
     q: 'Peut-on offrir une balade à poney ?',
@@ -193,11 +193,11 @@ export default function BaladePoneyPage() {
 
           <h2 className={h2}>Quand venir, et comment réserver ?</h2>
           <p className={p}>
-            Le club est ouvert tous les jours, de 10h à 17h, toute l&apos;année.
-            La balade se réserve auprès du club : un appel à Pénélope permet de
-            caler le jour, l&apos;heure et la durée qui conviennent à votre
-            enfant. Pour les jours fériés, un appel avant de venir est le plus
-            sûr.
+            Le club est ouvert tous les jours, de 10h à 17h. Il ne ferme
+            qu&apos;un jour par an, le 25 décembre ; le 1er janvier, il est
+            ouvert. La balade se réserve auprès du club : un appel à Pénélope
+            permet de caler le jour, l&apos;heure et la durée qui conviennent à
+            votre enfant.
           </p>
           <p className={p}>
             Vous cherchez une idée cadeau ? La balade à poney s&apos;offre aussi
@@ -267,10 +267,10 @@ export default function BaladePoneyPage() {
               </li>
               <li>
                 <strong>Lieu :</strong> Fort Apache, quartier Col de Vence,
-                route de Saint-Barnabé.
+                75 route de Saint-Barnabé.
               </li>
               <li>
-                <strong>Horaires :</strong> tous les jours, de 10h à 17h.
+                <strong>Horaires :</strong> tous les jours, de 10h à 17h, sauf le 25 décembre.
               </li>
               <li>
                 <strong>Équipement :</strong> casque aux normes CE et étriers de
