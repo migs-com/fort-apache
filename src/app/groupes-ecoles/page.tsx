@@ -8,7 +8,7 @@ import { siteConfig } from '@/lib/site-config';
 export const metadata: Metadata = {
   title: 'Écoles et centres de loisirs au poney club',
   description:
-    "Sortie scolaire ou centre de loisirs au poney club, au Col de Vence près de Nice : poneys, nature et vie d'écurie, ouvert tous les jours. Appelez Pénélope.",
+    "Sortie scolaire ou centre de loisirs au poney club, au Col de Vence près de Nice : à partir de 7 € par enfant, demi-journée ou journée. Appelez Pénélope.",
   alternates: {
     canonical: `${siteConfig.url}/groupes-ecoles`,
   },
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 const faq: { q: string; a: string }[] = [
   {
     q: 'Le club accueille-t-il les écoles et les centres de loisirs ?',
-    a: "Oui. Fort Apache accueille les classes et les groupes de centres de loisirs. Le programme, l'encadrement et le tarif se calent avec Pénélope au 04 93 58 91 43.",
+    a: "Oui. Fort Apache accueille les classes, les centres de loisirs et les collectivités, à la demi-journée ou à la journée, à partir de 7 € par enfant. Le programme se cale avec Pénélope au 04 93 58 91 43.",
   },
   {
     q: 'Les enfants doivent-ils déjà savoir monter ?',
@@ -25,7 +25,7 @@ const faq: { q: string; a: string }[] = [
   },
   {
     q: 'Quel est le tarif pour un groupe ?',
-    a: "Il dépend du nombre d'enfants, de leur âge et du programme retenu. Pénélope vous le donne au moment de préparer la sortie ; les tarifs des activités du club sont sur la page des tarifs.",
+    a: "À partir de 7 € par enfant. Le prix dépend du nombre d'enfants, de la durée, du programme et de la régularité des venues ; Pénélope l'établit pour chaque groupe.",
   },
   {
     q: 'Quand peut-on venir avec un groupe ?',
@@ -92,6 +92,7 @@ export default function GroupesEcolesPage() {
             Nice, de Vence, de Grasse ou du littoral, c&apos;est une sortie
             nature complète : des poneys à approcher et à soigner, des chemins
             à parcourir, et un club qui accueille des cavaliers depuis 1975.
+            Les sorties de groupe sont proposées à partir de 7 € par enfant.
           </p>
 
           <div className="relative aspect-[3/2] rounded-lg overflow-hidden my-8">
@@ -138,6 +139,40 @@ export default function GroupesEcolesPage() {
             parfois les balades, des oies et un coq animent la cour. Le
             contenu exact de la sortie, temps à poney, soins, balade, se
             construit avec Pénélope selon l&apos;âge et la taille du groupe.
+          </p>
+
+          <h2 className={h2}>Quels formats pour un groupe ?</h2>
+          <p className={p}>
+            Il n&apos;y a pas de formule unique : le programme se construit
+            selon le nombre d&apos;enfants, leur âge et le temps dont vous
+            disposez, à la demi-journée ou à la journée. Quelques formats
+            déjà pratiqués au club :
+          </p>
+          <ul className="list-disc pl-6 mb-4 space-y-2">
+            <li>
+              des tours à poney en rotation sur toute la journée, pour un
+              grand groupe qui arrive en plusieurs fois avec un seul minibus ;
+            </li>
+            <li>
+              une animation d&apos;une demi-heure en carrière, l&apos;espace
+              clos où l&apos;on travaille à poney ;
+            </li>
+            <li>
+              une journée complète, avec pour chaque groupe d&apos;enfants un
+              cours en carrière et une balade ;
+            </li>
+            <li>
+              un projet pédagogique suivi avec une école maternelle, qui
+              s&apos;est conclu par la venue des poneys à la fête de
+              l&apos;école.
+            </li>
+          </ul>
+          <p className={p}>
+            Le tarif suit le même principe, à partir de 7 € par enfant : il
+            dépend de l&apos;effectif, de la durée et de la régularité des
+            venues. Une classe qui revient plusieurs fois ou un grand groupe
+            n&apos;ont pas le même prix qu&apos;une sortie unique de quelques
+            enfants.
           </p>
 
           <h2 className={h2}>Pour quel âge ?</h2>
@@ -198,11 +233,12 @@ export default function GroupesEcolesPage() {
             <li>la durée souhaitée, demi-journée ou journée ;</li>
             <li>le repas : pique-nique sur place ou non ;</li>
             <li>l&apos;arrivée du groupe et le stationnement du car ;</li>
-            <li>le tarif et ce qu&apos;il comprend.</li>
+            <li>une sortie unique ou des venues régulières.</li>
           </ul>
           <p className={p}>
-            Pénélope vous répond au téléphone et vous propose un programme
-            adapté à l&apos;âge des enfants et à la taille du groupe.
+            Pénélope vous propose un programme adapté à l&apos;âge des
+            enfants et à la taille du groupe, et vous donne le prix
+            correspondant.
           </p>
 
           <h2 className={h2}>Quand venir ?</h2>
@@ -270,8 +306,9 @@ export default function GroupesEcolesPage() {
                 groupes d&apos;enfants, sans expérience du poney.
               </li>
               <li>
-                <strong>Programme :</strong> durée, déroulé, temps à poney et
-                encadrement à voir avec Pénélope.
+                <strong>Programme :</strong> à la demi-journée ou à la
+                journée ; tours à poney, animation en carrière, cours et
+                balade, selon le groupe.
               </li>
               <li>
                 <strong>Lieu :</strong> Fort Apache, quartier Col de Vence,
@@ -285,11 +322,8 @@ export default function GroupesEcolesPage() {
                 sécurité fournis.
               </li>
               <li>
-                <strong>Tarifs :</strong> sur demande ; voir aussi la{' '}
-                <Link href="/tarifs" className={lien}>
-                  page des tarifs
-                </Link>
-                .
+                <strong>Tarif :</strong> à partir de 7 € par enfant, selon
+                l&apos;effectif, la durée et la régularité des venues.
               </li>
             </ul>
             <p className="mt-6 text-charbon/85">
