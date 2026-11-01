@@ -4,25 +4,25 @@ import { getLocale } from 'next-intl/server';
 import { LinkButton } from '@/components/ui/Button';
 
 const FR = {
-  eyebrow: 'Club équestre — Vence · Col de Vence',
+  eyebrow: 'Club équestre · Vence · Col de Vence',
   h1Line1: 'Au royaume des chevaux,',
   h1Line2: 'au cœur des Préalpes d’Azur',
   subtitle:
     'Balades à poney en famille dès 2 ans, cours d’équitation, stages vacances et randonnées. Ouvert tous les jours de 10h à 17h.',
   primaryCta: 'Réserver une balade',
   secondaryCta: 'Découvrir le club →',
-  alt: 'Fort Apache — Club équestre',
+  alt: 'Fort Apache, club équestre',
 } as const;
 
 const EN = {
-  eyebrow: 'Equestrian club — Vence · Col de Vence',
+  eyebrow: 'Equestrian club · Vence · Col de Vence',
   h1Line1: 'A home for horses,',
   h1Line2: 'in the heart of the Préalpes d’Azur',
   subtitle:
     'Family pony rides from age 2, riding lessons, school holiday camps and trail rides. Open every day.',
   primaryCta: 'Book a ride',
   secondaryCta: 'Discover the club →',
-  alt: 'Fort Apache — Equestrian Club',
+  alt: 'Fort Apache, equestrian club',
 } as const;
 
 export async function Hero() {

@@ -109,7 +109,7 @@ export function Header() {
           >
             <Image
               src="/logos/logo-horizontal-b.svg"
-              alt="Fort Apache — Équitation Vence"
+              alt="Fort Apache, équitation à Vence"
               width={200}
               height={82}
               priority
@@ -119,7 +119,7 @@ export function Header() {
             />
             <Image
               src="/logos/logo-original.svg"
-              alt="Fort Apache — Équitation Vence"
+              alt="Fort Apache, équitation à Vence"
               width={63}
               height={44}
               priority

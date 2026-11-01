@@ -4,7 +4,7 @@ import { ContactForm } from '@/components/ui/ContactForm';
 import { siteConfig } from '@/lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'Contact — Prendre rendez-vous',
+  title: 'Contact : prendre rendez-vous',
   description:
     "Contactez Fort Apache pour une inscription, un stage, un cours particulier ou un simple renseignement. Notre équipe vous répond rapidement.",
   alternates: {

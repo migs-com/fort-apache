@@ -10,7 +10,7 @@ import { LinkButton } from '@/components/ui/Button';
 import { siteConfig } from '@/lib/site-config';
 
 export const metadata: Metadata = {
-  title: `${siteConfig.fullName} — Balades à poney & équitation à Vence`,
+  title: `${siteConfig.fullName} : balades à poney & équitation à Vence`,
   description:
     "Club équestre à Vence (06140), quartier Col de Vence. Balades à poney dès 2 ans, cours d'équitation, stages vacances et randonnées. Ouvert tous les jours de 10h à 17h.",
   alternates: {
@@ -49,7 +49,7 @@ export default function HomePage() {
             </p>
             <p>
               Sa philosophie aujourd&apos;hui : transmettre ce qu&apos;elle a
-              reçu — l&apos;apprentissage total du cheval. Des bi-poney aux
+              reçu : l&apos;apprentissage total du cheval. Des bi-poney aux
               compétiteurs confirmés, chaque cavalier trouve sa place à Fort
               Apache.
             </p>
@@ -75,7 +75,7 @@ export default function HomePage() {
           </h2>
           <p className="text-creme/80 max-w-xl mx-auto mb-8">
             Notre équipe vous accompagne pour trouver la formule qui vous
-            correspond — du baby poney au cavalier confirmé. Ouvert tous les
+            correspond, du baby poney au cavalier confirmé. Ouvert tous les
             jours de 10h à 17h.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
