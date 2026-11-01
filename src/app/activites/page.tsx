@@ -158,6 +158,10 @@ export default function ActivitesPage() {
             <Link href="/anniversaire-poney" className="text-bordeaux underline">
               fêter un anniversaire au poney club
             </Link>
+            . Une classe ou un centre de loisirs ?{' '}
+            <Link href="/groupes-ecoles" className="text-bordeaux underline">
+              Les sorties de groupe au poney club
+            </Link>
             .
           </p>
         </div>

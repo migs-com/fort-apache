@@ -19,6 +19,7 @@ const frOnlyPaths = [
   '/actualites',
   '/balade-poney',
   '/anniversaire-poney',
+  '/groupes-ecoles',
   '/mentions-legales',
   '/confidentialite',
 ];
