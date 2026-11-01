@@ -159,6 +159,14 @@ export async function Footer() {
               tFooter!('credits')
             ) : (
               <>
+                <Link href="/mentions-legales" className="hover:text-cream">
+                  Mentions légales
+                </Link>
+                {' · '}
+                <Link href="/confidentialite" className="hover:text-cream">
+                  Confidentialité
+                </Link>
+                {' · '}
                 Site réalisé par{' '}
                 <span className="font-medium">Mig&apos;s Communication</span>
               </>
