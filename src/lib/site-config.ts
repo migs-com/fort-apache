@@ -11,7 +11,7 @@ export const siteConfig = {
     phoneDisplay: '04 93 58 91 43',
     address: {
       street: '75 route de Saint-Barnabé, quartier Col de Vence',
-      locality: 'Vence',
+      locality: 'Coursegoules',
       region: 'Alpes-Maritimes',
       postalCode: '06140',
       country: 'FR',

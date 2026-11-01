@@ -19,7 +19,7 @@
     "navTitle": "Navigation",
     "findUsTitle": "Find us",
     "street": "75 route de Saint-Barnabé, Quartier Col de Vence",
-    "city": "06140 Vence",
+    "city": "06140 Coursegoules",
     "copyright": "© {year} Fort Apache, equestrian club. All rights reserved.",
     "credits": "Website by Mig's Communication"
   },
@@ -141,7 +141,7 @@
   "Activities": {
     "Metadata": {
       "title": "Equestrian activities: pony rides, lessons and camps",
-      "description": "All our activities at Fort Apache (Vence, 06140): family pony rides, group and private lessons, pony school, trail rides, school holiday camps and competition riding."
+      "description": "All our activities at Fort Apache (Col de Vence, 06140 Coursegoules): family pony rides, group and private lessons, pony school, trail rides, school holiday camps and competition riding."
     },
     "Header": {
       "overline": "Activities",
@@ -275,7 +275,7 @@
       "emailLabel": "Email",
       "addressLabel": "Address",
       "addressLine1": "75 route de Saint-Barnabé, Quartier Col de Vence",
-      "addressLine2": "06140 Vence",
+      "addressLine2": "06140 Coursegoules",
       "hoursHeading": "Opening hours",
       "hoursLine": "Every day, 10am to 5pm"
     },
