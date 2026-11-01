@@ -22,7 +22,7 @@ const roboto = Roboto({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.fullName} — Cours d'équitation pour tous niveaux`,
+    default: `${siteConfig.fullName} : cours d'équitation pour tous niveaux`,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,

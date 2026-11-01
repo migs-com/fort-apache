@@ -64,7 +64,7 @@ export function WhyUs() {
             Pourquoi choisir Fort Apache
           </h2>
           <p className="max-w-2xl mx-auto text-charbon/75">
-            Un club d&apos;équitation pas comme les autres — par son
+            Un club d&apos;équitation pas comme les autres, par son
             histoire, son équipe, et son cadre.
           </p>
         </div>

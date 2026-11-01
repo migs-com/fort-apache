@@ -31,7 +31,7 @@ export async function Footer() {
         <div className="md:col-span-2">
           <Image
             src="/logos/logo-vertical-blanc.svg"
-            alt="Fort Apache — Club Équestre"
+            alt="Fort Apache, club équestre"
             width={91}
             height={100}
             className="h-24 w-auto mb-4"
@@ -153,7 +153,7 @@ export async function Footer() {
           <p>
             {isEn
               ? tFooter!('copyright', { year })
-              : `© ${year} Fort Apache — Club Équestre. Tous droits réservés.`}
+              : `© ${year} Fort Apache, club équestre. Tous droits réservés.`}
           </p>
           <p>
             {isEn ? (

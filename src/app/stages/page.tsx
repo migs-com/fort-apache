@@ -8,7 +8,7 @@ import { ffeImages } from '@/lib/images';
 import { siteConfig } from '@/lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'Stages équestres enfants et ados | Fort Apache — Vence',
+  title: 'Stages équestres enfants et ados à Vence',
   description:
     "Stages de vacances au club équestre Fort Apache à Vence. À partir de 6 ans, à la journée ou à la demi-journée. Préparation au galop, immersion totale, perfectionnement.",
   alternates: {
@@ -184,7 +184,7 @@ export default function StagesPage() {
             <p className="font-serif italic text-sable-light pt-4 border-l-4 border-sable-light pl-4">
               « Le cheval c&apos;est pas juste l&apos;animal sur lequel on
               monte, c&apos;est plein d&apos;autres choses autour. »
-              <br />— Pénélope
+              <br />Pénélope
             </p>
           </div>
           <div className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-xl">

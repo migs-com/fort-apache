@@ -4,7 +4,7 @@ import { LinkButton } from '@/components/ui/Button';
 import { siteConfig } from '@/lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'Tarifs équitation, stages et pensions | Fort Apache — Vence',
+  title: 'Tarifs équitation, stages et pensions à Vence',
   description:
     "Tarifs complets du club Fort Apache à Vence : séances, forfaits mensuels, trimestriels et annuels. Baby poney, cours enfants, adultes, cours particuliers. Licence FFE incluse.",
   alternates: {
@@ -27,7 +27,7 @@ const seances: Row[] = [
   { formule: 'Éveil poney (baby poney)', detail: '4 à 6 ans', prix: '20 € la séance' },
   { formule: 'Enfant demi-journée', detail: 'À partir de 6 ans', prix: '25 €' },
   { formule: 'Enfant journée entière', detail: 'À partir de 6 ans', prix: '38 €' },
-  { formule: 'Adulte à la séance', detail: '—', prix: '20 €' },
+  { formule: 'Adulte à la séance', detail: 'Adultes', prix: '20 €' },
   { formule: 'Cours particulier', detail: 'Tous âges', prix: '50 € la séance' },
 ];
 

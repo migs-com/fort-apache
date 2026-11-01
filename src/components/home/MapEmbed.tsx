@@ -22,7 +22,7 @@ export function MapEmbed() {
 
         <div className="rounded-lg overflow-hidden shadow-lg border border-sable/40">
           <iframe
-            title="Carte — Fort Apache Club Équestre"
+            title="Carte : Fort Apache, club équestre"
             src={`https://www.google.com/maps?q=${query}&output=embed`}
             width="100%"
             height="400"

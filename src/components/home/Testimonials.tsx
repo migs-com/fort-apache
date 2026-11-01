@@ -7,7 +7,7 @@ type Testimonial = {
 const testimonials: Testimonial[] = [
   {
     quote:
-      "On apprend vraiment à tout gérer par rapport au cheval, pas seulement à monter. Quoi qu'il se passe — pour le donner à manger, s'il est malade — on sait quoi faire.",
+      "On apprend vraiment à tout gérer par rapport au cheval, pas seulement à monter. Quoi qu'il se passe, pour le donner à manger, s'il est malade, on sait quoi faire.",
     name: 'Une élève',
     niveau: 'Cavalière de Fort Apache',
   },
@@ -15,13 +15,13 @@ const testimonials: Testimonial[] = [
     quote:
       "C'est un club où on a plaisir à venir parce qu'il y a du sens. On apprend à connaître son cheval, à connaître l'équitation. Le cheval a beaucoup d'importance.",
     name: 'Un parent',
-    niveau: "France 3 — Reportage",
+    niveau: "France 3, reportage",
   },
   {
     quote:
       "Quand j'ai des petits problèmes, soit au collège ou avec des copains, je vais voir les chevaux. Il m'aide un peu, il m'apaise.",
     name: 'Une jeune cavalière',
-    niveau: 'France 3 — Reportage',
+    niveau: 'France 3, reportage',
   },
 ];
 

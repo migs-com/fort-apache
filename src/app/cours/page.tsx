@@ -8,7 +8,7 @@ import { Card, CardBody, CardTitle } from '@/components/ui/Card';
 import { ffeImages } from '@/lib/images';
 
 export const metadata: Metadata = {
-  title: 'Cours d\'équitation — De l\'éveil poney aux adultes',
+  title: 'Cours d\'équitation : de l\'éveil poney aux adultes',
   description:
     "À Fort Apache (Vence 06140) : éveil poney dès 4 ans, demi-journées et journées complètes pour les enfants, cours adultes à la séance. Cours collectifs ou particuliers, tous niveaux.",
   alternates: {
@@ -29,7 +29,7 @@ const formules = [
     ],
   },
   {
-    titre: 'Enfant — demi-journée',
+    titre: 'Enfant, demi-journée',
     public: 'À partir de 6 ans',
     duree: 'Mercredi et samedi',
     objectifs: [
@@ -40,7 +40,7 @@ const formules = [
     ],
   },
   {
-    titre: 'Enfant — journée complète',
+    titre: 'Enfant, journée complète',
     public: 'À partir de 6 ans',
     duree: '10h à 17h, mercredi et samedi',
     objectifs: [
@@ -203,7 +203,7 @@ export default function CoursPage() {
             <p className="font-serif italic text-sable-light pt-4 border-l-4 border-sable-light pl-4">
               « Le cheval c&apos;est pas juste l&apos;animal sur lequel on
               monte, c&apos;est plein d&apos;autres choses autour. »
-              <br />— Pénélope
+              <br />Pénélope
             </p>
           </div>
           <div className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-xl">

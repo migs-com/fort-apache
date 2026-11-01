@@ -41,7 +41,7 @@ export async function sendContactEmail(data: ContactInput) {
     return { id: 'dev-mode', dev: true } as const;
   }
 
-  const subject = `Nouveau contact Fort Apache — ${escapeHtml(
+  const subject = `Nouveau contact Fort Apache : ${escapeHtml(
     data.prenom
   )} ${escapeHtml(data.nom)}`;
 

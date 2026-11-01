@@ -8,7 +8,7 @@ import {
 import { ffeImages } from '@/lib/images';
 
 export const metadata: Metadata = {
-  title: 'Galerie photos — Nos chevaux, nos cavaliers',
+  title: 'Galerie photos : nos chevaux, nos cavaliers',
   description:
     "Découvrez en images la vie du club Fort Apache : cours, stages, compétitions, randonnées et portraits de notre cavalerie.",
   alternates: {
@@ -22,8 +22,8 @@ const W = 1200;
 const H = 900;
 
 const images: GalleryImage[] = [
-  { src: ffeImages.top3, alt: 'Fort Apache — vue d\'ensemble', category: 'Le club', width: W, height: H },
-  { src: ffeImages.top7, alt: 'Fort Apache — cavalerie', category: 'Le club', width: W, height: H },
+  { src: ffeImages.top3, alt: 'Fort Apache, vue d\'ensemble', category: 'Le club', width: W, height: H },
+  { src: ffeImages.top7, alt: 'Fort Apache, la cavalerie', category: 'Le club', width: W, height: H },
   { src: ffeImages.article1, alt: 'Moment de vie au club', category: 'Actualités', width: W, height: H },
   { src: ffeImages.article2, alt: 'Moment de vie au club', category: 'Actualités', width: W, height: H },
   { src: ffeImages.album[0], alt: 'Photo du club', category: 'Album', width: W, height: H },
@@ -46,7 +46,7 @@ export default function GaleriePage() {
     <>
       <PageHeader overline="Galerie" title="La vie du club en images">
         Parcours en carrière, stages ensoleillés, instants complices avec nos
-        chevaux — un aperçu de ce que vous vivrez à Fort Apache.
+        chevaux : un aperçu de ce que vous vivrez à Fort Apache.
       </PageHeader>
 
       <section className="section bg-creme">

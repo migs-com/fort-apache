@@ -8,7 +8,7 @@ import { Reportage } from '@/components/ui/Reportage';
 import { ffeImages } from '@/lib/images';
 
 export const metadata: Metadata = {
-  title: 'Le Club — Histoire, équipe et cavalerie',
+  title: 'Le Club : histoire, équipe et cavalerie',
   description:
     "Découvrez Fort Apache : Pénélope, son équipe pédagogique, l'histoire du club, les équipements et notre cavalerie de chevaux et poneys.",
   alternates: {
@@ -143,7 +143,7 @@ export default function LeClubPage() {
           <Reportage
             videoId="m_POi9XlYC8"
             startSeconds={35}
-            title="Reportage Fort Apache — Club équestre à Vence"
+            title="Reportage Fort Apache, club équestre à Vence"
           />
         </div>
       </section>

@@ -1,6 +1,6 @@
 export const siteConfig = {
   name: 'Fort Apache',
-  fullName: 'Fort Apache — Club Équestre',
+  fullName: 'Fort Apache, Club Équestre',
   description:
     "Club équestre Fort Apache à Vence (06140), quartier Col de Vence : balades à poney, cours d'équitation, stages, randonnées et compétitions. Ouvert tous les jours de 10h à 17h.",
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://fort-apache-equitation-vence.fr',
@@ -26,7 +26,7 @@ export const siteConfig = {
     instagram: 'https://www.instagram.com/fort.apache.equitation.vence/' as string | null,
   },
   openingHours: [
-    { day: 'Tous les jours', hours: '10h — 17h' },
+    { day: 'Tous les jours', hours: '10h à 17h' },
   ],
 } as const;
 

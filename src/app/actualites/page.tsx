@@ -47,7 +47,7 @@ export default async function ActualitesPage() {
               </p>
               <p>
                 En attendant nos premiers articles, retrouvez toute la vie
-                du club au quotidien sur Instagram et Facebook —
+                du club au quotidien sur Instagram et Facebook :
                 <a
                   href="/#social-wall"
                   className="text-bordeaux underline ml-1"
