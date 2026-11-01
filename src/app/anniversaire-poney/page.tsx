@@ -8,7 +8,7 @@ import { siteConfig } from '@/lib/site-config';
 export const metadata: Metadata = {
   title: 'Anniversaire au poney club au Col de Vence',
   description:
-    "Fêtez l'anniversaire de votre enfant au poney club, au Col de Vence près de Nice : poneys doux, pleine nature, ouvert tous les jours. Appelez Pénélope.",
+    "Anniversaire au poney club au Col de Vence, près de Nice : à partir de 9 € par enfant, balade offerte à l'enfant fêté, tables en plein air. Appelez Pénélope.",
   alternates: {
     canonical: `${siteConfig.url}/anniversaire-poney`,
   },
@@ -21,7 +21,7 @@ const faq: { q: string; a: string }[] = [
   },
   {
     q: "Quel est le tarif d'un anniversaire au poney club ?",
-    a: "Le tarif dépend de la formule retenue avec le club. Pénélope vous le donne au moment de réserver ; les tarifs des autres activités sont sur la page des tarifs.",
+    a: "À partir de 9 € par enfant, et la balade est offerte à l'enfant qui fête son anniversaire. Le prix dépend de ce que vous choisissez : balade, animation en carrière, soins aux poneys. Pénélope vous le donne au moment de réserver.",
   },
   {
     q: 'Les invités doivent-ils savoir monter à poney ?',
@@ -32,8 +32,12 @@ const faq: { q: string; a: string }[] = [
     a: "Oui. Le club est ouvert tous les jours de l'année, de 10h à 17h ; il ne ferme que le 25 décembre. Pensez simplement à bien couvrir les enfants.",
   },
   {
-    q: "Peut-on offrir une balade à poney à l'enfant qui fête son anniversaire ?",
-    a: "Oui, le club propose des bons cadeaux. Pour la formule et ses conditions, renseignez-vous auprès de Pénélope au 04 93 58 91 43.",
+    q: "L'enfant qui fête son anniversaire paie-t-il sa balade ?",
+    a: "Non. Sa balade, ou l'activité choisie pour le groupe, lui est toujours offerte par le club.",
+  },
+  {
+    q: 'Faut-il apporter le goûter et le gâteau ?',
+    a: "Oui. Le club ne fournit ni goûter ni gâteau : vous apportez ce que vous voulez et vous profitez librement des tables et des chaises. Des boissons et des bonbons sont proposés à la buvette, seulement si vous le souhaitez.",
   },
 ];
 
@@ -88,7 +92,8 @@ export default function AnniversairePoneyPage() {
             Fêter un anniversaire au poney club, c&apos;est possible au Col de
             Vence, à une quarantaine de minutes de la mer : Fort Apache accueille
             les anniversaires d&apos;enfants au club, au milieu des poneys et
-            des chemins de nature. Pour les parents qui cherchent une idée
+            des chemins de nature, à partir de 9 € par enfant, et la balade
+            est offerte à l&apos;enfant qui fête son anniversaire. Pour les parents qui cherchent une idée
             d&apos;anniversaire près de Nice, de Vence ou de Grasse qui sorte de
             l&apos;ordinaire, c&apos;est une fête en plein air, avec de vrais
             animaux et un vrai décor. Le club accueille des cavaliers depuis
@@ -123,6 +128,33 @@ export default function AnniversairePoneyPage() {
             ou des chevreuils sur les chemins. Pour une bande d&apos;enfants
             habitués à la ville, c&apos;est une vraie sortie nature, le temps
             d&apos;un après-midi.
+          </p>
+
+          <h2 className={h2}>Comment se passe un anniversaire au poney club ?</h2>
+          <p className={p}>
+            Ici, rien n&apos;est imposé : la fête se compose à la carte. La
+            plupart des familles viennent pour profiter du lieu. Elles
+            s&apos;installent aux tables et aux chaises du club, en libre
+            accès et sans supplément, ajoutent un peu de décoration, sortent
+            le gâteau et le goûter qu&apos;elles ont apportés, et les enfants
+            partent en balade à poney. Le club ne fournit ni goûter ni
+            gâteau ; si vous le souhaitez, quelques boissons et bonbons sont
+            proposés à la buvette, au détail.
+          </p>
+          <p className={p}>
+            La balade d&apos;une demi-heure est la base de la fête, à partir
+            de 9 € par enfant. Pour aller plus loin, on peut y ajouter une
+            animation en carrière, l&apos;espace clos où l&apos;on travaille
+            à poney, des soins aux poneys, une balade avec les parents, et
+            aller jusqu&apos;à une demi-journée au club. Une famille revient
+            ainsi chaque année pour la même petite fille : une demi-heure en
+            carrière, une demi-heure de balade avec les parents, puis les
+            soins aux poneys.
+          </p>
+          <p className={p}>
+            Dans tous les cas, l&apos;enfant qui fête son anniversaire ne paie
+            pas : sa balade, ou l&apos;activité choisie, lui est offerte. Le
+            club accueille jusqu&apos;à une vingtaine d&apos;enfants.
           </p>
 
           <h2 className={h2}>À partir de quel âge ?</h2>
@@ -195,23 +227,23 @@ export default function AnniversairePoneyPage() {
             accompagnent ont intérêt à prévoir de bonnes chaussures de marche.
           </p>
 
-          <h2 className={h2}>Que demander au moment de réserver ?</h2>
+          <h2 className={h2}>Que dire à Pénélope en réservant ?</h2>
           <p className={p}>
             Chaque fête est différente : un anniversaire de 4 ans ne
-            s&apos;organise pas comme celui de 9 ans. Pour que tout soit calé du premier coup, préparez ces
-            questions avant d&apos;appeler le club :
+            s&apos;organise pas comme celui de 9 ans. Pour que tout soit calé
+            du premier coup, ayez ces éléments sous la main en appelant le
+            club :
           </p>
           <ul className="list-disc pl-6 mb-4 space-y-2">
             <li>la date et l&apos;heure qui vous conviennent, avec une date de repli ;</li>
-            <li>le nombre d&apos;enfants et leur âge ;</li>
-            <li>la durée et le déroulé de la fête, et le temps passé à poney ;</li>
-            <li>le goûter : où le prendre et ce qu&apos;il faut apporter ;</li>
-            <li>le nombre d&apos;adultes à prévoir pour accompagner ;</li>
-            <li>le tarif de la formule.</li>
+            <li>le nombre d&apos;enfants, jusqu&apos;à une vingtaine, et leur âge ;</li>
+            <li>ce que vous voulez faire : balade seule, animation en carrière, soins aux poneys, demi-journée ;</li>
+            <li>le nombre d&apos;adultes qui accompagnent ;</li>
+            <li>si vous souhaitez des boissons ou des bonbons de la buvette.</li>
           </ul>
           <p className={p}>
-            Pénélope répond à tout cela au téléphone et vous propose ce qui
-            convient à l&apos;âge de votre enfant et à la taille du groupe.
+            Pénélope vous propose ce qui convient à l&apos;âge de votre enfant
+            et à la taille du groupe, et vous donne le prix correspondant.
           </p>
 
           <h2 className={h2}>Quand venir, et comment réserver ?</h2>
@@ -289,8 +321,15 @@ export default function AnniversairePoneyPage() {
                 dès 2 ans, sans aucune expérience du poney.
               </li>
               <li>
-                <strong>Formule :</strong> nombre d&apos;enfants, durée et
-                déroulé à voir avec Pénélope au moment de réserver.
+                <strong>Formule :</strong> à la carte, de la balade
+                d&apos;une demi-heure à la demi-journée (animation en
+                carrière, soins aux poneys) ; jusqu&apos;à une vingtaine
+                d&apos;enfants.
+              </li>
+              <li>
+                <strong>Sur place :</strong> tables et chaises en libre accès ;
+                goûter et gâteau à apporter ; boissons et bonbons à la
+                buvette, si vous le souhaitez.
               </li>
               <li>
                 <strong>Lieu :</strong> Fort Apache, quartier Col de Vence,
@@ -304,11 +343,8 @@ export default function AnniversairePoneyPage() {
                 sécurité fournis.
               </li>
               <li>
-                <strong>Tarifs :</strong> sur demande ; voir aussi la{' '}
-                <Link href="/tarifs" className={lien}>
-                  page des tarifs
-                </Link>
-                .
+                <strong>Tarif :</strong> à partir de 9 € par enfant ; la
+                balade est offerte à l&apos;enfant qui fête son anniversaire.
               </li>
             </ul>
             <p className="mt-6 text-charbon/85">

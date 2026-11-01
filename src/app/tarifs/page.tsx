@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { PageHeader } from '@/components/ui/PageHeader';
 import { LinkButton } from '@/components/ui/Button';
 import { siteConfig } from '@/lib/site-config';
@@ -47,6 +48,19 @@ const annuels: Row[] = [
   { formule: 'Année demi-journée enfant', prix: '600 €' },
   { formule: 'Année journée enfant', prix: '900 €' },
   { formule: 'Année adulte', prix: '600 €' },
+];
+
+const groupes: Row[] = [
+  {
+    formule: "Anniversaire d'enfant",
+    detail: "Balade offerte à l'enfant fêté",
+    prix: 'À partir de 9 € par enfant',
+  },
+  {
+    formule: 'Écoles, centres de loisirs, collectivités',
+    detail: 'Selon effectif et durée',
+    prix: 'À partir de 7 € par enfant',
+  },
 ];
 
 const priceSchema = {
@@ -200,6 +214,25 @@ export default function TarifsPage() {
 
           <Block overline="Bloc 4" title="Forfait annuel">
             <TarifsTable rows={annuels} />
+          </Block>
+
+          <Block
+            overline="Bloc 5"
+            title="Anniversaires et groupes"
+            intro="Formules à la carte, établies avec Pénélope selon le nombre d'enfants et le programme."
+          >
+            <TarifsTable rows={groupes} showDetail />
+            <p className="mt-4 text-charbon/80">
+              Le détail sur les pages{' '}
+              <Link href="/anniversaire-poney" className="text-bordeaux underline">
+                anniversaire au poney club
+              </Link>{' '}
+              et{' '}
+              <Link href="/groupes-ecoles" className="text-bordeaux underline">
+                écoles et centres de loisirs
+              </Link>
+              .
+            </p>
           </Block>
 
           <section className="mb-12 md:mb-16">
