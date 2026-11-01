@@ -1,15 +1,16 @@
 /**
- * Registre centralisé des photos du site fortapache.ffe.com.
+ * Registre centralisé des photos reprises de l'ancien site fortapache.ffe.com.
  *
- * Ces URLs sont servies via next/image : Vercel va télécharger les images
- * depuis fortapache.ffe.com au moment du build / à la première requête,
- * les optimiser (WebP/AVIF, tailles adaptatives) et les servir via son CDN.
+ * Depuis le 01/11/2026, les fichiers sont hébergés par le site lui-même, dans
+ * public/photos/ffe (même arborescence que sur le site fédéral) : la galerie
+ * et les portraits de la cavalerie ne dépendent plus du site fédéral, qui peut
+ * être désactivé sans rien casser.
  *
- * Pour remplacer une photo par une version définitive, il suffit de
- * modifier l'URL ici — elle sera mise à jour partout sur le site.
+ * Pour remplacer une photo, il suffit de modifier le chemin ici : il sera mis
+ * à jour partout sur le site.
  */
 
-const BASE = 'https://fortapache.ffe.com';
+const BASE = '/photos/ffe';
 
 export const ffeImages = {
   // Photos "Top" — probablement les plus belles mises en avant du template
