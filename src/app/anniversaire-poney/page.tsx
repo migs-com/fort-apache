@@ -238,6 +238,10 @@ export default function AnniversairePoneyPage() {
             <Link href="/actualites/offrir-balade-poney-noel" className={lien}>
               idée cadeau : une balade à poney
             </Link>
+            . Pour une classe ou un centre de loisirs, voyez notre page{' '}
+            <Link href="/groupes-ecoles" className={lien}>
+              écoles et centres de loisirs
+            </Link>
             .
           </p>
         </div>
