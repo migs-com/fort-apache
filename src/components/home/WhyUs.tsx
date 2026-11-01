@@ -42,7 +42,7 @@ const reasons: Reason[] = [
   {
     title: 'Ouvert tous les jours',
     description:
-      "Le club vous accueille tous les jours de l'année, de 10h à 17h. Cours, balades, stages : à vous de choisir.",
+      "Le club vous accueille tous les jours de 10h à 17h, sauf le 25 décembre. Cours, balades, stages : à vous de choisir.",
     icon: (
       <svg className={iconCls} viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
         <rect x="6" y="10" width="36" height="32" rx="2" />

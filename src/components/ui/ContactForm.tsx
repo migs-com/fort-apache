@@ -1,5 +1,6 @@
 'use client';
 
+import { trackEvent } from '@/lib/analytics';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useMemo, useState } from 'react';
@@ -203,6 +204,11 @@ export function ContactForm({ defaultObjet }: { defaultObjet?: string }) {
         throw new Error(body.error || s.serverErrorFallback);
       }
 
+      trackEvent('generate_lead', {
+        form_name: 'contact',
+        objet: data.objet || 'non précisé',
+        page_path: window.location.pathname,
+      });
       setStatus('success');
       reset();
     } catch (e) {

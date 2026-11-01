@@ -25,7 +25,7 @@ export default function MentionsLegalesPage() {
             <br />
             Dirigeante : Pénélope Purtell
             <br />
-            Carrefour Saint-Barnabé, quartier Col de Vence, 06140 Coursegoules
+            75 route de Saint-Barnabé, quartier Col de Vence, 06140 Coursegoules
             <br />
             SIRET : 403 688 062 00021
             <br />
