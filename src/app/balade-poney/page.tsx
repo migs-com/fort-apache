@@ -214,6 +214,10 @@ export default function BaladePoneyPage() {
             <Link href="/stages" className={lien}>
               stages poney des vacances
             </Link>
+            . Vous organisez une fête ? Voyez notre page{' '}
+            <Link href="/anniversaire-poney" className={lien}>
+              anniversaire au poney club
+            </Link>
             .
           </p>
         </div>

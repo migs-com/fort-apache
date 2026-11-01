@@ -11,6 +11,8 @@
 
 const cormorant =
   'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap';
+const roboto =
+  'https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap';
 const dmSans =
   'https://fonts.googleapis.com/css2?family=DM+Sans:wght@100..1000&display=swap';
 
@@ -35,5 +37,9 @@ module.exports = {
   ].join('\n\n'),
   [dmSans]: [
     face('DM Sans', '100 1000', 'https://fonts.gstatic.com/s/dmsans/mock-variable.woff2'),
+  ].join('\n\n'),
+  [roboto]: [
+    face('Roboto', 400, 'https://fonts.gstatic.com/s/roboto/mock-400.woff2'),
+    face('Roboto', 700, 'https://fonts.gstatic.com/s/roboto/mock-700.woff2'),
   ].join('\n\n'),
 };
