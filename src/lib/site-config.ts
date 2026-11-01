@@ -17,8 +17,8 @@ export const siteConfig = {
       country: 'FR',
     },
     geo: {
-      latitude: '43.7939',
-      longitude: '7.0547',
+      latitude: '43.7651138',
+      longitude: '7.0697398',
     },
   },
   socials: {

@@ -11,7 +11,15 @@ const translatedPagePairs: Array<{ fr: string; en: string }> = [
   { fr: '/contact', en: '/en/contact' },
 ];
 
-const frOnlyPaths = ['/le-club', '/cours', '/stages', '/galerie', '/actualites'];
+const frOnlyPaths = [
+  '/le-club',
+  '/cours',
+  '/stages',
+  '/galerie',
+  '/actualites',
+  '/mentions-legales',
+  '/confidentialite',
+];
 
 // Le plan du site se régénère toutes les heures : les articles publiés dans
 // Notion y apparaissent sans attendre une nouvelle mise en ligne du site.
