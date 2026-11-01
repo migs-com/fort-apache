@@ -149,6 +149,20 @@ export default function ActivitesPage() {
         </div>
       </section>
 
+      {/* Anniversaires */}
+      <section className="bg-creme pb-10">
+        <div className="container mx-auto">
+          <p className="text-center text-charbon/85">
+            Un anniversaire à fêter ? Le club accueille les anniversaires
+            d&apos;enfants :{' '}
+            <Link href="/anniversaire-poney" className="text-bordeaux underline">
+              fêter un anniversaire au poney club
+            </Link>
+            .
+          </p>
+        </div>
+      </section>
+
       {/* Autres activités */}
       <section className="bg-creme pb-16 md:pb-24">
         <div className="container mx-auto">
