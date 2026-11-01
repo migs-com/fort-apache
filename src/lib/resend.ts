@@ -1,10 +1,23 @@
 import { Resend } from 'resend';
+import nodemailer from 'nodemailer';
 import type { ContactInput } from '@/lib/contact-schema';
 
 const apiKey = process.env.RESEND_API_KEY;
 const contactEmail = process.env.CONTACT_EMAIL || 'contact@fort-apache-equitation-vence.fr';
+
+// Envoi par la boîte du domaine chez O2switch (voie retenue le 01/11/2026).
+// La boîte contact@ reçoit le message et le renvoie à Pénélope (redirecteur cPanel).
+// Seul le mot de passe de la boîte est à poser dans Vercel : SMTP_PASSWORD.
+const smtpPassword = process.env.SMTP_PASSWORD;
+const smtpUser = process.env.SMTP_USER || 'contact@fort-apache-equitation-vence.fr';
+const smtpHost = process.env.SMTP_HOST || 'cocatrix.o2switch.net';
+const smtpPort = Number(process.env.SMTP_PORT || 465);
+
 const fromEmail =
-  process.env.CONTACT_FROM_EMAIL || 'Fort Apache <onboarding@resend.dev>';
+  process.env.CONTACT_FROM_EMAIL ||
+  (smtpPassword
+    ? `Site Fort Apache <${smtpUser}>`
+    : 'Fort Apache <onboarding@resend.dev>');
 
 export function escapeHtml(value: string): string {
   return value
@@ -16,19 +29,17 @@ export function escapeHtml(value: string): string {
 }
 
 export async function sendContactEmail(data: ContactInput) {
-  if (!apiKey) {
+  if (!apiKey && !smtpPassword) {
     // Sans clé d'envoi, le message ne peut pas partir. En production, on le
     // dit au visiteur au lieu de simuler un succès : sinon la demande est
     // perdue sans que personne le sache. En développement, on garde le mode test.
     // eslint-disable-next-line no-console
-    console.warn('[resend] RESEND_API_KEY not set — email not sent.');
+    console.warn('[contact] SMTP_PASSWORD et RESEND_API_KEY absents : message non envoye.');
     if (process.env.NODE_ENV === 'production') {
-      throw new Error('RESEND_API_KEY missing');
+      throw new Error('Aucun service d envoi configure');
     }
     return { id: 'dev-mode', dev: true } as const;
   }
-
-  const resend = new Resend(apiKey);
 
   const subject = `Nouveau contact Fort Apache — ${escapeHtml(
     data.prenom
@@ -73,6 +84,25 @@ export async function sendContactEmail(data: ContactInput) {
     .filter(Boolean)
     .join('\n');
 
+  if (smtpPassword) {
+    const transporter = nodemailer.createTransport({
+      host: smtpHost,
+      port: smtpPort,
+      secure: smtpPort === 465,
+      auth: { user: smtpUser, pass: smtpPassword },
+    });
+    const info = await transporter.sendMail({
+      from: fromEmail,
+      to: contactEmail,
+      replyTo: data.email,
+      subject,
+      html,
+      text,
+    });
+    return { id: info.messageId ?? null, dev: false } as const;
+  }
+
+  const resend = new Resend(apiKey);
   const response = await resend.emails.send({
     from: fromEmail,
     to: contactEmail,
