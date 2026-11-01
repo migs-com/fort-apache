@@ -17,6 +17,7 @@ const frOnlyPaths = [
   '/stages',
   '/galerie',
   '/actualites',
+  '/balade-poney',
   '/mentions-legales',
   '/confidentialite',
 ];

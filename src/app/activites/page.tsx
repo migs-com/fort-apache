@@ -137,6 +137,12 @@ export default function ActivitesPage() {
                 >
                   Réserver une balade
                 </LinkButton>
+                <Link
+                  href="/balade-poney"
+                  className="self-center text-bordeaux underline"
+                >
+                  Tout savoir sur la balade à poney dès 2 ans
+                </Link>
               </div>
             </div>
           </article>
