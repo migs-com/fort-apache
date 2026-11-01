@@ -42,6 +42,9 @@ const defaultErrorMessages: ContactErrorMessages = {
   phoneInvalid: 'Numéro invalide',
 };
 
+const emptyToUndefined = (value: unknown) =>
+  value === '' || value === null ? undefined : value;
+
 export function makeContactSchema(messages: ContactErrorMessages = defaultErrorMessages) {
   return z.object({
     nom: z.string().min(2, messages.lastNameShort).max(80),
@@ -49,14 +52,17 @@ export function makeContactSchema(messages: ContactErrorMessages = defaultErrorM
     age: z
       .union([z.coerce.number().int().min(3).max(110), z.literal('')])
       .optional(),
-    niveau: z.enum(niveaux).optional(),
+    // Un menu laissé sur « Choisir… » envoie une chaîne vide : on la traite
+    // comme une absence de réponse, sinon le formulaire refuse de partir sans
+    // afficher d'erreur (défaut constaté le 01/11/2026).
+    niveau: z.preprocess(emptyToUndefined, z.enum(niveaux).optional()),
     email: z.string().email(messages.emailInvalid),
     telephone: z
       .string()
       .min(8, messages.phoneShort)
       .max(25)
       .regex(/^[+0-9\s().-]+$/, messages.phoneInvalid),
-    objet: z.enum(objets).optional(),
+    objet: z.preprocess(emptyToUndefined, z.enum(objets).optional()),
     message: z.string().max(2000).optional(),
     // honeypot — should always be empty
     website: z.string().max(0).optional().or(z.literal('')),
