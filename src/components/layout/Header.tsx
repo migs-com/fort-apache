@@ -235,7 +235,7 @@ export function Header() {
           au header ~72px et non au viewport). */}
       <div
         id="mobile-menu"
-        className={`lg:hidden fixed inset-0 z-[60] bg-cream transition-transform duration-300 ease-out ${
+        className={`lg:hidden fixed inset-0 z-40 bg-cream transition-transform duration-300 ease-out ${
           open ? 'translate-x-0' : 'translate-x-full'
         }`}
         aria-hidden={!open}
