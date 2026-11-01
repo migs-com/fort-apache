@@ -65,6 +65,8 @@ export function Header() {
   const contactCta = isEn ? 'Contact us' : 'Nous contacter';
   const openMenuLabel = isEn ? 'Open menu' : 'Ouvrir le menu';
   const closeMenuLabel = isEn ? 'Close menu' : 'Fermer le menu';
+  const callLabel = isEn ? 'Call the club' : 'Appeler le club';
+  const telHref = `tel:${siteConfig.contact.phone}`;
 
   const items: ReadonlyArray<{ href: string; label: string }> = isEn
     ? enItems
@@ -146,11 +148,53 @@ export function Header() {
               );
             })}
             <LanguageSwitcher className="ml-1" />
+            <a
+              href={telHref}
+              className="flex items-center gap-2 text-sm font-medium text-midnight hover:text-terracotta transition-colors whitespace-nowrap"
+            >
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                />
+              </svg>
+              <span className="sr-only">{callLabel} : </span>
+              <span className="hidden xl:inline">{siteConfig.contact.phoneDisplay}</span>
+            </a>
             <LinkButton href={contactHref} variant="primary" size="sm">
               {contactCta}
             </LinkButton>
           </nav>
 
+          <div className="lg:hidden flex items-center gap-3">
+            <a
+              href={telHref}
+              className="flex items-center justify-center w-11 h-11 rounded-full bg-terracotta text-white shadow-md"
+            >
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                />
+              </svg>
+              <span className="sr-only">{callLabel}</span>
+            </a>
           <button
             type="button"
             className="lg:hidden relative z-[70] p-2 -mr-2 text-midnight"
@@ -182,6 +226,7 @@ export function Header() {
               )}
             </svg>
           </button>
+          </div>
         </div>
       </header>
 
@@ -222,6 +267,26 @@ export function Header() {
             />
           </div>
           <div className="mt-6">
+            <a
+              href={telHref}
+              className="flex items-center justify-center gap-2 w-full py-3 rounded-full border-2 border-terracotta text-terracotta font-medium mb-3"
+            >
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                />
+              </svg>
+              {callLabel} : {siteConfig.contact.phoneDisplay}
+            </a>
             <LinkButton
               href={contactHref}
               variant="primary"
