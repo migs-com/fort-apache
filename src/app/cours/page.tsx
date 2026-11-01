@@ -10,7 +10,7 @@ import { ffeImages } from '@/lib/images';
 export const metadata: Metadata = {
   title: 'Cours d\'équitation : de l\'éveil poney aux adultes',
   description:
-    "À Fort Apache (Vence 06140) : éveil poney dès 4 ans, demi-journées et journées complètes pour les enfants, cours adultes à la séance. Cours collectifs ou particuliers, tous niveaux.",
+    "À Fort Apache (Col de Vence, 06140 Coursegoules) : éveil poney dès 4 ans, demi-journées et journées complètes pour les enfants, cours adultes à la séance. Cours collectifs ou particuliers, tous niveaux.",
   alternates: {
     canonical: `${siteConfig.url}/cours`,
   },

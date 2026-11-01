@@ -10,7 +10,7 @@ import { siteConfig } from '@/lib/site-config';
 export const metadata: Metadata = {
   title: 'Activités équestres : balades à poney, cours et stages',
   description:
-    "Toutes nos activités à Fort Apache (Vence, 06140) : balades à poney en famille, cours collectifs ou privés, école poney, randonnées, stages vacances et compétitions.",
+    "Toutes nos activités à Fort Apache (Col de Vence, 06140 Coursegoules) : balades à poney en famille, cours collectifs ou privés, école poney, randonnées, stages vacances et compétitions.",
   alternates: {
     canonical: `${siteConfig.url}/activites`,
     languages: {
