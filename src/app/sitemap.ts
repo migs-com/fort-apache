@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
 import { siteConfig } from '@/lib/site-config';
-import { getArticles } from '@/lib/notion';
+import { getArticlesForSitemap } from '@/lib/notion';
 
 // Pairs of FR/EN translated pages. Non-translated FR pages are listed as
 // fr-only entries further down.
@@ -68,7 +68,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }));
 
-  const articles = await getArticles();
+  const articles = await getArticlesForSitemap();
   const articleEntries: MetadataRoute.Sitemap = articles.map((a) => ({
     url: `${base}/actualites/${a.slug}`,
     lastModified: new Date(a.date),

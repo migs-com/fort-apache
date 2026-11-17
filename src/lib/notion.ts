@@ -116,27 +116,28 @@ function mapPageToArticle(page: unknown): Article | null {
 // Une erreur Notion n'est jamais mise en mémoire : la visite suivante réessaie.
 const CACHE_SECONDS = 300;
 
-const fetchArticlesCached = unstable_cache(
-  async (): Promise<Article[]> => {
-    const client = getClient();
-    if (!client || !databaseId) return [];
+async function queryArticles(): Promise<Article[]> {
+  const client = getClient();
+  if (!client || !databaseId) return [];
 
-    const response = await client.databases.query({
-      database_id: databaseId,
-      sorts: [{ timestamp: 'created_time', direction: 'descending' }],
-      page_size: 50,
-    });
+  const response = await client.databases.query({
+    database_id: databaseId,
+    sorts: [{ timestamp: 'created_time', direction: 'descending' }],
+    page_size: 50,
+  });
 
-    // Tri par date de publication (champ Date), la plus récente d'abord,
-    // et non par date de création de la page dans Notion.
-    return response.results
-      .map(mapPageToArticle)
-      .filter((a): a is Article => a !== null)
-      .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-  },
-  ['notion-articles'],
-  { revalidate: CACHE_SECONDS, tags: ['notion'] }
-);
+  // Tri par date de publication (champ Date), la plus récente d'abord,
+  // et non par date de création de la page dans Notion.
+  return response.results
+    .map(mapPageToArticle)
+    .filter((a): a is Article => a !== null)
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+}
+
+const fetchArticlesCached = unstable_cache(queryArticles, ['notion-articles'], {
+  revalidate: CACHE_SECONDS,
+  tags: ['notion'],
+});
 
 const fetchMarkdownCached = unstable_cache(
   async (pageId: string): Promise<string> => {
@@ -159,6 +160,26 @@ export const getArticles = cache(async (): Promise<Article[]> => {
     return [];
   }
 });
+
+/**
+ * Liste des articles pour le plan du site, lue directement dans Notion.
+ *
+ * Le plan du site a sa propre mise à jour (toutes les heures). Il ne passe
+ * pas par la mémoire de 5 minutes : sur Vercel, la remise à jour de cette
+ * mémoire se fait après la réponse, la fonction est alors mise en pause et
+ * l'appel à Notion expire. Le plan du site restait ainsi figé sur la liste
+ * du dernier déploiement (constat du 17/11/2026). En cas d'échec de Notion,
+ * on retombe sur la liste en mémoire plutôt que de renvoyer une liste vide.
+ */
+export async function getArticlesForSitemap(): Promise<Article[]> {
+  try {
+    return await queryArticles();
+  } catch (e) {
+    // eslint-disable-next-line no-console
+    console.error('[notion] getArticlesForSitemap failed, cached list used', e);
+    return getArticles();
+  }
+}
 
 export const getArticleBySlug = cache(
   async (slug: string): Promise<ArticleWithContent | null> => {
